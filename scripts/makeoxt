@@ -1,0 +1,87 @@
+#!/usr/bin/python
+
+import oxttools.xmltemplate as xtmpl
+from argparse import ArgumentParser
+from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
+import time, os, codecs
+import lxml.etree as et
+
+def zipadd(zipfile, data, fname) :
+    zinfo = ZipInfo()
+    zinfo.filename = fname
+    tlocal = time.localtime()
+    zinfo.date_time = (tlocal[0], tlocal[1]+1, tlocal[2]+1, tlocal[3], tlocal[4], tlocal[5])
+    zinfo.compress_type = ZIP_DEFLATED
+    zipfile.writestr(zinfo, data)
+
+scripttypes = {
+    'west' : 1,
+    'asian' : 2,
+    'ctl' : 3,
+    'rtl' : 4
+}
+
+parser = ArgumentParser()
+parser.add_argument('langtag',help='language tag for this extension')
+parser.add_argument('outfile',help='output oxt file')
+parser.add_argument('-t','--type',default='west',help='script type [west, asian, ctl, rtl]')
+parser.add_argument('-f','--font',action='append',help='Specifies font for semantic font e.g. -f UI_SANS="Times New Roman". May be repeated')
+parser.add_argument('-l','--langname',help='Language name for UI strings')
+parser.add_argument('--publisher',help='Name of publisher')
+parser.add_argument('--puburl',default='',help='URL of publisher')
+args = parser.parse_args()
+
+resdir = os.path.join(os.path.dirname(xtmpl.__file__), 'data')
+scripttype = scripttypes.get(args.type.lower(), 1)
+
+ozip = ZipFile(args.outfile, "w")
+t = xtmpl.Templater()
+
+fontmap = {}
+if args.font is not None :
+    for f in args.font :
+        (id, name) = f.split('=')
+        fontmap[id] = name
+    t.define('fonttypes', " ".join(sorted(fontmap.keys())))
+else :
+    t.define('fonttypes', '')
+if args.langname is None : args.langname = args.langtag
+
+
+def fn_fonts(context, name) :
+    return fontmap[name]
+
+t.define('langtag', args.langtag)
+t.define('resdir', resdir)
+t.define('scripttype', str(scripttype))
+t.define('language', args.langname)
+if args.publisher is not None :
+    t.define('publisher', args.publisher)
+    t.define('puburl', args.puburl)
+else :
+    t.define('publisher', '')
+t.addfn(None, 'fonts', fn_fonts)
+t.parse(os.path.join(resdir, 'dictxcu.xml'))
+t.process()
+zipadd(ozip, unicode(t).encode('utf-8'), 'dictionaries.xcu')
+
+t.parse(os.path.join(resdir, 'oxtdescription.xml'))
+t.process()
+zipadd(ozip, unicode(t).encode('utf-8'), 'description.xml')
+
+license="""LICENSES:
+Spell checker: MIT
+
+https://opensource.org/licenses/MIT
+"""
+zipadd(ozip, license.encode('utf-8'), 'LICENSES-en.txt')
+
+manifest="""<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE manifest:manifest PUBLIC "-//OpenOffice.org//DTD Manifest 1.0//EN" "Manifest.dtd">
+<manifest:manifest xmlns:manifest="http://openoffice.org/2001/manifest">
+    <manifest:file-entry manifest:media-type="application/vnd.sun.star.configuration-data" manifest:full-path="dictionaries.xcu"/>
+</manifest:manifest>
+"""
+zipadd(ozip, manifest.encode('utf-8'), 'META-INF/manifest.xml')
+
+ozip.close()
