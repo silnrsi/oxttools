@@ -117,7 +117,7 @@ if args.dict :
         ziphunspell(ozip, hun, args.langtag)
     elif args.dicttype == 'text' :
         hun = hs.Hunspell(args.langtag)
-        with open(args.dict) as infile :
+        with codecs.open(args.dict, encoding='utf-8') as infile :
             for l in infile.readlines() :
                 hun.addword(l.strip())
         ziphunspell(ozip, hun, args.langtag)
