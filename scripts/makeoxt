@@ -105,9 +105,9 @@ if args.dict :
         elif args.dict.endswith('.txt') :
             args.dicttype = 'text'
     if args.dicttype == 'hunspell' :
-        ozip.write(args.dict, 'dictionaries/' + args.langtag + '.aff', ZIP_DEFLATE)
+        ozip.write(args.dict, 'dictionaries/' + args.langtag + '.aff', ZIP_DEFLATED)
         d = args.dict.replace('.aff', '.dic')
-        ozip.write(d, 'dictionaries/' + args.langtag + '.dic', ZIP_DEFLATE)
+        ozip.write(d, 'dictionaries/' + args.langtag + '.dic', ZIP_DEFLATED)
     elif args.dicttype == 'pt' or args.dicttype == 'ptstrict' :
         doc = et.parse(args.dict)
         hun = hs.Hunspell(args.langtag)
