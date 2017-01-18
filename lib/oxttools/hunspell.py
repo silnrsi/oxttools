@@ -8,7 +8,8 @@ class Hunspell(object) :
         self.words = []
 
     def addword(self, word) :
-        self.words.append(word)
+        if len(word) :
+            self.words.append(word)
 
     def getaff(self) :
         return """

@@ -29,7 +29,7 @@ parser.add_argument('-t','--type',default='west',help='script type [west, asian,
 parser.add_argument('-f','--font',action='append',help='Specifies font for semantic font e.g. -f UI_SANS="Times New Roman". May be repeated')
 parser.add_argument('-l','--langname',help='Language name for UI strings')
 parser.add_argument('-d','--dict',help='Wordlist dictionary. For hunspell dictionaries, specify the .aff file. Will try to infer what kind of xml')
-parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt, ptstrict]')
+parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt, ptstrict, text]')
 parser.add_argument('--publisher',help='Name of publisher')
 parser.add_argument('--puburl',default='',help='URL of publisher')
 args = parser.parse_args()
@@ -94,6 +94,8 @@ if args.dict :
         elif args.dict.endswith('.xml') :
             # should dig into xml, but for now we only know about one type
             args.dicttype = 'pt'
+        elif args.dict.endswith('.txt') :
+            args.dicttype = 'text'
     if args.dicttype == 'hunspell' :
         ozip.write(args.dict, 'dictionaries/' + args.langtag + '.aff', ZIP_DEFLATE)
         d = args.dict.replace('.aff', '.dic')
@@ -104,6 +106,13 @@ if args.dict :
         for e in doc.findall('//item') :
             if args.dicttype == 'ptstrict' and e.attrib['spelling'] != 'Correct' : continue
             hun.addword(e.attrib['word'])
+        zipadd(ozip, hun.getaff().encode('utf-8'), 'dictionaries/' + args.langtag + '.aff')
+        zipadd(ozip, hun.getdic().encode('utf-8'), 'dictionaries/' + args.langtag + '.dic')
+    elif args.dicttype == 'text' :
+        hun = hs.Hunspell(args.langtag)
+        with open(args.dict) as infile :
+            for l in infile.readlines() :
+                hun.addword(l.strip())
         zipadd(ozip, hun.getaff().encode('utf-8'), 'dictionaries/' + args.langtag + '.aff')
         zipadd(ozip, hun.getdic().encode('utf-8'), 'dictionaries/' + args.langtag + '.dic')
 
