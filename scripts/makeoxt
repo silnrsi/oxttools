@@ -15,6 +15,10 @@ def zipadd(zipfile, data, fname) :
     zinfo.compress_type = ZIP_DEFLATED
     zipfile.writestr(zinfo, data)
 
+def ziphunspell(ozip, hun, name) :
+        zipadd(ozip, hun.getaff().encode('utf-8'), 'dictionaries/' + name + '.aff')
+        zipadd(ozip, hun.getdic().encode('utf-8'), 'dictionaries/' + name + '.dic')
+
 scripttypes = {
     'west' : 1,
     'asian' : 2,
@@ -106,14 +110,12 @@ if args.dict :
         for e in doc.findall('//item') :
             if args.dicttype == 'ptstrict' and e.attrib['spelling'] != 'Correct' : continue
             hun.addword(e.attrib['word'])
-        zipadd(ozip, hun.getaff().encode('utf-8'), 'dictionaries/' + args.langtag + '.aff')
-        zipadd(ozip, hun.getdic().encode('utf-8'), 'dictionaries/' + args.langtag + '.dic')
+        ziphunspell(ozip, hun, args.langtag)
     elif args.dicttype == 'text' :
         hun = hs.Hunspell(args.langtag)
         with open(args.dict) as infile :
             for l in infile.readlines() :
                 hun.addword(l.strip())
-        zipadd(ozip, hun.getaff().encode('utf-8'), 'dictionaries/' + args.langtag + '.aff')
-        zipadd(ozip, hun.getdic().encode('utf-8'), 'dictionaries/' + args.langtag + '.dic')
+        ziphunspell(ozip, hun, args.langtag)
 
 ozip.close()
