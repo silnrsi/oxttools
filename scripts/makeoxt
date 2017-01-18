@@ -1,10 +1,14 @@
 #!/usr/bin/python
 
-import oxttools.xmltemplate as xtmpl
+import time, os, codecs, sys
+try:
+    import oxttools.xmltemplate as xtmpl
+except ImportError:
+    sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'lib')))
+    import oxttools.xmltemplate as xtmpl
 import oxttools.hunspell as hs
 from argparse import ArgumentParser
 from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
-import time, os, codecs
 import lxml.etree as et
 
 def zipadd(zipfile, data, fname) :
