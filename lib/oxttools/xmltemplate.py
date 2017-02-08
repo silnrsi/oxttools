@@ -142,6 +142,8 @@ class Templater(object) :
             elif len(c) :
                 self.processattrib(c, context)
                 self.process(c, context=context, nest=False)
+            else :
+                self.processattrib(c, context)
         if nest :
             self.vars = oldvars
         return root
