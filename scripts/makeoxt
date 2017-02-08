@@ -23,6 +23,11 @@ def ziphunspell(ozip, hun, name) :
         zipadd(ozip, hun.getaff().encode('utf-8'), 'dictionaries/' + name + '.aff')
         zipadd(ozip, hun.getdic().encode('utf-8'), 'dictionaries/' + name + '.dic')
 
+def zipnfcfile(ozip, fin, fout) :
+    with open(fin) as fd :
+        dat = u"\n".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
+        zipadd(ozip, dat, fout)
+
 scripttypes = {
     'west' : 1,
     'asian' : 2,
@@ -107,9 +112,9 @@ if args.dict :
         elif args.dict.endswith('.txt') :
             args.dicttype = 'text'
     if args.dicttype == 'hunspell' :
-        ozip.write(args.dict, 'dictionaries/' + args.langtag + '.aff', ZIP_DEFLATED)
+        zipnfcfile(ozip, args.dict, 'dictionaries/' + args.langtag + '.aff')
         d = args.dict.replace('.aff', '.dic')
-        ozip.write(d, 'dictionaries/' + args.langtag + '.dic', ZIP_DEFLATED)
+        zipnfcfile(ozip, d, 'dictionaries/' + args.langtag + '.dic')
     elif args.dicttype == 'pt' or args.dicttype == 'ptstrict' :
         doc = et.parse(args.dict)
         hun = hs.Hunspell(args.langtag)
