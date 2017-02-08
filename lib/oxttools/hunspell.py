@@ -1,5 +1,6 @@
 
 import codecs
+import unicodedata
 
 class Hunspell(object) :
 
@@ -9,7 +10,8 @@ class Hunspell(object) :
 
     def addword(self, word) :
         if len(word) :
-            self.words.append(word)
+            dat = unicodedata.normalize('NFC', word) 
+            self.words.append(dat)
 
     def getaff(self) :
         return """
