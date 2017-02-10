@@ -23,10 +23,14 @@ def ziphunspell(ozip, hun, name) :
         zipadd(ozip, hun.getaff().encode('utf-8'), 'dictionaries/' + name + '.aff')
         zipadd(ozip, hun.getdic().encode('utf-8'), 'dictionaries/' + name + '.dic')
 
-def zipnfcfile(ozip, fin, fout) :
+def zipnfcfile(ozip, fin, fout, affix=None) :
+    dat = ""
     with open(fin) as fd :
-        dat = u"\n".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
-        zipadd(ozip, dat, fout)
+        dat += u"\n".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
+    if affix is not None :
+        with oepn(affix) as fd:
+            dat += u"\n".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
+    zipadd(ozip, dat, fout)
 
 scripttypes = {
     'west' : 1,
@@ -42,6 +46,7 @@ parser.add_argument('-t','--type',default='west',help='script type [west, asian,
 parser.add_argument('-f','--font',action='append',help='Specifies font for semantic font e.g. -f UI_SANS="Times New Roman". May be repeated')
 parser.add_argument('-l','--langname',help='Language name for UI strings')
 parser.add_argument('-d','--dict',help='Wordlist dictionary. For hunspell dictionaries, specify the .aff file. Will try to infer what kind of xml')
+parser.add_argument('-a','--affix',help='Merge the given affix file data into the generated .aff file')
 parser.add_argument('-v','--version',default='0.1',help='OXT version number')
 parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt, ptstrict, text]')
 parser.add_argument('--publisher',help='Name of publisher')
@@ -112,9 +117,9 @@ if args.dict :
         elif args.dict.endswith('.txt') :
             args.dicttype = 'text'
     if args.dicttype == 'hunspell' :
-        zipnfcfile(ozip, args.dict, 'dictionaries/' + args.langtag + '.aff')
+        zipnfcfile(ozip, args.dict, 'dictionaries/' + args.langtag + '.aff', args.affix)
         d = args.dict.replace('.aff', '.dic')
-        zipnfcfile(ozip, d, 'dictionaries/' + args.langtag + '.dic')
+        zipnfcfile(ozip, d, 'dictionaries/' + args.langtag + '.dic', None)
     elif args.dicttype == 'pt' or args.dicttype == 'ptstrict' :
         doc = et.parse(args.dict)
         hun = hs.Hunspell(args.langtag)
