@@ -36,13 +36,14 @@ scripttypes = {
     'west' : 1,
     'asian' : 2,
     'ctl' : 3,
-    'rtl' : 4
+    'rtl' : 4,
+    'none' : ""
 }
 
 parser = ArgumentParser()
 parser.add_argument('langtag',help='language tag for this extension')
 parser.add_argument('outfile',help='output oxt file')
-parser.add_argument('-t','--type',default='west',help='script type [west, asian, ctl, rtl]')
+parser.add_argument('-t','--type',default='west',help='script type [west, asian, ctl, rtl, none] Use none if libo already knows about the tag.')
 parser.add_argument('-f','--font',action='append',help='Specifies font for semantic font e.g. -f UI_SANS="Times New Roman". May be repeated')
 parser.add_argument('-l','--langname',help='Language name for UI strings')
 parser.add_argument('-d','--dict',help='Wordlist dictionary. For hunspell dictionaries, specify the .aff file. Will try to infer what kind of xml')

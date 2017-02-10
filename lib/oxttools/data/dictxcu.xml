@@ -3,6 +3,7 @@
          xmlns:xs="http://www.w3.org/2001/XMLSchema"
          xmlns:tmpl="uri://nrsi.sil.org/template/0.1"
          xmlns:tmpla="uri://nrsi.sil.org/template_attributes/0.1">
+ <tmpl:if tmpl:path="$scripttype">
   <item o:path="/org.openoffice.VCL">
     <node o:name="ExtraLanguages">
       <node o:name="shn" tmpla:name="$langtag" o:op="fuse">
@@ -26,6 +27,7 @@
     </node>
    </tmpl:if>
   </item>
+ </tmpl:if>
 
   <item o:path="/org.openoffice.Office.Linguistic">
     <node o:name="ServiceManager">
