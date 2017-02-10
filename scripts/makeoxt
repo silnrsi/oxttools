@@ -126,12 +126,16 @@ if args.dict :
         for e in doc.findall('//item') :
             if args.dicttype == 'ptstrict' and e.attrib['spelling'] != 'Correct' : continue
             hun.addword(e.attrib['word'])
+        if args.affix is not None :
+            hun.mergeaffix(args.affix)
         ziphunspell(ozip, hun, args.langtag)
     elif args.dicttype == 'text' :
         hun = hs.Hunspell(args.langtag)
         with codecs.open(args.dict, encoding='utf-8') as infile :
             for l in infile.readlines() :
                 hun.addword(l.strip())
+        if args.affix is not None :
+            hun.mergeaffix(args.affix)
         ziphunspell(ozip, hun, args.langtag)
 
 ozip.close()
