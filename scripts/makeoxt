@@ -30,7 +30,7 @@ def zipnfcfile(ozip, fin, fout, affix=None) :
     if affix is not None :
         with oepn(affix) as fd:
             dat += u"\n".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
-    zipadd(ozip, dat, fout)
+    zipadd(ozip, dat.replace("\uFEFF", ""), fout)
 
 scripttypes = {
     'west' : 1,
@@ -133,7 +133,7 @@ if args.dict :
         hun = hs.Hunspell(args.langtag)
         with codecs.open(args.dict, encoding='utf-8') as infile :
             for l in infile.readlines() :
-                hun.addword(l.strip())
+                hun.addword(l.replace("\uFEFF", "").strip())
         if args.affix is not None :
             hun.mergeaffix(args.affix)
         ziphunspell(ozip, hun, args.langtag)

@@ -16,8 +16,8 @@ class Hunspell(object) :
 
     def mergeaffix(self, fname) :
         if fname is not None :
-            with open(fname) as fd :
-                self.affix = "\n".join(fd.readlines())
+            with codecs.open(fname, encoding='utf-8') as fd :
+                self.affix = "\n".join(fd.readlines()).replace(u"\uFEFF", "")
 
     def getaff(self) :
         return """
