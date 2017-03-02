@@ -1,10 +1,12 @@
 #!/usr/bin/python
 
 import lxml.etree as et
-import codecs, re, copy
+import codecs, re, copy, sys
 
 tmpl = "{uri://nrsi.sil.org/template/0.1}"
 tmpla = "{uri://nrsi.sil.org/template_attributes/0.1}"
+
+stringtype = str if sys.version_info[0] >= 3 else basestring
 
 class IterDict(object) :
     def __init__(self) :
@@ -14,7 +16,7 @@ class IterDict(object) :
         self.atstart = True
 
     def __setitem__(self, key, value) :
-        if isinstance(value, basestring) or not hasattr(value, 'len') :
+        if isinstance(value, stringtype) or not hasattr(value, 'len') :
             value = [value]
         self.keys[key] = len(self.values)
         self.values.append(value)
@@ -40,7 +42,7 @@ class IterDict(object) :
         raise StopIteration
 
 def asstr(v) :
-    if isinstance(v, basestring) : return v
+    if isinstance(v, stringtype) : return v
     elif isinstance(v, et._Element) : return v.text
     elif len(v) == 0 : return ''
     v = v[0]
@@ -82,7 +84,7 @@ class Templater(object) :
                     k = c.attrib[tmpl+'name']
                     if not tmpl+"fallback" in c.attrib or not k in self.vars :
                         v = self.xpath(c.text, context, c)
-                        if isinstance(v, (basestring, list)) and len(v) == 0 :
+                        if isinstance(v, (stringtype, list)) and len(v) == 0 :
                             v = c.attrib.get(tmpl+'default', '')
                         self.vars[k] = v
                 elif name == 'value' :
@@ -167,7 +169,7 @@ class Templater(object) :
             res = context.xpath(path, extensions = self.fns, smart_strings=False, **self.vars)
         except Exception as e :
             raise et.XPathEvalError(e.message + ":\n" + path + ", at line " + str(base.sourceline))
-        if not isinstance(res, basestring) and len(res) == 1 :
+        if not isinstance(res, stringtype) and len(res) == 1 :
             res = res[0]
         return res
 
