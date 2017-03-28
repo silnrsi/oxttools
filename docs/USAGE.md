@@ -1,18 +1,30 @@
-# oxttools
-Tools for creating language support oxt extensions for LibreOffice
+# Using oxttools
 
-## Dependencies
-oxttools depends on the lxml python library, which can be tricky to install on Windows.
+makeoxt is the tool for creating a LibreOffice extension.
+You will need to choose a language tag to associate with your writing system.
+LibreOffice 5.3 or later is needed if you are adding a language.
+
+## Windows installation (using packaged version)
+Copy makeoxt.exe to the working folder
+
+## Linux installation
+Use setup.py to install the makeoxt python script.
 
 ## Usage
-makeoxt is the tool for creating a LibreOffice extension. You will need to choose a language
-tag to associate with your writing system. Also, adding new languages only works with
-LibreOffice 5.3 or later.
-
-For example:
-
+- Copy DICT.txt to the working folder
+- From command prompt enter the command:
 ```
-makeoxt -d mywords.txt -l "My Language" -t ctl qax-x-complex qax-x-complex.oxt
+makeoxt -d DICT.txt -l "Name of Language" -t SCRIPTTYPE LANGTAG OUTPUT.oxt
 ```
+- OUTPUT.oxt will be created
 
-See USAGE.txt for more complete usage instructions.
+where
+- DICT.txt = name of a file containing a list of words (one per line)
+- "Name of Language" = the name of the language enclosed in quotes (for example "Ankave" or "Albanian")
+- SCRIPTTYPE =
+  - west (Latin, Greek, Cyrillic, etc.)
+  - asian (Chinese, Japanese, Korean)
+  - rtl (complex right-to-left scripts, Arabic, etc.)
+  - ctl (complex left-to-right scripts, Devanagri, etc.)
+- LANGTAG = the language tag (for example aak or aae-Latn)
+- OUTPUT.oxt = name of the LibreOffice extension to be created

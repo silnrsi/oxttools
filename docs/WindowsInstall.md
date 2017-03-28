@@ -59,16 +59,4 @@ uses the pyintaller.exe that was installed in the Python 2.7 `Scripts` folder. T
 ### Installation
 - Copy makeoxt.exe to working folder.
 
-### Usage
-- Copy DICT.txt to working folder
-- Use from command prompt as:
-```
-makeoxt -d DICT.txt -l "Name of Language" -t ctl LANGTAG OUTPUT.oxt
-```
-- Distribute OUTPUT.oxt
-
-where
-- DICT.txt = name of a file containing a list of words (one per line)
-- "Name of Language" = the name of the language enclosed in quotes (for example "Ankave" or "Albanian")
-- LANGTAG = the language tag (for example aak or aae-Latn)
-- OUTPUT.oxt = name of the LibreOffice extension to be created
+See USAGE.md for usage information.
