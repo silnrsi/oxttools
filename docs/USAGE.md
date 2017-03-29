@@ -28,3 +28,16 @@ where
   - ctl (complex left-to-right scripts, Devanagri, etc.)
 - LANGTAG = the language tag (for example aak or aae-Latn)
 - OUTPUT.oxt = name of the LibreOffice extension to be created
+
+## Using the .oxt file
+### Installing the .oxt file in LibreOffice
+- Tools menu, Extension Manager... menu item brings up a dialog
+- Click Add
+- Navigate to the folder with the .oxt file and double-click on it
+- Accept the license
+- Close the Extension Manager dialog
+
+### Initial use of the language in a LibreOffice document
+- Format menu, Character menu item brings up a dialog
+- Select the language name (value of "Name of Language" in the creation process) from the list
+- The language name should then be available from the Tools menu, Language menu item
