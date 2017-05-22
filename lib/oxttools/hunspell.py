@@ -14,13 +14,14 @@ class Hunspell(object) :
         self.words = set()
         self.affix = ""
         self.chars = set()
+        self.ignore = set()
         self.puncs = puncs
 
     def addword(self, word) :
         if len(word) :
             line = unicodedata.normalize('NFC', word)
             for dat in line.split() :  # no phrases, just words
-                res = []
+                self.words.add(dat)
                 i = 0
                 while i < len(dat) :
                     c = dat[i]
@@ -29,9 +30,9 @@ class Hunspell(object) :
                         c += dat[i]
                     if ord(c[0]) > 128 or unicodedata.category(c[0])[0] not in "SP" or c[0] in self.puncs :
                         self.chars.add(c)
-                        res.append(c)
+                    else :
+                        self.ignore.add(c[0])
                     i += 1
-                self.words.add(u"".join(res))
 
     def mergeaffix(self, fname) :
         if fname is not None :
@@ -67,6 +68,9 @@ SET UTF-8
 
         if len(specialchars) :
             res += u"\nWORDCHARS {}\n".format(u"".join(specialchars))
+
+        if len(self.ignore) :
+            res += u"\nIGNORE {}\n".format(u"".join(sorted(self.ignore)))
 
         if len(uconv) :
             res += u"\nICONV {}\n".format(len(uconv))
