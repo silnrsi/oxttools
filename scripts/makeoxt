@@ -20,6 +20,7 @@ def zipadd(zipfile, data, fname) :
     tlocal = time.localtime()
     zinfo.date_time = (tlocal[0], tlocal[1]+1, tlocal[2]+1, tlocal[3], tlocal[4], tlocal[5])
     zinfo.compress_type = ZIP_DEFLATED
+    zinfo.external_attr = 0664 << 16
     zipfile.writestr(zinfo, data)
 
 def ziphunspell(ozip, hun, name) :
@@ -46,6 +47,7 @@ scripttypes = {
 parser = ArgumentParser()
 parser.add_argument('langtag',help='language tag for this extension')
 parser.add_argument('outfile',help='output oxt file')
+parser.add_argument('-w','--word',default="",help="ASCII punctuation characters that are word forming")
 parser.add_argument('-t','--type',default='west',help='script type [west, asian, ctl, rtl, none] Use none if libo already knows about the tag.')
 parser.add_argument('-f','--font',action='append',help='Specifies font for semantic font e.g. -f UI_SANS="Times New Roman". May be repeated')
 parser.add_argument('-l','--langname',help='Language name for UI strings')
@@ -126,7 +128,7 @@ if args.dict :
         zipnfcfile(ozip, d, 'dictionaries/' + args.langtag + '.dic', None)
     elif args.dicttype == 'pt' or args.dicttype == 'ptstrict' :
         doc = et.parse(args.dict)
-        hun = hs.Hunspell(args.langtag)
+        hun = hs.Hunspell(args.langtag, puncs=args.word)
         for e in doc.findall('//item') :
             if args.dicttype == 'ptstrict' and e.attrib['spelling'] != 'Correct' : continue
             hun.addword(e.attrib['word'])
@@ -134,7 +136,7 @@ if args.dict :
             hun.mergeaffix(args.affix)
         ziphunspell(ozip, hun, args.langtag)
     elif args.dicttype == 'text' :
-        hun = hs.Hunspell(args.langtag)
+        hun = hs.Hunspell(args.langtag, puncs=args.word)
         with codecs.open(args.dict, encoding='utf-8') as infile :
             for l in infile.readlines() :
                 hun.addword(l.replace("\uFEFF", "").strip())
