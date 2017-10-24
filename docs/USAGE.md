@@ -8,7 +8,11 @@ LibreOffice 5.3 or later is needed if you are adding a language.
 Copy makeoxt.exe to the working folder
 
 ## Linux installation
-Use setup.py to install the makeoxt python script.
+Use setup.py to install the makeoxt python script:
+```
+python setup.py build
+sudo python setup.py install
+```
 
 ## Usage
 - Copy DICT.txt to the working folder
