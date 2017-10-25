@@ -54,7 +54,7 @@ parser.add_argument('-l','--langname',help='Language name for UI strings')
 parser.add_argument('-d','--dict',help='Wordlist dictionary. For hunspell dictionaries, specify the .aff file. Will try to infer what kind of xml')
 parser.add_argument('-a','--affix',help='Merge the given affix file data into the generated .aff file')
 parser.add_argument('-v','--version',default='0.1',help='OXT version number')
-parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt, ptstrict, text]')
+parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt, ptall(including unknown/incorrect), text]')
 parser.add_argument('--publisher',help='Name of publisher')
 parser.add_argument('--puburl',default='',help='URL of publisher')
 args = parser.parse_args()
@@ -126,11 +126,11 @@ if args.dict :
         zipnfcfile(ozip, args.dict, 'dictionaries/' + args.langtag + '.aff', args.affix)
         d = args.dict.replace('.aff', '.dic')
         zipnfcfile(ozip, d, 'dictionaries/' + args.langtag + '.dic', None)
-    elif args.dicttype == 'pt' or args.dicttype == 'ptstrict' :
+    elif args.dicttype == 'pt' or args.dicttype == 'ptall' :
         doc = et.parse(args.dict)
         hun = hs.Hunspell(args.langtag, puncs=args.word)
         for e in doc.findall('//item') :
-            if args.dicttype == 'ptstrict' and e.attrib['spelling'] != 'Correct' : continue
+            if args.dicttype == 'pt' and e.attrib['spelling'] != 'Correct' : continue
             hun.addword(u"".join(e.attrib['word']))
         if args.affix is not None :
             hun.mergeaffix(args.affix)
