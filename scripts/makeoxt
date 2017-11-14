@@ -131,7 +131,7 @@ if args.dict :
         hun = hs.Hunspell(args.langtag, puncs=args.word)
         for e in doc.findall('//item') :
             if args.dicttype == 'ptstrict' and e.attrib['spelling'] != 'Correct' : continue
-            hun.addword(e.attrib['word'])
+            hun.addword(unicode(e.attrib['word']))
         if args.affix is not None :
             hun.mergeaffix(args.affix)
         ziphunspell(ozip, hun, args.langtag)
