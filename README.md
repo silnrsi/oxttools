@@ -26,4 +26,4 @@ For example:
 makeoxt -d mywords.txt -l "My Language" -t ctl qax-x-complex qax-x-complex.oxt
 ```
 
-See USAGE.txt for more complete usage instructions.
+See USAGE.md for more complete usage instructions.
