@@ -5,7 +5,7 @@ The following instructions explain how to:
 - package the oxttools installation into a single .exe
 - install and use the packaged .exe
 
-If you have downloaded the packaged .exe (makeoxt.exe), you can skip down to the 'Installing from packaged version' section.
+If you have downloaded the packaged makeoxt.exe (in makeoxt.zip from the https://github.com/silnrsi/oxttools/releases page), you can skip down to the 'Installing from packaged version' section.
 
 ## Installing from source
 ### Install Python

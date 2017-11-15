@@ -7,11 +7,11 @@ oxttools depends on the lxml python library, which can be tricky to install on W
 ## Installation
 
 ### Windows
-See WindowsInstall.md
+See WindowsInstall.md (in the `docs` folder)
 
 ### Linux
 ```
-python setup.py install
+python setup.py build
 sudo python setup.py install
 ```
 
