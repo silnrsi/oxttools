@@ -45,6 +45,6 @@ where
 - Close the Extension Manager dialog
 
 ### Initial use of the language in a LibreOffice document
-- Format menu, Character menu item brings up a dialog
+- Format menu, Character menu, Font tab dialog
 - Select the language name (value of "Name of Language" in the creation process) from the list
 - The language name should then be available from the Tools menu, Language menu item
