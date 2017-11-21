@@ -62,15 +62,23 @@ uses the pyintaller.exe that was installed in the Python 2.7 `Scripts` folder. T
 - Copy makeoxt.exe to working folder.
 
 ### Usage
-- Copy DICT.txt to working folder
+- Copy WORDLIST to working folder
 - Use from command prompt as:
 ```
-makeoxt -d DICT.txt -l "Name of Language" -t ctl LANGTAG OUTPUT.oxt
+makeoxt -d WORDLIST -l "Name of Language" -t SCRIPTTYPE LANGTAG OUTPUT.oxt
 ```
 - Distribute OUTPUT.oxt
 
 where
-- DICT.txt = name of a file containing a list of words (one per line)
+- WORDLIST (which processes differently based on the file extension) =
+  - DICT.txt : plain text file containing a list of words (one per line)
+  - PARATEXT_WORDLIST.xml : file containing the output of Paratext's Wordlist-File-Export to XML
+  - DICT.aff : (experimental) hunspell .dic/.aff dictionary files
 - "Name of Language" = the name of the language enclosed in quotes (for example "Ankave" or "Albanian")
+- SCRIPTTYPE =
+  - west (Latin, Greek, Cyrillic, etc.)
+  - asian (Chinese, Japanese, Korean)
+  - rtl (complex right-to-left scripts, Arabic, etc.)
+  - ctl (complex left-to-right scripts, Devanagri, etc.)
 - LANGTAG = the language tag (for example aak or aae-Latn)
 - OUTPUT.oxt = name of the LibreOffice extension to be created

@@ -15,15 +15,18 @@ sudo python setup.py install
 ```
 
 ## Usage
-- Copy DICT.txt to the working folder
+- Copy WORDLIST (.txt, .dic/.aff, .xml) to the working folder
 - From command prompt enter the command:
 ```
-makeoxt -d DICT.txt -l "Name of Language" -t SCRIPTTYPE LANGTAG OUTPUT.oxt
+makeoxt -d WORDLIST -l "Name of Language" -t SCRIPTTYPE LANGTAG OUTPUT.oxt
 ```
 - OUTPUT.oxt will be created
 
 where
-- DICT.txt = name of a file containing a list of words (one per line)
+- WORDLIST (which processes differently based on the file extension) =
+  - DICT.txt : plain text file containing a list of words (one per line)
+  - PARATEXT_WORDLIST.xml : file containing the output of Paratext's Wordlist-File-Export to XML
+  - DICT.aff : (experimental) hunspell .dic/.aff dictionary files
 - "Name of Language" = the name of the language enclosed in quotes (for example "Ankave" or "Albanian")
 - SCRIPTTYPE =
   - west (Latin, Greek, Cyrillic, etc.)
