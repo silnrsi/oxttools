@@ -87,7 +87,7 @@ parser.add_argument('-l','--langname',help='Language name for UI strings')
 parser.add_argument('-d','--dict',help='Wordlist dictionary. For hunspell dictionaries, specify the .aff file. Will try to infer what kind of xml')
 parser.add_argument('-a','--affix',help='Merge the given affix file data into the generated .aff file')
 parser.add_argument('-v','--version',default='0.1',help='OXT version number')
-parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt, ptstrict, text]')
+parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt, ptall, text]')
 parser.add_argument('--publisher',help='Name of publisher')
 parser.add_argument('--puburl',default='',help='URL of publisher')
 args = parser.parse_args()
@@ -167,12 +167,18 @@ if args.dict :
         zipnfcfile(ozip, args.dict, 'dictionaries/' + args.langtag + '.aff', args.affix)
         d = args.dict.replace('.aff', '.dic')
         zipnfcfile(ozip, d, 'dictionaries/' + args.langtag + '.dic', None)
-    elif args.dicttype == 'pt' or args.dicttype == 'ptstrict' :
+    elif args.dicttype == 'pt' or args.dicttype == 'ptall' :
+        itemcount = 0
+        wordcount = 0
         doc = et.parse(args.dict)
         hun = hs.Hunspell(args.langtag, puncs=args.word)
         for e in doc.findall('//item') :
-            if args.dicttype == 'ptstrict' and e.attrib['spelling'] != 'Correct' : continue
+            itemcount += 1
+            if args.dicttype != 'ptall' and e.attrib['spelling'] != 'Correct' : continue
             hun.addword(unicode(e.attrib['word']))
+            wordcount += 1
+        if wordcount * 4 < itemcount :  #warn if less than 25% of the words are valid
+            print "Warning: only {:.0f}% of the words marked as correct and entered into the dictionary. Consider using --dicttype ptall".format(wordcount / float(itemcount) * 100)
         if args.affix is not None :
             hun.mergeaffix(args.affix)
         ziphunspell(ozip, hun, args.langtag)
