@@ -204,7 +204,7 @@ class Templater(object) :
             if c.tag == self._uritag('text:hidden-text'):
                 (command, rest) = c.attrib[self._uritag('text:string-value')].split(' ', 1)
                 if command == 'value':
-                    value = context.findtext(rest)
+                    value = self.xpathtext(rest, context, c)
                     c.tag = self._uritag('text:span')
                     c.text = value
                 elif command == 'attr':
@@ -213,9 +213,21 @@ class Templater(object) :
                         (attr, default) = attr.split("=")
                     else:
                         default = ""
-                    value = context.find(rest)
+                    value = self.xpath(rest, context, c)
                     c.tag = self._uritag('text:span')
                     c.text = value.get(attr, default)
+                elif command == 'variable':
+                    var, rest = rest.split(' ', 1)
+                    value = self.xpathtext(rest, context, c)
+                    self.vars[var] = value
+                elif command == 'varattr':
+                    var, attr, rest = rest.split(' ', 2)
+                    if '=' in attr:
+                        (attr, default) = attr.split("=")
+                    else:
+                        default = ""
+                    value = self.xpath(rest, context, c)
+                    self.vars[var] = value.get(attr, default)
                 elif command == 'for':
                     (mode, var, rest) = rest.split(' ', 2)
                     if var == infor:
@@ -236,7 +248,7 @@ class Templater(object) :
                     starti = parent.index(start)
                     endi = parent.index(end)
                     replacements = []
-                    for val in context.findall(rest):
+                    for val in self.xpathall(rest, context, c):
                         memo = {}
                         temp = [x.__deepcopy__(memo) for x in parent[starti:endi+1]]
                         self.processodt(root=temp, context=val, infor=var)
@@ -247,15 +259,24 @@ class Templater(object) :
             else:
                 self.processodt(root=c, context=context, infor=infor)
 
-    def xpath(self, path, context, base) :
-        # print path, self.vars
-#        try :
+    def xpathall(self, path, context, base):
         res = context.xpath(path, extensions = self.fns, smart_strings=False, namespaces = self.ns, **self.vars)
-#        except Exception as e :
-#            raise et.XPathEvalError(e.message + ":\n" + path + ", at line " + str(base.sourceline))
+        return res
+
+    def xpath(self, path, context, base) :
+        res = self.xpathall(path, context, base)
         if not isinstance(res, stringtype) and len(res) == 1 :
             res = res[0]
         return res
+
+    def xpathtext(self, path, context, base):
+        res = self.xpathall(path, context, base)
+        if res is None:
+            return ""
+        if isinstance(res, stringtype):
+            return res
+        else:
+            return res[0].text
 
     @staticmethod
     def fn_doc(context, txt) :
