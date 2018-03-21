@@ -18,13 +18,13 @@
  *   the License at http://www.apache.org/licenses/LICENSE-2.0 .
  -->
 <Locale versionDTD="2.0.3" allowUpdateFromCLDR="yes" version="1.2" xmlns:tmpl="uri://nrsi.sil.org/template/0.1" xmlns:tmpla="uri://nrsi.sil.org/template_attributes/0.1">
+  <tmpl:namespace tmpl:name="sil">urn://www.sil.org/ldml/0.1</tmpl:namespace>
   <tmpl:variable tmpl:name="resdir" tmpl:fallback="true">"."</tmpl:variable>
   <tmpl:variable tmpl:name="territory">/ldml/identity/territory/@type</tmpl:variable>
   <tmpl:variable tmpl:name="general">"General"</tmpl:variable>
 
   <tmpl:variable tmpl:name="numbers">/ldml/numbers/defaultNumberingSystem/text()</tmpl:variable>
   <tmpl:variable tmpl:name="supplemental">doc(concat($resdir, "/supplementalData.xml"))</tmpl:variable>
-<!--  <tmpl:variable tmpl:name="bullets">doc(concat($resdir, "/bullets.xml"))</tmpl:variable> -->
   <tmpl:variable tmpl:name="calendar" tmpl:default="gregorian">firstword($supplemental/calendarPreferenceData/calendarPreference[contains(@territories, $territory)]/@ordering)</tmpl:variable>
   <tmpl:variable tmpl:name="currency">$supplemental/currencyData/region[@iso3166=$territory]/currency[not(@to) and not(@tender)]/@iso4217</tmpl:variable>
   <tmpl:variable tmpl:name="datesep">findsep(/ldml/dates/calendars/calendar[@type=$calendar]/dateFormats/dateFormatLength[@type='short']/dateFormat/pattern/text(), 0)</tmpl:variable>
@@ -42,14 +42,14 @@
   <LC_CTYPE>
     <Separators>
       <DateSeparator><tmpl:value tmpl:path="$datesep">/</tmpl:value></DateSeparator>
-      <ThousandSeparator><tmpl:value tmpl:path="/ldml/numbers/symbols[@numbersystem=$numbers]/group">,</tmpl:value></ThousandSeparator>
-      <DecimalSeparator><tmpl:value tmpl:path="/ldml/numbers/symbols[@numbersystem=$numbers]/decimal">.</tmpl:value></DecimalSeparator>
+      <ThousandSeparator><tmpl:value tmpl:path="/ldml/numbers/symbols[@numberSystem=$numbers]/group">,</tmpl:value></ThousandSeparator>
+      <DecimalSeparator><tmpl:value tmpl:path="/ldml/numbers/symbols[@numberSystem=$numbers]/decimal">.</tmpl:value></DecimalSeparator>
       <TimeSeparator><tmpl:value tmpl:path="findsep(/ldml/dates/calendars/calendar[@type=$calendar]/timeFormats/timeFormatLength[@type='short']/timeFormat/pattern, 0)">:</tmpl:value></TimeSeparator>
-      <Time100SecSeparator><tmpl:value tmpl:path="/ldml/numbers/symbols[@numbersystem=$numbers]/decimal">.</tmpl:value></Time100SecSeparator>
+      <Time100SecSeparator><tmpl:value tmpl:path="/ldml/numbers/symbols[@numberSystem=$numbers]/decimal">.</tmpl:value></Time100SecSeparator>
       <!-- ListSeparator only used to work out row and column separators in sc formulae -->
       <ListSeparator>;</ListSeparator>
       <LongDateDayOfWeekSeparator><tmpl:value tmpl:path="findsep(/ldml/dates/calendars/calendar[@type=$calendar]/dateTimeFormats/dateTimeFormatLength[@type='medium']/dateTimeFormat/pattern, 0)">, </tmpl:value></LongDateDayOfWeekSeparator>
-      <LongDateDaySeparator><tmpl:value tmpl:path="findsep(/ldml/dates/calendars/calendar[@type=$calendar]/dateFormats/dateFormatLength[@type='long']/dateFormat/pattern, 1)">, </tmpl:value></LongDateDaySeparator>
+      <LongDateDaySeparator><tmpl:value tmpl:path="findsep(/ldml/dates/calendars/calendar[@type=$calendar]/dateFormats/dateFormatLength[@type='long']/dateFormat/pattern, 2)">, </tmpl:value></LongDateDaySeparator>
       <LongDateMonthSeparator><tmpl:value tmpl:path="findsep(/ldml/dates/calendars/calendar[@type=$calendar]/dateFormats/dateFormatLength[@type='long']/dateFormat/pattern, 0)"> </tmpl:value></LongDateMonthSeparator>
       <LongDateYearSeparator><tmpl:value tmpl:path="findsep(/ldml/dates/calendars/calendar[@type=$calendar]/appendItems/appendItem[@request='Year'], 0)"> </tmpl:value></LongDateYearSeparator>
     </Separators>
@@ -230,7 +230,7 @@
   <LC_FORMAT_1>
   </LC_FORMAT_1>
   <LC_COLLATION>
-    <tmpl:foreach tmpl:path="/ldml/collations/collation">
+    <tmpl:foreach tmpl:path="/ldml/collations/collation[@sil:modified='true']">
       <Collator tmpla:default="choose(@type = $collator, 'true', 'false')" unoid="alphanumeric" tmpla:unoid="@type">
         <tmpl:value tmpl:path="cr" tmpl:cdata="true"/>
       </Collator>

@@ -50,11 +50,12 @@ def asstr(v) :
         return v.text
     return v
 
+docs = {}
 class Templater(object) :
 
     def __init__(self) :
         self.vars = {}
-        self.docs = {}
+        self.ns = {}
         self.fns = copy.copy(self.extensions)
 
     def define(self, name, val) :
@@ -87,6 +88,10 @@ class Templater(object) :
                         if isinstance(v, (stringtype, list)) and len(v) == 0 :
                             v = c.attrib.get(tmpl+'default', '')
                         self.vars[k] = v
+                elif name == 'namespace':
+                    self.processattrib(c, context)
+                    k = c.attrib[tmpl+'name']
+                    self.ns[k] = c.text
                 elif name == 'value' :
                     self.processattrib(c, context)
                     v = self.xpath(c.attrib[tmpl+"path"], context, c)
@@ -163,12 +168,91 @@ class Templater(object) :
                     node.set(newk, newv)
                 del node.attrib[k]
 
+    def _uritag(self, tag):
+        bits = tag.split(':')
+        if len(bits) == 2 and bits[0] in self.doc.getroot().nsmap:
+            return "{" + self.doc.getroot().nsmap[bits[0]] + "}" + bits[1]
+        else:
+            return tag
+
+    def _scanendfor(self, root, start, var, mode):
+        for c in root[start:]:
+            if c.tag == self._uritag('text:hidden-text'):
+                (command, rest) = c.attrib[self._uritag('text:string-value')].split(' ', 1)
+                if command == 'endfor':
+                    if rest == var:
+                        if mode == 'para':
+                            end = c.getparent()
+                            while end.tag != self._uritag('text:p'):
+                                if end == self._uritag('office:text'):
+                                    raise SyntaxError('endfor not in paragraph')
+                                end = end.getparent()
+                        else:
+                            raise SyntaxError("Unexpected endfor mode")
+                        return end
+            else:
+                res = self._scanendfor(c, 0, var, mode)
+                if res is not None:
+                    return res
+        return None
+
+    def processodt(self, root=None, context=None, infor=None):
+        if root is None :
+            root = self.doc.getroot().find('.//' + self._uritag('office:text'))
+        
+        for c in root:
+            if c.tag == self._uritag('text:hidden-text'):
+                (command, rest) = c.attrib[self._uritag('text:string-value')].split(' ', 1)
+                if command == 'value':
+                    value = context.findtext(rest)
+                    c.tag = self._uritag('text:span')
+                    c.text = value
+                elif command == 'attr':
+                    attr, rest = rest.split(' ', 1)
+                    if '=' in attr:
+                        (attr, default) = attr.split("=")
+                    else:
+                        default = ""
+                    value = context.find(rest)
+                    c.tag = self._uritag('text:span')
+                    c.text = value.get(attr, default)
+                elif command == 'for':
+                    (mode, var, rest) = rest.split(' ', 2)
+                    if var == infor:
+                        continue
+                    if mode == 'para':
+                        start = c.getparent()
+                        while start.tag != self._uritag('text:p'):
+                            if start == self._uritag('office:text'):
+                                raise SyntaxError("for para not in paragraph")
+                            start = start.getparent()
+                    else:
+                        raise SyntaxError("Unknown for type")
+                    parent = start.getparent()
+                    end = self._scanendfor(parent, parent.index(start), var, mode)
+                    if start.getparent() != end.getparent():
+                        raise SyntaxError("Unbalanced for")
+                    parent = start.getparent()
+                    starti = parent.index(start)
+                    endi = parent.index(end)
+                    replacements = []
+                    for val in context.findall(rest):
+                        memo = {}
+                        temp = [x.__deepcopy__(memo) for x in parent[starti:endi+1]]
+                        self.processodt(root=temp, context=val, infor=var)
+                        replacements.extend(temp)
+                    parent[starti:endi+1] = replacements
+                elif command == 'endfor':
+                    continue                        
+            else:
+                self.processodt(root=c, context=context, infor=infor)
+
     def xpath(self, path, context, base) :
         # print path, self.vars
-        try :
-            res = context.xpath(path, extensions = self.fns, smart_strings=False, **self.vars)
-        except Exception as e :
-            raise et.XPathEvalError(e.message + ":\n" + path + ", at line " + str(base.sourceline))
+#        try :
+        res = context.xpath(path, extensions = self.fns, smart_strings=False, namespaces = self.ns, **self.vars)
+#        except Exception as e :
+#            raise et.XPathEvalError(e.message + ":\n" + path + ", at line " + str(base.sourceline))
         if not isinstance(res, stringtype) and len(res) == 1 :
             res = res[0]
         return res
@@ -176,9 +260,9 @@ class Templater(object) :
     @staticmethod
     def fn_doc(context, txt) :
         txt = asstr(txt)
-        if txt not in self.docs :
-            self.docs[txt] = et.parse(txt)
-        return self.docs[txt].getroot()
+        if txt not in docs :
+            docs[txt] = et.parse(txt)
+        return docs[txt].getroot()
 
     @staticmethod
     def fn_firstword(context, txt) :
@@ -224,16 +308,21 @@ class Templater(object) :
             if x is not '' :
                 return x
         return ''
+
+    @staticmethod
+    def fn_concat(context, a, b):
+        return a + b
         
     extensions = {
-        (None, 'doc') : fn_doc,
-        (None, 'firstword') : fn_firstword,
-        (None, 'findsep') : fn_findsep,
-        (None, 'replace') : fn_replace,
-        (None, 'dateformat') : fn_dateformat,
-        (None, 'choose') : fn_choose,
-        (None, 'split') : fn_split,
-        (None, 'default') : fn_default
+        (None, 'doc') : fn_doc.__func__,
+        (None, 'firstword') : fn_firstword.__func__,
+        (None, 'findsep') : fn_findsep.__func__,
+        (None, 'replace') : fn_replace.__func__,
+        (None, 'dateformat') : fn_dateformat.__func__,
+        (None, 'choose') : fn_choose.__func__,
+        (None, 'split') : fn_split.__func__,
+        (None, 'default') : fn_default.__func__,
+        (None, 'concat') : fn_concat.__func__
     }
 
 
@@ -242,10 +331,14 @@ if __name__ == '__main__' :
     template = sys.argv[1]
     data = sys.argv[2]
     t = Templater()
-    t.define('resdir', os.path.abspath(os.path.dirname(__file__)))
+    t.define('resdir', os.path.abspath(os.path.join(os.path.dirname(__file__), "data")))
     t.parse(template)
     d = et.parse(data).getroot()
-    t.process(context = d)
+    if sys.argv[1].endswith('.fodt'):
+        t.processodt(context=d)
+    else:
+        t.process(context = d)
     with codecs.open(sys.argv[3], "w", encoding="utf-8") as of :
+        of.write("<?xml version='1.0'?>\n")
         of.write(unicode(t))
 
