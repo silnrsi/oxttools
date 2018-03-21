@@ -204,30 +204,13 @@ class Templater(object) :
             if c.tag == self._uritag('text:hidden-text'):
                 (command, rest) = c.attrib[self._uritag('text:string-value')].split(' ', 1)
                 if command == 'value':
-                    value = self.xpathtext(rest, context, c)
-                    c.tag = self._uritag('text:span')
-                    c.text = value
-                elif command == 'attr':
-                    attr, rest = rest.split(' ', 1)
-                    if '=' in attr:
-                        (attr, default) = attr.split("=")
-                    else:
-                        default = ""
                     value = self.xpath(rest, context, c)
                     c.tag = self._uritag('text:span')
-                    c.text = value.get(attr, default)
+                    c.text = asstr(value)
                 elif command == 'variable':
                     var, rest = rest.split(' ', 1)
-                    value = self.xpathtext(rest, context, c)
-                    self.vars[var] = value
-                elif command == 'varattr':
-                    var, attr, rest = rest.split(' ', 2)
-                    if '=' in attr:
-                        (attr, default) = attr.split("=")
-                    else:
-                        default = ""
                     value = self.xpath(rest, context, c)
-                    self.vars[var] = value.get(attr, default)
+                    self.vars[var] = value
                 elif command == 'for':
                     (mode, var, rest) = rest.split(' ', 2)
                     if var == infor:
