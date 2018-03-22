@@ -265,7 +265,10 @@ class Templater(object) :
         return (parent, index+1)
 
     def xpathall(self, path, context, base):
-        res = context.xpath(path, extensions = self.fns, smart_strings=False, namespaces = self.ns, **self.vars)
+        try:
+            res = context.xpath(path, extensions = self.fns, smart_strings=False, namespaces = self.ns, **self.vars)
+        except XPathEvalError as e:
+            raise SyntaxError("{} in xpath expression: {}".format(e.args[0], path))
         return res
 
     def xpath(self, path, context, base) :
@@ -368,11 +371,11 @@ if __name__ == '__main__' :
     t = Templater()
     t.define('resdir', os.path.abspath(os.path.join(os.path.dirname(__file__), "data")))
     t.parse(template)
-    d = et.parse(data).getroot()
-#    nsmap = oldd.nsmap
-#    nsmap['xml'] = 'http://www.w3.org/XML/1998/namespace'
-#    d = et.Element(oldd.tag, nsmap=nsmap)
-#    d[:] = oldd[:]
+    oldd = et.parse(data).getroot()
+    nsmap = oldd.nsmap
+    nsmap['sil'] = 'urn://www.sil.org/ldml/0.1'
+    d = et.Element(oldd.tag, nsmap=nsmap)
+    d[:] = oldd[:]
     if sys.argv[1].endswith('.fodt'):
         t.processodt(context=d)
     else:
