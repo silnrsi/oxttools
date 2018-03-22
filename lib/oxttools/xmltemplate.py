@@ -2,6 +2,7 @@
 
 import lxml.etree as et
 import codecs, re, copy, sys
+from lxml.etree import XPathEvalError
 
 tmpl = "{uri://nrsi.sil.org/template/0.1}"
 tmpla = "{uri://nrsi.sil.org/template_attributes/0.1}"
@@ -366,21 +367,42 @@ class Templater(object) :
 
 if __name__ == '__main__' :
     import sys, os
-    template = sys.argv[1]
-    data = sys.argv[2]
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('infile',help='xml file to process')
+    parser.add_argument('outfile',help='Ouptut file to generate')
+    parser.add_argument('-t','--template',help='Template file to generate from')
+    parser.add_argument('-l','--langtag',help='Maximal Langtag for this data')
+    args = parser.parse_args()
+    if args.template is None:
+        args.template = 'simple_report.fodt'
     t = Templater()
     t.define('resdir', os.path.abspath(os.path.join(os.path.dirname(__file__), "data")))
-    t.parse(template)
-    oldd = et.parse(data).getroot()
+
+    if args.langtag is not None:
+        try:
+            from sldr.langtags import LangTag
+        except ImportError:
+            sys.path.append(os.path.join(os.path.dirname(__file__), '../../../sldr/sldr/python/lib'))
+            from sldr.langtags import LangTag
+        ltag = LangTag(args.langtag)
+        t.define('lang', ltag.lang)
+        t.define('script', ltag.script)
+        t.define('lscript', ltag.script.lower())
+        t.define('region', ltag.region)
+
+    t.parse(args.template)
+    oldd = et.parse(args.infile).getroot()
     nsmap = oldd.nsmap
     nsmap['sil'] = 'urn://www.sil.org/ldml/0.1'
     d = et.Element(oldd.tag, nsmap=nsmap)
     d[:] = oldd[:]
-    if sys.argv[1].endswith('.fodt'):
+    if args.template.endswith('.fodt'):
         t.processodt(context=d)
     else:
         t.process(context = d)
-    with codecs.open(sys.argv[3], "w", encoding="utf-8") as of :
+    with codecs.open(args.outfile, "w", encoding="utf-8") as of :
         of.write("<?xml version='1.0'?>\n")
         of.write(unicode(t))
 
