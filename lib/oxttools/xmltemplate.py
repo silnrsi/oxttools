@@ -182,11 +182,9 @@ class Templater(object) :
                 if command == 'endfor':
                     if rest == var:
                         if mode == 'para':
-                            end = c.getparent()
-                            while end.tag != self._uritag('text:p'):
-                                if end == self._uritag('office:text'):
-                                    raise SyntaxError('endfor not in paragraph')
-                                end = end.getparent()
+                            end = self._upscan(c, 'endfor para', 'text:p')
+                        elif mode == 'row':
+                            end = self._upscan(c, 'endfor row', 'table:table-row')
                         else:
                             raise SyntaxError("Unexpected endfor mode")
                         return end
@@ -196,11 +194,24 @@ class Templater(object) :
                     return res
         return None
 
-    def processodt(self, root=None, context=None, infor=None):
+    def _upscan(self, start, errorctxt, *tags):
+        testtags = [self._uritag(x) for x in tags]
+        top = self._uritag('office:text')
+        res = start.getparent()
+        while res.tag not in testtags:
+            if res.tag == top:
+                raise SyntaxError("cannot find {} above {}".format(tags[0], errorctxt))
+            res = res.getparent()
+        return res
+
+    def processodt(self, root=None, parent=None, index=0, context=None, infor=None):
         if root is None :
             root = self.doc.getroot().find('.//' + self._uritag('office:text'))
-        
-        for c in root:
+            parent = root.getparent()
+            self.ns = context.nsmap
+        i = 0
+        while i < len(root):
+            c = root[i]
             if c.tag == self._uritag('text:hidden-text'):
                 (command, rest) = c.attrib[self._uritag('text:string-value')].split(' ', 1)
                 if command == 'value':
@@ -211,36 +222,47 @@ class Templater(object) :
                     var, rest = rest.split(' ', 1)
                     value = self.xpath(rest, context, c)
                     self.vars[var] = value
-                elif command == 'for':
+                elif command in ('forenum', 'forstr', 'for'):
                     (mode, var, rest) = rest.split(' ', 2)
                     if var == infor:
+                        i += 1
                         continue
                     if mode == 'para':
-                        start = c.getparent()
-                        while start.tag != self._uritag('text:p'):
-                            if start == self._uritag('office:text'):
-                                raise SyntaxError("for para not in paragraph")
-                            start = start.getparent()
+                        start = self._upscan(c, 'for para', 'text:p')
+                    elif mode == 'row':
+                        start = self._upscan(c, 'for row', 'table:table-row')
                     else:
                         raise SyntaxError("Unknown for type")
-                    parent = start.getparent()
-                    end = self._scanendfor(parent, parent.index(start), var, mode)
+                    forparent = start.getparent()
+                    end = self._scanendfor(forparent, forparent.index(start), var, mode)
                     if start.getparent() != end.getparent():
                         raise SyntaxError("Unbalanced for")
-                    parent = start.getparent()
-                    starti = parent.index(start)
-                    endi = parent.index(end)
+                    starti = forparent.index(start)
+                    endi = forparent.index(end)
                     replacements = []
-                    for val in self.xpathall(rest, context, c):
+                    if command == 'for' or command == 'forstr':
+                        vals = self.xpathall(rest, context, c)
+                    elif command == 'forenum':
+                        vals = rest.split(' ')
+                    for val in vals:
+                        ctx = val if command == 'for' else context
                         memo = {}
-                        temp = [x.__deepcopy__(memo) for x in parent[starti:endi+1]]
-                        self.processodt(root=temp, context=val, infor=var)
+                        temp = [x.__deepcopy__(memo) for x in forparent[starti:endi+1]]
+                        oldvars = self.vars.copy()
+                        self.vars[var] = val
+                        self.processodt(root=temp, context=ctx, infor=var)
+                        self.vars = oldvars
                         replacements.extend(temp)
-                    parent[starti:endi+1] = replacements
+                    forparent[starti:endi+1] = replacements
+                    return (forparent, starti + len(replacements))
                 elif command == 'endfor':
-                    continue                        
+                    pass
+                i += 1
             else:
-                self.processodt(root=c, context=context, infor=infor)
+                root, i = self.processodt(root=c, parent=root, index=i, context=context, infor=infor)
+                if infor is None and isinstance(parent, et._Element) and (parent.getparent() is None or root is parent or root in parent.iterancestors()):
+                    return (root, i)
+        return (parent, index+1)
 
     def xpathall(self, path, context, base):
         res = context.xpath(path, extensions = self.fns, smart_strings=False, namespaces = self.ns, **self.vars)
@@ -261,6 +283,7 @@ class Templater(object) :
         else:
             return res[0].text
 
+# xpath functions
     @staticmethod
     def fn_doc(context, txt) :
         txt = asstr(txt)
@@ -316,6 +339,13 @@ class Templater(object) :
     @staticmethod
     def fn_concat(context, a, b):
         return a + b
+
+    @staticmethod
+    def fn_set(context, *vals):
+        s = set()
+        for v in vals:
+            s.update(v)
+        return sorted(s)
         
     extensions = {
         (None, 'doc') : fn_doc.__func__,
@@ -326,7 +356,8 @@ class Templater(object) :
         (None, 'choose') : fn_choose.__func__,
         (None, 'split') : fn_split.__func__,
         (None, 'default') : fn_default.__func__,
-        (None, 'concat') : fn_concat.__func__
+        (None, 'concat') : fn_concat.__func__,
+        (None, 'set') : fn_set.__func__,
     }
 
 
@@ -338,6 +369,10 @@ if __name__ == '__main__' :
     t.define('resdir', os.path.abspath(os.path.join(os.path.dirname(__file__), "data")))
     t.parse(template)
     d = et.parse(data).getroot()
+#    nsmap = oldd.nsmap
+#    nsmap['xml'] = 'http://www.w3.org/XML/1998/namespace'
+#    d = et.Element(oldd.tag, nsmap=nsmap)
+#    d[:] = oldd[:]
     if sys.argv[1].endswith('.fodt'):
         t.processodt(context=d)
     else:
