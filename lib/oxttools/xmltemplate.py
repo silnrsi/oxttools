@@ -176,11 +176,15 @@ class Templater(object) :
         else:
             return tag
 
-    def _scanendfor(self, root, start, var, mode):
+    def _scanendfor(self, root, start, var, mode, match):
         for c in root[start:]:
             if c.tag == self._uritag('text:hidden-text'):
-                (command, rest) = c.attrib[self._uritag('text:string-value')].split(' ', 1)
-                if command == 'endfor':
+                v = c.attrib[self._uritag('text:string-value')]
+                if ' ' in v:
+                    (command, rest) = v.split(' ', 1)
+                else:
+                    (command, rest) = (v, '')
+                if command == match:
                     if rest == var:
                         if mode == 'para':
                             end = self._upscan(c, 'endfor para', 'text:p')
@@ -190,7 +194,7 @@ class Templater(object) :
                             raise SyntaxError("Unexpected endfor mode")
                         return end
             else:
-                res = self._scanendfor(c, 0, var, mode)
+                res = self._scanendfor(c, 0, var, mode, match)
                 if res is not None:
                     return res
         return None
@@ -214,7 +218,11 @@ class Templater(object) :
         while i < len(root):
             c = root[i]
             if c.tag == self._uritag('text:hidden-text'):
-                (command, rest) = c.attrib[self._uritag('text:string-value')].split(' ', 1)
+                v = c.attrib[self._uritag('text:string-value')]
+                if ' ' in v:
+                    (command, rest) = v.split(' ', 1)
+                else:
+                    (command, rest) = (v, '')
                 if command == 'value':
                     value = self.xpath(rest, context, c)
                     c.tag = self._uritag('text:span')
@@ -227,6 +235,16 @@ class Templater(object) :
                     var, rest = rest.split(' ', 1)
                     value = self.xpath(rest, context, c)
                     self.vars[var] = value
+                elif command == "condvar":
+                    var, test, rest = rest.split(' ', 2)
+                    value = asstr(self.xpath(test, context, c))
+                    for r in rest.split(' '):
+                        k, v = r.split("=")
+                        if value == k or k == "":
+                            self.vars[var] = v
+                            break
+                    else:
+                        self.vars[var] = ""
                 elif command in ('forenum', 'forstr', 'for'):
                     (mode, var, rest) = rest.split(' ', 2)
                     if var == infor:
@@ -239,7 +257,7 @@ class Templater(object) :
                     else:
                         raise SyntaxError("Unknown for type")
                     forparent = start.getparent()
-                    end = self._scanendfor(forparent, forparent.index(start), var, mode)
+                    end = self._scanendfor(forparent, forparent.index(start), var, mode, "endfor")
                     if end is None or start.getparent() != end.getparent():
                         raise SyntaxError("Unbalanced for")
                     starti = forparent.index(start)
@@ -261,6 +279,27 @@ class Templater(object) :
                     forparent[starti:endi+1] = replacements
                     return (forparent, starti + len(replacements))
                 elif command == 'endfor':
+                    pass
+                elif command == "ifin":
+                    (mode, ident, val, rest) = rest.split(' ', 3)
+                    if mode == 'para':
+                        start = self._upscan(c, 'if para', 'text:p')
+                    elif mode == 'row':
+                        start = self._upscan(c, 'if row', 'table:table-row')
+                    else:
+                        raise SyntaxError("Unknown if type")
+                    ifparent = start.getparent()
+                    end = self._scanendfor(ifparent, ifparent.index(start), ident, mode, "endif")
+                    if end is None or start.getparent() != end.getparent():
+                        raise SyntaxError("Unbalanced if")
+                    starti = ifparent.index(start)
+                    endi = ifparent.index(end)
+                    value = self.xpath(val, context, c)
+                    vstr = asstr(value)
+                    if vstr not in rest:
+                        ifparent[starti:endi+1] = []
+                        return (ifparent, starti)
+                elif command == "endif":
                     pass
                 i += 1
             else:
