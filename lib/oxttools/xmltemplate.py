@@ -218,7 +218,11 @@ class Templater(object) :
                 if command == 'value':
                     value = self.xpath(rest, context, c)
                     c.tag = self._uritag('text:span')
-                    c.text = asstr(value)
+                    lines = asstr(value).strip().split("\n")
+                    c.text = lines.pop(0)
+                    for l in lines:
+                        s = et.SubElement(c, self._uritag("text:line-break"))
+                        s.tail = l.strip()
                 elif command == 'variable':
                     var, rest = rest.split(' ', 1)
                     value = self.xpath(rest, context, c)
@@ -236,7 +240,7 @@ class Templater(object) :
                         raise SyntaxError("Unknown for type")
                     forparent = start.getparent()
                     end = self._scanendfor(forparent, forparent.index(start), var, mode)
-                    if start.getparent() != end.getparent():
+                    if end is None or start.getparent() != end.getparent():
                         raise SyntaxError("Unbalanced for")
                     starti = forparent.index(start)
                     endi = forparent.index(end)
@@ -328,9 +332,15 @@ class Templater(object) :
         return a if test else b
 
     @staticmethod
-    def fn_split(control, txt) :
-        txt = asstr(txt)
-        return txt.split()
+    def fn_split(control, *vals) :
+        res = []
+        for x in vals:
+            if isinstance(x, (list, tuple)):
+                for v in x:
+                    res.extend(asstr(v).split())
+            else:
+                res.extend(asstr(x).split())
+        return res
 
     @staticmethod
     def fn_default(control, *vals) :
@@ -348,7 +358,10 @@ class Templater(object) :
     def fn_set(context, *vals):
         s = set()
         for v in vals:
-            s.update(v)
+            if isinstance(v, (list, tuple)):
+                s.update(v)
+            else:
+                s.add(v)
         return sorted(s)
         
     extensions = {
