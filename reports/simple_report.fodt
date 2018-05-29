@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <office:document xmlns:office="urn:oasis:names:tc:opendocument:xmlns:office:1.0" xmlns:style="urn:oasis:names:tc:opendocument:xmlns:style:1.0" xmlns:text="urn:oasis:names:tc:opendocument:xmlns:text:1.0" xmlns:table="urn:oasis:names:tc:opendocument:xmlns:table:1.0" xmlns:draw="urn:oasis:names:tc:opendocument:xmlns:drawing:1.0" xmlns:fo="urn:oasis:names:tc:opendocument:xmlns:xsl-fo-compatible:1.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:meta="urn:oasis:names:tc:opendocument:xmlns:meta:1.0" xmlns:number="urn:oasis:names:tc:opendocument:xmlns:datastyle:1.0" xmlns:svg="urn:oasis:names:tc:opendocument:xmlns:svg-compatible:1.0" xmlns:chart="urn:oasis:names:tc:opendocument:xmlns:chart:1.0" xmlns:dr3d="urn:oasis:names:tc:opendocument:xmlns:dr3d:1.0" xmlns:math="http://www.w3.org/1998/Math/MathML" xmlns:form="urn:oasis:names:tc:opendocument:xmlns:form:1.0" xmlns:script="urn:oasis:names:tc:opendocument:xmlns:script:1.0" xmlns:config="urn:oasis:names:tc:opendocument:xmlns:config:1.0" xmlns:ooo="http://openoffice.org/2004/office" xmlns:ooow="http://openoffice.org/2004/writer" xmlns:oooc="http://openoffice.org/2004/calc" xmlns:dom="http://www.w3.org/2001/xml-events" xmlns:xforms="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rpt="http://openoffice.org/2005/report" xmlns:of="urn:oasis:names:tc:opendocument:xmlns:of:1.2" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:grddl="http://www.w3.org/2003/g/data-view#" xmlns:officeooo="http://openoffice.org/2009/office" xmlns:tableooo="http://openoffice.org/2009/table" xmlns:drawooo="http://openoffice.org/2010/draw" xmlns:calcext="urn:org:documentfoundation:names:experimental:calc:xmlns:calcext:1.0" xmlns:loext="urn:org:documentfoundation:names:experimental:office:xmlns:loext:1.0" xmlns:field="urn:openoffice:names:experimental:ooo-ms-interop:xmlns:field:1.0" xmlns:formx="urn:openoffice:names:experimental:ooxml-odf-interop:xmlns:form:1.0" xmlns:css3t="http://www.w3.org/TR/css3-text/" office:version="1.2" office:mimetype="application/vnd.oasis.opendocument.text">
- <office:meta><meta:initial-creator>Martin Hosken</meta:initial-creator><meta:creation-date>2018-03-21T11:24:52.380662218</meta:creation-date><meta:editing-cycles>112</meta:editing-cycles><meta:editing-duration>P1DT9H11M9S</meta:editing-duration><dc:date>2018-05-28T16:57:45.256659605</dc:date><meta:generator>LibreOffice/6.0.3.2$Linux_X86_64 LibreOffice_project/00m0$Build-2</meta:generator><dc:creator>Martin Hosken</dc:creator><meta:document-statistic meta:table-count="22" meta:image-count="0" meta:object-count="0" meta:page-count="10" meta:paragraph-count="288" meta:word-count="348" meta:character-count="2440" meta:non-whitespace-character-count="2178"/><meta:user-defined meta:name="Language">be</meta:user-defined></office:meta>
+ <office:meta><meta:initial-creator>Martin Hosken</meta:initial-creator><meta:creation-date>2018-03-21T11:24:52.380662218</meta:creation-date><meta:editing-cycles>114</meta:editing-cycles><meta:editing-duration>P1DT9H19M56S</meta:editing-duration><dc:date>2018-05-29T15:51:42.648908020</dc:date><meta:generator>LibreOffice/6.0.3.2$Linux_X86_64 LibreOffice_project/00m0$Build-2</meta:generator><dc:creator>Martin Hosken</dc:creator><meta:document-statistic meta:table-count="22" meta:image-count="0" meta:object-count="0" meta:page-count="10" meta:paragraph-count="290" meta:word-count="351" meta:character-count="2457" meta:non-whitespace-character-count="2193"/><meta:user-defined meta:name="Language">be</meta:user-defined></office:meta>
  <office:settings>
   <config:config-item-set config:name="ooo:view-settings">
-   <config:config-item config:name="ViewAreaTop" config:type="long">122</config:config-item>
+   <config:config-item config:name="ViewAreaTop" config:type="long">281215</config:config-item>
    <config:config-item config:name="ViewAreaLeft" config:type="long">0</config:config-item>
-   <config:config-item config:name="ViewAreaWidth" config:type="long">19634</config:config-item>
-   <config:config-item config:name="ViewAreaHeight" config:type="long">22147</config:config-item>
+   <config:config-item config:name="ViewAreaWidth" config:type="long">22386</config:config-item>
+   <config:config-item config:name="ViewAreaHeight" config:type="long">21301</config:config-item>
    <config:config-item config:name="ShowRedlineChanges" config:type="boolean">true</config:config-item>
    <config:config-item config:name="InBrowseMode" config:type="boolean">false</config:config-item>
    <config:config-item-map-indexed config:name="Views">
     <config:config-item-map-entry>
      <config:config-item config:name="ViewId" config:type="string">view2</config:config-item>
-     <config:config-item config:name="ViewLeft" config:type="long">10121</config:config-item>
-     <config:config-item config:name="ViewTop" config:type="long">3475</config:config-item>
+     <config:config-item config:name="ViewLeft" config:type="long">5916</config:config-item>
+     <config:config-item config:name="ViewTop" config:type="long">295758</config:config-item>
      <config:config-item config:name="VisibleLeft" config:type="long">0</config:config-item>
-     <config:config-item config:name="VisibleTop" config:type="long">122</config:config-item>
-     <config:config-item config:name="VisibleRight" config:type="long">19632</config:config-item>
-     <config:config-item config:name="VisibleBottom" config:type="long">22267</config:config-item>
+     <config:config-item config:name="VisibleTop" config:type="long">281215</config:config-item>
+     <config:config-item config:name="VisibleRight" config:type="long">22384</config:config-item>
+     <config:config-item config:name="VisibleBottom" config:type="long">302514</config:config-item>
      <config:config-item config:name="ZoomType" config:type="short">0</config:config-item>
      <config:config-item config:name="ViewLayoutColumns" config:type="short">0</config:config-item>
      <config:config-item config:name="ViewLayoutBookMode" config:type="boolean">false</config:config-item>
@@ -92,7 +92,7 @@
    <config:config-item config:name="UnxForceZeroExtLeading" config:type="boolean">false</config:config-item>
    <config:config-item config:name="TabAtLeftIndentForParagraphsInList" config:type="boolean">false</config:config-item>
    <config:config-item config:name="PrintRightPages" config:type="boolean">true</config:config-item>
-   <config:config-item config:name="Rsid" config:type="int">2604853</config:config-item>
+   <config:config-item config:name="Rsid" config:type="int">2663276</config:config-item>
    <config:config-item config:name="MathBaselineAlignment" config:type="boolean">false</config:config-item>
    <config:config-item config:name="MsWordCompTrailingBlanks" config:type="boolean">false</config:config-item>
    <config:config-item config:name="InvertBorderSpacing" config:type="boolean">false</config:config-item>
@@ -424,7 +424,7 @@
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="0.05pt solid #000000" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
   </style:style>
   <style:style style:name="Table8" style:family="table">
-   <style:table-properties style:width="6.6931in" table:align="margins" style:shadow="none"/>
+   <style:table-properties style:width="6.6931in" table:align="margins"/>
   </style:style>
   <style:style style:name="Table8.A" style:family="table-column">
    <style:table-column-properties style:column-width="1.1153in" style:rel-column-width="10922*"/>
@@ -508,7 +508,10 @@
    <style:table-properties style:width="6.6931in" table:align="margins"/>
   </style:style>
   <style:style style:name="Table12.A" style:family="table-column">
-   <style:table-column-properties style:column-width="1.6736in" style:rel-column-width="16383*"/>
+   <style:table-column-properties style:column-width="1.6729in" style:rel-column-width="16383*"/>
+  </style:style>
+  <style:style style:name="Table12.D" style:family="table-column">
+   <style:table-column-properties style:column-width="1.6736in" style:rel-column-width="16386*"/>
   </style:style>
   <style:style style:name="Table12.A1" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="0.05pt solid #000000" fo:border-bottom="0.05pt solid #000000"/>
@@ -543,6 +546,27 @@
   <style:style style:name="Table13.B2" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="0.05pt solid #000000" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
   </style:style>
+  <style:style style:name="Table22" style:family="table">
+   <style:table-properties style:width="6.6979in" fo:margin-left="0in" table:align="left"/>
+  </style:style>
+  <style:style style:name="Table22.A" style:family="table-column">
+   <style:table-column-properties style:column-width="2.875in"/>
+  </style:style>
+  <style:style style:name="Table22.B" style:family="table-column">
+   <style:table-column-properties style:column-width="3.8229in"/>
+  </style:style>
+  <style:style style:name="Table22.A1" style:family="table-cell">
+   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="0.05pt solid #000000" fo:border-bottom="0.05pt solid #000000"/>
+  </style:style>
+  <style:style style:name="Table22.B1" style:family="table-cell">
+   <style:table-cell-properties fo:padding="0.0382in" fo:border="0.05pt solid #000000"/>
+  </style:style>
+  <style:style style:name="Table22.A2" style:family="table-cell">
+   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
+  </style:style>
+  <style:style style:name="Table22.B2" style:family="table-cell">
+   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="0.05pt solid #000000" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
+  </style:style>
   <style:style style:name="Table14" style:family="table">
    <style:table-properties style:width="6.6931in" table:align="margins"/>
   </style:style>
@@ -565,7 +589,10 @@
    <style:table-properties style:width="6.6931in" table:align="margins"/>
   </style:style>
   <style:style style:name="Table15.A" style:family="table-column">
-   <style:table-column-properties style:column-width="1.6736in" style:rel-column-width="16383*"/>
+   <style:table-column-properties style:column-width="1.6729in" style:rel-column-width="16383*"/>
+  </style:style>
+  <style:style style:name="Table15.D" style:family="table-column">
+   <style:table-column-properties style:column-width="1.6736in" style:rel-column-width="16386*"/>
   </style:style>
   <style:style style:name="Table15.A1" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="0.05pt solid #000000" fo:border-bottom="0.05pt solid #000000"/>
@@ -583,7 +610,10 @@
    <style:table-properties style:width="6.6931in" table:align="margins"/>
   </style:style>
   <style:style style:name="Table16.A" style:family="table-column">
-   <style:table-column-properties style:column-width="1.6736in" style:rel-column-width="16383*"/>
+   <style:table-column-properties style:column-width="1.6729in" style:rel-column-width="16383*"/>
+  </style:style>
+  <style:style style:name="Table16.D" style:family="table-column">
+   <style:table-column-properties style:column-width="1.6736in" style:rel-column-width="16386*"/>
   </style:style>
   <style:style style:name="Table16.A1" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="0.05pt solid #000000" fo:border-bottom="0.05pt solid #000000"/>
@@ -595,6 +625,27 @@
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
   </style:style>
   <style:style style:name="Table16.D2" style:family="table-cell">
+   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="0.05pt solid #000000" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
+  </style:style>
+  <style:style style:name="Table18" style:family="table">
+   <style:table-properties style:width="6.6931in" table:align="margins"/>
+  </style:style>
+  <style:style style:name="Table18.A" style:family="table-column">
+   <style:table-column-properties style:column-width="3.3465in" style:rel-column-width="32767*"/>
+  </style:style>
+  <style:style style:name="Table18.B" style:family="table-column">
+   <style:table-column-properties style:column-width="3.3465in" style:rel-column-width="32768*"/>
+  </style:style>
+  <style:style style:name="Table18.A1" style:family="table-cell">
+   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="0.05pt solid #000000" fo:border-bottom="0.05pt solid #000000"/>
+  </style:style>
+  <style:style style:name="Table18.B1" style:family="table-cell">
+   <style:table-cell-properties fo:padding="0.0382in" fo:border="0.05pt solid #000000"/>
+  </style:style>
+  <style:style style:name="Table18.A2" style:family="table-cell">
+   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
+  </style:style>
+  <style:style style:name="Table18.B2" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="0.05pt solid #000000" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
   </style:style>
   <style:style style:name="Table17" style:family="table">
@@ -615,29 +666,14 @@
   <style:style style:name="Table17.E2" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="0.05pt solid #000000" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
   </style:style>
-  <style:style style:name="Table18" style:family="table">
-   <style:table-properties style:width="6.6931in" table:align="margins"/>
-  </style:style>
-  <style:style style:name="Table18.A" style:family="table-column">
-   <style:table-column-properties style:column-width="3.3465in" style:rel-column-width="32767*"/>
-  </style:style>
-  <style:style style:name="Table18.A1" style:family="table-cell">
-   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="0.05pt solid #000000" fo:border-bottom="0.05pt solid #000000"/>
-  </style:style>
-  <style:style style:name="Table18.B1" style:family="table-cell">
-   <style:table-cell-properties fo:padding="0.0382in" fo:border="0.05pt solid #000000"/>
-  </style:style>
-  <style:style style:name="Table18.A2" style:family="table-cell">
-   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
-  </style:style>
-  <style:style style:name="Table18.B2" style:family="table-cell">
-   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="0.05pt solid #000000" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
-  </style:style>
   <style:style style:name="Table19" style:family="table">
    <style:table-properties style:width="6.6931in" table:align="margins"/>
   </style:style>
   <style:style style:name="Table19.A" style:family="table-column">
-   <style:table-column-properties style:column-width="1.6736in" style:rel-column-width="16383*"/>
+   <style:table-column-properties style:column-width="1.6729in" style:rel-column-width="16383*"/>
+  </style:style>
+  <style:style style:name="Table19.D" style:family="table-column">
+   <style:table-column-properties style:column-width="1.6736in" style:rel-column-width="16386*"/>
   </style:style>
   <style:style style:name="Table19.A1" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="0.05pt solid #000000" fo:border-bottom="0.05pt solid #000000"/>
@@ -655,18 +691,24 @@
    <style:table-properties style:width="6.6931in" table:align="margins"/>
   </style:style>
   <style:style style:name="Table20.A" style:family="table-column">
-   <style:table-column-properties style:column-width="3.3465in" style:rel-column-width="32767*"/>
+   <style:table-column-properties style:column-width="2.2313in" style:rel-column-width="21844*"/>
+  </style:style>
+  <style:style style:name="Table20.B" style:family="table-column">
+   <style:table-column-properties style:column-width="2.2313in" style:rel-column-width="21846*"/>
+  </style:style>
+  <style:style style:name="Table20.C" style:family="table-column">
+   <style:table-column-properties style:column-width="2.2313in" style:rel-column-width="21845*"/>
   </style:style>
   <style:style style:name="Table20.A1" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="0.05pt solid #000000" fo:border-bottom="0.05pt solid #000000"/>
   </style:style>
-  <style:style style:name="Table20.B1" style:family="table-cell">
+  <style:style style:name="Table20.C1" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border="0.05pt solid #000000"/>
   </style:style>
   <style:style style:name="Table20.A2" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
   </style:style>
-  <style:style style:name="Table20.B2" style:family="table-cell">
+  <style:style style:name="Table20.C2" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="0.05pt solid #000000" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
   </style:style>
   <style:style style:name="Table21" style:family="table">
@@ -674,6 +716,9 @@
   </style:style>
   <style:style style:name="Table21.A" style:family="table-column">
    <style:table-column-properties style:column-width="3.3465in" style:rel-column-width="32767*"/>
+  </style:style>
+  <style:style style:name="Table21.B" style:family="table-column">
+   <style:table-column-properties style:column-width="3.3465in" style:rel-column-width="32768*"/>
   </style:style>
   <style:style style:name="Table21.A1" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="0.05pt solid #000000" fo:border-bottom="0.05pt solid #000000"/>
@@ -685,27 +730,6 @@
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
   </style:style>
   <style:style style:name="Table21.B2" style:family="table-cell">
-   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="0.05pt solid #000000" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
-  </style:style>
-  <style:style style:name="Table22" style:family="table">
-   <style:table-properties style:width="6.6979in" fo:margin-left="0in" table:align="left"/>
-  </style:style>
-  <style:style style:name="Table22.A" style:family="table-column">
-   <style:table-column-properties style:column-width="2.875in"/>
-  </style:style>
-  <style:style style:name="Table22.B" style:family="table-column">
-   <style:table-column-properties style:column-width="3.8229in"/>
-  </style:style>
-  <style:style style:name="Table22.A1" style:family="table-cell">
-   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="0.05pt solid #000000" fo:border-bottom="0.05pt solid #000000"/>
-  </style:style>
-  <style:style style:name="Table22.B1" style:family="table-cell">
-   <style:table-cell-properties fo:padding="0.0382in" fo:border="0.05pt solid #000000"/>
-  </style:style>
-  <style:style style:name="Table22.A2" style:family="table-cell">
-   <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="none" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
-  </style:style>
-  <style:style style:name="Table22.B2" style:family="table-cell">
    <style:table-cell-properties fo:padding="0.0382in" fo:border-left="0.05pt solid #000000" fo:border-right="0.05pt solid #000000" fo:border-top="none" fo:border-bottom="0.05pt solid #000000"/>
   </style:style>
   <style:style style:name="P1" style:family="paragraph" style:parent-style-name="Standard">
@@ -727,72 +751,32 @@
    <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
   </style:style>
   <style:style style:name="P7" style:family="paragraph" style:parent-style-name="Standard">
-   <style:text-properties officeooo:paragraph-rsid="0021533a"/>
+   <style:paragraph-properties>
+    <style:tab-stops>
+     <style:tab-stop style:position="1in"/>
+    </style:tab-stops>
+   </style:paragraph-properties>
+   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
   </style:style>
   <style:style style:name="P8" style:family="paragraph" style:parent-style-name="Standard">
-   <style:text-properties officeooo:rsid="0021c13a" officeooo:paragraph-rsid="0021c13a"/>
+   <style:text-properties officeooo:paragraph-rsid="0021533a"/>
   </style:style>
   <style:style style:name="P9" style:family="paragraph" style:parent-style-name="Standard">
-   <style:text-properties officeooo:paragraph-rsid="0021c13a"/>
+   <style:text-properties officeooo:rsid="0021c13a" officeooo:paragraph-rsid="0021c13a"/>
   </style:style>
   <style:style style:name="P10" style:family="paragraph" style:parent-style-name="Standard">
-   <style:text-properties officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5"/>
+   <style:text-properties officeooo:paragraph-rsid="0021c13a"/>
   </style:style>
   <style:style style:name="P11" style:family="paragraph" style:parent-style-name="Standard">
-   <style:text-properties officeooo:paragraph-rsid="002271e5"/>
-  </style:style>
-  <style:style style:name="P12" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties officeooo:rsid="00207866" officeooo:paragraph-rsid="00207866"/>
-  </style:style>
-  <style:style style:name="P13" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties fo:font-weight="bold" officeooo:rsid="00207866" officeooo:paragraph-rsid="00207866" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
-  </style:style>
-  <style:style style:name="P14" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties fo:font-weight="bold" officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
-  </style:style>
-  <style:style style:name="P15" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
-  </style:style>
-  <style:style style:name="P16" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties officeooo:paragraph-rsid="0021533a"/>
-  </style:style>
-  <style:style style:name="P17" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties officeooo:rsid="0021c13a" officeooo:paragraph-rsid="0021c13a"/>
-  </style:style>
-  <style:style style:name="P18" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5"/>
   </style:style>
-  <style:style style:name="P19" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+  <style:style style:name="P12" style:family="paragraph" style:parent-style-name="Standard">
    <style:text-properties officeooo:paragraph-rsid="002271e5"/>
   </style:style>
-  <style:style style:name="P20" style:family="paragraph" style:parent-style-name="Text_20_body">
-   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
-  </style:style>
-  <style:style style:name="P21" style:family="paragraph" style:parent-style-name="Text_20_body">
-   <style:text-properties officeooo:paragraph-rsid="0021533a"/>
-  </style:style>
-  <style:style style:name="P22" style:family="paragraph" style:parent-style-name="Text_20_body">
-   <style:text-properties officeooo:rsid="0021c13a" officeooo:paragraph-rsid="0021c13a"/>
-  </style:style>
-  <style:style style:name="P23" style:family="paragraph" style:parent-style-name="Heading_20_1">
-   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
-  </style:style>
-  <style:style style:name="P24" style:family="paragraph" style:parent-style-name="Heading_20_2">
-   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
-  </style:style>
-  <style:style style:name="P25" style:family="paragraph" style:parent-style-name="Heading_20_2">
-   <style:text-properties officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5"/>
-  </style:style>
-  <style:style style:name="P26" style:family="paragraph" style:parent-style-name="Heading_20_3">
-   <style:text-properties officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5"/>
-  </style:style>
-  <style:style style:name="P27" style:family="paragraph" style:parent-style-name="Heading_20_3">
-   <style:text-properties officeooo:paragraph-rsid="002271e5"/>
-  </style:style>
-  <style:style style:name="P28" style:family="paragraph" style:parent-style-name="Standard">
+  <style:style style:name="P13" style:family="paragraph" style:parent-style-name="Standard">
    <style:text-properties officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365"/>
   </style:style>
-  <style:style style:name="P29" style:family="paragraph" style:parent-style-name="Standard">
+  <style:style style:name="P14" style:family="paragraph" style:parent-style-name="Standard">
    <style:paragraph-properties>
     <style:tab-stops>
      <style:tab-stop style:position="1in"/>
@@ -800,99 +784,163 @@
    </style:paragraph-properties>
    <style:text-properties officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365"/>
   </style:style>
-  <style:style style:name="P30" style:family="paragraph" style:parent-style-name="Standard">
-   <style:paragraph-properties>
-    <style:tab-stops>
-     <style:tab-stop style:position="1in"/>
-    </style:tab-stops>
-   </style:paragraph-properties>
-   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
-  </style:style>
-  <style:style style:name="P31" style:family="paragraph" style:parent-style-name="Standard">
+  <style:style style:name="P15" style:family="paragraph" style:parent-style-name="Standard">
    <style:text-properties officeooo:rsid="00247aa7" officeooo:paragraph-rsid="00247aa7"/>
   </style:style>
-  <style:style style:name="P32" style:family="paragraph" style:parent-style-name="Standard">
+  <style:style style:name="P16" style:family="paragraph" style:parent-style-name="Standard">
    <style:text-properties officeooo:rsid="00247aa7" officeooo:paragraph-rsid="0027bf35"/>
   </style:style>
-  <style:style style:name="P33" style:family="paragraph" style:parent-style-name="Standard">
+  <style:style style:name="P17" style:family="paragraph" style:parent-style-name="Standard">
    <style:text-properties officeooo:rsid="0027bf35" officeooo:paragraph-rsid="0027bf35"/>
   </style:style>
-  <style:style style:name="P34" style:family="paragraph" style:parent-style-name="Standard">
+  <style:style style:name="P18" style:family="paragraph" style:parent-style-name="Standard">
    <style:text-properties officeooo:paragraph-rsid="0027bf35"/>
   </style:style>
-  <style:style style:name="P35" style:family="paragraph" style:parent-style-name="Standard">
+  <style:style style:name="P19" style:family="paragraph" style:parent-style-name="Standard">
    <style:text-properties officeooo:paragraph-rsid="00247aa7"/>
   </style:style>
-  <style:style style:name="P36" style:family="paragraph" style:parent-style-name="Text_20_body">
-   <style:text-properties officeooo:paragraph-rsid="0022f365"/>
+  <style:style style:name="P20" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+   <style:text-properties officeooo:rsid="00207866" officeooo:paragraph-rsid="00207866"/>
   </style:style>
-  <style:style style:name="P37" style:family="paragraph" style:parent-style-name="Text_20_body">
-   <style:text-properties officeooo:rsid="00247aa7" officeooo:paragraph-rsid="00247aa7"/>
+  <style:style style:name="P21" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+   <style:text-properties fo:font-weight="bold" officeooo:rsid="00207866" officeooo:paragraph-rsid="00207866" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P38" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365"/>
+  <style:style style:name="P22" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+   <style:text-properties fo:font-weight="bold" officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P39" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+  <style:style style:name="P23" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties fo:font-weight="bold" officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P40" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+  <style:style style:name="P24" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties fo:font-weight="bold" officeooo:rsid="00247aa7" officeooo:paragraph-rsid="00247aa7" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P41" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+  <style:style style:name="P25" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties fo:font-weight="bold" officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P42" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+  <style:style style:name="P26" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties fo:font-weight="bold" officeooo:rsid="0021c13a" officeooo:paragraph-rsid="0021c13a" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P43" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+  <style:style style:name="P27" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties fo:font-weight="bold" officeooo:rsid="002658d2" officeooo:paragraph-rsid="002658d2" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P44" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+  <style:style style:name="P28" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties fo:font-weight="bold" officeooo:rsid="0027bf35" officeooo:paragraph-rsid="0027bf35" style:font-weight-asian="bold" style:font-weight-complex="bold"/>
   </style:style>
-  <style:style style:name="P45" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties officeooo:rsid="00247aa7" officeooo:paragraph-rsid="00247aa7"/>
-  </style:style>
-  <style:style style:name="P46" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5"/>
-  </style:style>
-  <style:style style:name="P47" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties officeooo:rsid="002658d2" officeooo:paragraph-rsid="002658d2"/>
-  </style:style>
-  <style:style style:name="P48" style:family="paragraph" style:parent-style-name="Table_20_Contents">
-   <style:text-properties officeooo:rsid="0027bf35" officeooo:paragraph-rsid="0027bf35"/>
-  </style:style>
-  <style:style style:name="P49" style:family="paragraph" style:parent-style-name="Heading_20_1">
+  <style:style style:name="P29" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
   </style:style>
-  <style:style style:name="P50" style:family="paragraph" style:parent-style-name="Heading_20_1">
-   <style:text-properties officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365"/>
+  <style:style style:name="P30" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+   <style:text-properties officeooo:paragraph-rsid="0021533a"/>
   </style:style>
-  <style:style style:name="P51" style:family="paragraph" style:parent-style-name="Heading_20_2">
-   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
+  <style:style style:name="P31" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+   <style:text-properties officeooo:rsid="0021c13a" officeooo:paragraph-rsid="0021c13a"/>
   </style:style>
-  <style:style style:name="P52" style:family="paragraph" style:parent-style-name="Heading_20_2">
+  <style:style style:name="P32" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5"/>
   </style:style>
-  <style:style style:name="P53" style:family="paragraph" style:parent-style-name="Heading_20_2">
+  <style:style style:name="P33" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+   <style:text-properties officeooo:paragraph-rsid="002271e5"/>
+  </style:style>
+  <style:style style:name="P34" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365"/>
   </style:style>
-  <style:style style:name="P54" style:family="paragraph" style:parent-style-name="Heading_20_2">
+  <style:style style:name="P35" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties officeooo:rsid="00247aa7" officeooo:paragraph-rsid="00247aa7"/>
   </style:style>
-  <style:style style:name="P55" style:family="paragraph" style:parent-style-name="Heading_20_2">
+  <style:style style:name="P36" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties officeooo:rsid="002658d2" officeooo:paragraph-rsid="002658d2"/>
   </style:style>
-  <style:style style:name="P56" style:family="paragraph" style:parent-style-name="Heading_20_2">
+  <style:style style:name="P37" style:family="paragraph" style:parent-style-name="Table_20_Contents">
    <style:text-properties officeooo:rsid="0027bf35" officeooo:paragraph-rsid="0027bf35"/>
   </style:style>
-  <style:style style:name="P57" style:family="paragraph" style:parent-style-name="Heading_20_3">
-   <style:text-properties officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5"/>
+  <style:style style:name="P38" style:family="paragraph" style:parent-style-name="Text_20_body">
+   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
   </style:style>
-  <style:style style:name="P58" style:family="paragraph" style:parent-style-name="Heading_20_3">
+  <style:style style:name="P39" style:family="paragraph" style:parent-style-name="Text_20_body">
+   <style:text-properties officeooo:paragraph-rsid="0021533a"/>
+  </style:style>
+  <style:style style:name="P40" style:family="paragraph" style:parent-style-name="Text_20_body">
+   <style:text-properties officeooo:rsid="0021c13a" officeooo:paragraph-rsid="0021c13a"/>
+  </style:style>
+  <style:style style:name="P41" style:family="paragraph" style:parent-style-name="Text_20_body">
+   <style:text-properties officeooo:paragraph-rsid="0022f365"/>
+  </style:style>
+  <style:style style:name="P42" style:family="paragraph" style:parent-style-name="Text_20_body">
+   <style:text-properties officeooo:rsid="00247aa7" officeooo:paragraph-rsid="00247aa7"/>
+  </style:style>
+  <style:style style:name="P43" style:family="paragraph" style:parent-style-name="Heading_20_1">
+   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
+  </style:style>
+  <style:style style:name="P44" style:family="paragraph" style:parent-style-name="Heading_20_1">
    <style:text-properties officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365"/>
   </style:style>
-  <style:style style:name="P59" style:family="paragraph" style:parent-style-name="Heading_20_3">
+  <style:style style:name="P45" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
+  </style:style>
+  <style:style style:name="P46" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5"/>
+  </style:style>
+  <style:style style:name="P47" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365"/>
+  </style:style>
+  <style:style style:name="P48" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="00247aa7" officeooo:paragraph-rsid="00247aa7"/>
+  </style:style>
+  <style:style style:name="P49" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="002658d2" officeooo:paragraph-rsid="002658d2"/>
+  </style:style>
+  <style:style style:name="P50" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="0027bf35" officeooo:paragraph-rsid="0027bf35"/>
+  </style:style>
+  <style:style style:name="P51" style:family="paragraph" style:parent-style-name="Heading_20_3">
+   <style:text-properties officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5"/>
+  </style:style>
+  <style:style style:name="P52" style:family="paragraph" style:parent-style-name="Heading_20_3">
+   <style:text-properties officeooo:paragraph-rsid="002271e5"/>
+  </style:style>
+  <style:style style:name="P53" style:family="paragraph" style:parent-style-name="Heading_20_3">
+   <style:text-properties officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365"/>
+  </style:style>
+  <style:style style:name="P54" style:family="paragraph" style:parent-style-name="Heading_20_3">
+   <style:text-properties officeooo:paragraph-rsid="002658d2"/>
+  </style:style>
+  <style:style style:name="P55" style:family="paragraph" style:parent-style-name="Heading_20_1">
+   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
+  </style:style>
+  <style:style style:name="P56" style:family="paragraph" style:parent-style-name="Heading_20_1">
+   <style:text-properties officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365"/>
+  </style:style>
+  <style:style style:name="P57" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+   <style:text-properties officeooo:rsid="0027bf35" officeooo:paragraph-rsid="0028a36c"/>
+  </style:style>
+  <style:style style:name="P58" style:family="paragraph" style:parent-style-name="Table_20_Contents">
+   <style:text-properties officeooo:rsid="0028a36c" officeooo:paragraph-rsid="0028a36c"/>
+  </style:style>
+  <style:style style:name="P59" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="0021533a" officeooo:paragraph-rsid="0021533a"/>
+  </style:style>
+  <style:style style:name="P60" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5"/>
+  </style:style>
+  <style:style style:name="P61" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365"/>
+  </style:style>
+  <style:style style:name="P62" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="00247aa7" officeooo:paragraph-rsid="00247aa7"/>
+  </style:style>
+  <style:style style:name="P63" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="002658d2" officeooo:paragraph-rsid="002658d2"/>
+  </style:style>
+  <style:style style:name="P64" style:family="paragraph" style:parent-style-name="Heading_20_2">
+   <style:text-properties officeooo:rsid="0027bf35" officeooo:paragraph-rsid="0027bf35"/>
+  </style:style>
+  <style:style style:name="P65" style:family="paragraph" style:parent-style-name="Heading_20_3">
+   <style:text-properties officeooo:rsid="002271e5" officeooo:paragraph-rsid="002271e5"/>
+  </style:style>
+  <style:style style:name="P66" style:family="paragraph" style:parent-style-name="Heading_20_3">
+   <style:text-properties officeooo:rsid="0022f365" officeooo:paragraph-rsid="0022f365"/>
+  </style:style>
+  <style:style style:name="P67" style:family="paragraph" style:parent-style-name="Heading_20_3">
    <style:text-properties officeooo:paragraph-rsid="002658d2"/>
   </style:style>
   <style:style style:name="T1" style:family="text">
@@ -919,7 +967,10 @@
   <style:style style:name="T8" style:family="text">
    <style:text-properties officeooo:rsid="0027bf35"/>
   </style:style>
-  <style:style style:name="T9" style:family="text"/>
+  <style:style style:name="T9" style:family="text">
+   <style:text-properties officeooo:rsid="0028a36c"/>
+  </style:style>
+  <style:style style:name="T10" style:family="text"/>
   <style:page-layout style:name="pm1">
    <style:page-layout-properties fo:page-width="8.2681in" fo:page-height="11.6929in" style:num-format="1" style:print-orientation="portrait" fo:margin-top="0.7874in" fo:margin-bottom="0.7874in" fo:margin-left="0.7874in" fo:margin-right="0.7874in" style:writing-mode="lr-tb" style:layout-grid-color="#c0c0c0" style:layout-grid-lines="20" style:layout-grid-base-height="0.278in" style:layout-grid-ruby-height="0.139in" style:layout-grid-mode="none" style:layout-grid-ruby-below="false" style:layout-grid-print="false" style:layout-grid-display="false" style:footnote-max-height="0in">
     <style:footnote-sep style:width="0.0071in" style:distance-before-sep="0.0398in" style:distance-after-sep="0.0398in" style:line-style="solid" style:adjustment="left" style:rel-width="25%" style:color="#000000"/>
@@ -950,10 +1001,10 @@
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table1.A1" office:value-type="string">
-       <text:p text:style-name="P13">Type</text:p>
+       <text:p text:style-name="P21">Type</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table1.B1" office:value-type="string">
-       <text:p text:style-name="P13">List</text:p>
+       <text:p text:style-name="P21">List</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -983,7 +1034,7 @@
     </table:table-row>
    </table:table>
    <text:p text:style-name="P5"/>
-   <text:h text:style-name="P23" text:outline-level="1">Posix</text:h>
+   <text:h text:style-name="P43" text:outline-level="1">Posix</text:h>
    <table:table table:name="Table2" table:style-name="Table2">
     <table:table-column table:style-name="Table2.A"/>
     <table:table-column table:style-name="Table2.B"/>
@@ -991,13 +1042,13 @@
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table2.A1" office:value-type="string">
-       <text:p text:style-name="P14">Day</text:p>
+       <text:p text:style-name="P22">Day</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table2.A1" office:value-type="string">
-       <text:p text:style-name="P14">Abbreviated</text:p>
+       <text:p text:style-name="P22">Abbreviated</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table2.C1" office:value-type="string">
-       <text:p text:style-name="P14">Long</text:p>
+       <text:p text:style-name="P22">Long</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -1013,7 +1064,7 @@
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P21"/>
+   <text:p text:style-name="P39"/>
    <table:table table:name="Table3" table:style-name="Table3">
     <table:table-column table:style-name="Table3.A"/>
     <table:table-column table:style-name="Table3.B"/>
@@ -1021,13 +1072,13 @@
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table3.A1" office:value-type="string">
-       <text:p text:style-name="P14">Month</text:p>
+       <text:p text:style-name="P22">Month</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table3.A1" office:value-type="string">
-       <text:p text:style-name="P14">Abbreviated</text:p>
+       <text:p text:style-name="P22">Abbreviated</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table3.C1" office:value-type="string">
-       <text:p text:style-name="P14">Long</text:p>
+       <text:p text:style-name="P22">Long</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -1043,7 +1094,7 @@
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P21"/>
+   <text:p text:style-name="P39"/>
    <text:p text:style-name="Standard">Formats</text:p>
    <table:table table:name="Table4" table:style-name="Table4">
     <table:table-column table:style-name="Table4.A"/>
@@ -1052,19 +1103,19 @@
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table4.A1" office:value-type="string">
-       <text:p text:style-name="P14">date/time</text:p>
+       <text:p text:style-name="P22">date/time</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table4.A1" office:value-type="string">
-       <text:p text:style-name="P14">Short</text:p>
+       <text:p text:style-name="P22">Short</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table4.C1" office:value-type="string">
-       <text:p text:style-name="P14">Long</text:p>
+       <text:p text:style-name="P22">Long</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
     <table:table-row>
      <table:table-cell table:style-name="Table4.A2" office:value-type="string">
-      <text:p text:style-name="P15">date</text:p>
+      <text:p text:style-name="P29">date</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table4.A2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;gregorian&apos;]/dateFormats/dateFormatLength[@type=&apos;short&apos;]/dateFormat/pattern" text:is-hidden="true"/></text:span></text:p>
@@ -1075,7 +1126,7 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table4.A2" office:value-type="string">
-      <text:p text:style-name="P15">time</text:p>
+      <text:p text:style-name="P29">time</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table4.A2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;gregorian&apos;]/timeFormats/timeFormatLength[@type=&apos;short&apos;]/timeFormat/pattern" text:is-hidden="true"/></text:span></text:p>
@@ -1086,23 +1137,23 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table4.A2" office:value-type="string">
-      <text:p text:style-name="P15">Generic date</text:p>
+      <text:p text:style-name="P29">Generic date</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table4.A2" office:value-type="string">
-      <text:p text:style-name="P16"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;generic&apos;]/dateFormats/dateFormatLength[@type=&apos;short&apos;]/dateFormat/pattern" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P30"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;generic&apos;]/dateFormats/dateFormatLength[@type=&apos;short&apos;]/dateFormat/pattern" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table4.C2" office:value-type="string">
-      <text:p text:style-name="P16"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;generic&apos;]/dateFormats/dateFormatLength[@type=&apos;long&apos;]/dateFormat/pattern" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P30"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;generic&apos;]/dateFormats/dateFormatLength[@type=&apos;long&apos;]/dateFormat/pattern" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P20"/>
+   <text:p text:style-name="P38"/>
    <text:p text:style-name="Standard">Number symbols:</text:p>
    <text:p text:style-name="Standard">Decimal Separator:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/symbols[@numberSystem=&apos;latn&apos;]/decimal" text:is-hidden="true"/></text:span></text:p>
    <text:p text:style-name="Standard">Group Separator:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/symbols[@numberSystem=&apos;latn&apos;]/group" text:is-hidden="true"/></text:span></text:p>
    <text:p text:style-name="Standard"/>
    <text:p text:style-name="P6">Number Format:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/decimalFormats[@numberSystem=&apos;latn&apos;]/decimalFormatLength[not(@type)]/decimalFormat[not(@type)]/pattern[not(@type)]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P8"/>
    <text:p text:style-name="Standard">“<text:span text:style-name="T2">Yes”:<text:tab/><text:tab/><text:tab/></text:span><text:span text:style-name="Vernacular"><text:span text:style-name="T2"><text:hidden-text text:condition="ooow:" text:string-value="value posix/messages/yesstr" text:is-hidden="true"/></text:span></text:span></text:p>
    <text:p text:style-name="Standard">“<text:span text:style-name="T2">No”:<text:tab/><text:tab/><text:tab/></text:span><text:span text:style-name="Vernacular"><text:span text:style-name="T2"><text:hidden-text text:condition="ooow:" text:string-value="value posix/messages/nostr" text:is-hidden="true"/></text:span></text:span></text:p>
    <text:p text:style-name="Standard"/>
@@ -1111,8 +1162,8 @@
    <text:p text:style-name="P6">Native:<text:tab/><text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/otherNumberingSystems/native" text:is-hidden="true"/></text:span></text:p>
    <text:p text:style-name="P6">Traditional:<text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/otherNumberingSystems/traditional" text:is-hidden="true"/></text:span></text:p>
    <text:p text:style-name="P6"><text:soft-page-break/>Finance:<text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/otherNumberingSystems/finance" text:is-hidden="true"/></text:span></text:p>
-   <text:h text:style-name="P23" text:outline-level="1">Minimal</text:h>
-   <text:h text:style-name="P24" text:outline-level="2">Translations</text:h>
+   <text:h text:style-name="P43" text:outline-level="1">Minimal</text:h>
+   <text:h text:style-name="P45" text:outline-level="2">Translations</text:h>
    <text:p text:style-name="Standard">Undefined language:<text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/languages/language[@type=&quot;und&quot;]" text:is-hidden="true"/></text:span></text:p>
    <text:p text:style-name="P6">Unwritten script (Zxxx):<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/scripts/script[@type=&quot;Zxxx&quot;]" text:is-hidden="true"/></text:span></text:p>
    <text:p text:style-name="P6">Unencoded script (Zzzz):<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/scripts/script[@type=&quot;Zzzz&quot;]" text:is-hidden="true"/></text:span></text:p>
@@ -1121,18 +1172,18 @@
    <text:p text:style-name="P6">Undefined Region (ZZ):<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/territories/territory[@type=&quot;ZZ&quot;]" text:is-hidden="true"/></text:span></text:p>
    <text:p text:style-name="P6">Gregorian Calendar:<text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/types/type[@key=&quot;calendar&quot;][@type=&quot;gregorian&quot;]" text:is-hidden="true"/></text:span></text:p>
    <text:p text:style-name="P6">Standard Calendar:<text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/types/type[@key=&quot;calendar&quot;][@type=&quot;standard&quot;]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P8">Digits name:<text:tab/><text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/types/type[@key=&quot;numbers&quot;][@type=$lscript]" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P9">Digits name:<text:tab/><text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/types/type[@key=&quot;numbers&quot;][@type=$lscript]" text:is-hidden="true"/></text:span></text:p>
    <text:p text:style-name="P6">Standard Sort order:<text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/types/type[@key=&quot;collation&quot;][@type=&quot;standard&quot;]" text:is-hidden="true"/></text:span></text:p>
    <text:p text:style-name="P6"/>
    <text:p text:style-name="P6">There are many other kinds of sort orders. If you have such different sort orders, please specify which one and give its local name. The choices are: phonebook, traditional, unihan, dictionary, reformed, big5han, gb2312han, pinyin, stroke, zhuyin. The currently known values are:</text:p>
    <text:p text:style-name="P6"/>
-   <text:p text:style-name="P30"><text:hidden-text text:condition="ooow:" text:string-value="for para s localeDisplayNames/types/type[@key=&quot;collation&quot;]" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value @type" text:is-hidden="true"/>:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value ." text:is-hidden="true"/></text:span><text:hidden-text text:condition="ooow:" text:string-value="endfor s" text:is-hidden="true"/></text:p>
-   <text:p text:style-name="P30"/>
-   <text:p text:style-name="P29">Standard Sort Tailoring: </text:p>
+   <text:p text:style-name="P7"><text:hidden-text text:condition="ooow:" text:string-value="for para s localeDisplayNames/types/type[@key=&quot;collation&quot;]" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value @type" text:is-hidden="true"/>:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value ." text:is-hidden="true"/></text:span><text:hidden-text text:condition="ooow:" text:string-value="endfor s" text:is-hidden="true"/></text:p>
+   <text:p text:style-name="P7"/>
+   <text:p text:style-name="P14">Standard Sort Tailoring: </text:p>
    <text:p text:style-name="Preformatted_20_Text"><text:hidden-text text:condition="ooow:" text:string-value="value collations/collation[@type=&quot;standard&quot;]/cr" text:is-hidden="true"/></text:p>
    <text:p text:style-name="P6"/>
    <text:h text:style-name="Heading_20_2" text:outline-level="2">Currency</text:h>
-   <text:p text:style-name="P37">If there are alternative display names for plural forms, note these.</text:p>
+   <text:p text:style-name="P42">If there are alternative display names for plural forms, note these.</text:p>
    <table:table table:name="Table5" table:style-name="Table5">
     <table:table-column table:style-name="Table5.A"/>
     <table:table-column table:style-name="Table5.B"/>
@@ -1142,25 +1193,25 @@
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table5.A1" office:value-type="string">
-       <text:p text:style-name="P42">Currency</text:p>
+       <text:p text:style-name="P26">Currency</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table5.A1" office:value-type="string">
-       <text:p text:style-name="P17">Display Name</text:p>
+       <text:p text:style-name="P31">Display Name</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table5.A1" office:value-type="string">
-       <text:p text:style-name="P17">Normal <text:span text:style-name="T5">symbol</text:span></text:p>
+       <text:p text:style-name="P31">Normal <text:span text:style-name="T5">symbol</text:span></text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table5.A1" office:value-type="string">
-       <text:p text:style-name="P17">Narrow <text:span text:style-name="T5">symbol</text:span></text:p>
+       <text:p text:style-name="P31">Narrow <text:span text:style-name="T5">symbol</text:span></text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table5.E1" office:value-type="string">
-       <text:p text:style-name="P17">Variant <text:span text:style-name="T5">symbol</text:span></text:p>
+       <text:p text:style-name="P31">Variant <text:span text:style-name="T5">symbol</text:span></text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
     <table:table-row>
      <table:table-cell table:style-name="Table5.A2" office:value-type="string">
-      <text:p text:style-name="P17">XXX</text:p>
+      <text:p text:style-name="P31">XXX</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table5.A2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/currencies/currency[@type=&quot;XXX&quot;]/displayName" text:is-hidden="true"/></text:span></text:p>
@@ -1193,7 +1244,7 @@
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P22"/>
+   <text:p text:style-name="P40"/>
    <text:h text:style-name="Heading_20_2" text:outline-level="2">Numbers</text:h>
    <table:table table:name="Table6" table:style-name="Table6">
     <table:table-column table:style-name="Table6.A"/>
@@ -1202,10 +1253,10 @@
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table6.A1" office:value-type="string">
-       <text:p text:style-name="P42">Symbol</text:p>
+       <text:p text:style-name="P26">Symbol</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table6.A1" office:value-type="string">
-       <text:p text:style-name="P17">Latn script</text:p>
+       <text:p text:style-name="P31">Latn script</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table6.C1" office:value-type="string">
        <text:p text:style-name="Table_20_Contents"><text:hidden-text text:condition="ooow:" text:string-value="value $script" text:is-hidden="true"/><text:s/><text:span text:style-name="T3">script</text:span></text:p>
@@ -1214,7 +1265,7 @@
     </table:table-header-rows>
     <table:table-row>
      <table:table-cell table:style-name="Table6.A2" office:value-type="string">
-      <text:p text:style-name="P17">Decimal</text:p>
+      <text:p text:style-name="P31">Decimal</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table6.A2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/symbols[@numberSystem=&apos;latn&apos;]/decimal" text:is-hidden="true"/></text:span></text:p>
@@ -1225,7 +1276,7 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table6.A2" office:value-type="string">
-      <text:p text:style-name="P17">Group</text:p>
+      <text:p text:style-name="P31">Group</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table6.A2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/symbols[@numberSystem=&apos;latn&apos;]/group" text:is-hidden="true"/></text:span></text:p>
@@ -1236,7 +1287,7 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table6.A2" office:value-type="string">
-      <text:p text:style-name="P17">Plus Sign</text:p>
+      <text:p text:style-name="P31">Plus Sign</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table6.A2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/symbols[@numberSystem=&apos;latn&apos;]/plusSign" text:is-hidden="true"/></text:span></text:p>
@@ -1247,7 +1298,7 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table6.A2" office:value-type="string">
-      <text:p text:style-name="P17">Minus Sign</text:p>
+      <text:p text:style-name="P31">Minus Sign</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table6.A2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/symbols[@numberSystem=&apos;latn&apos;]/minusSign" text:is-hidden="true"/></text:span></text:p>
@@ -1258,7 +1309,7 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table6.A2" office:value-type="string">
-      <text:p text:style-name="P17">Percent Sign</text:p>
+      <text:p text:style-name="P31">Percent Sign</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table6.A2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/symbols[@numberSystem=&apos;latn&apos;]/percentSign" text:is-hidden="true"/></text:span></text:p>
@@ -1270,10 +1321,10 @@
    </table:table>
    <text:p text:style-name="Text_20_body"/>
    <text:p text:style-name="Standard">Decimal Format:<text:tab/><text:span text:style-name="Vernacular"><text:span text:style-name="T2"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/decimalFormats[@numberSystem=$lscript]/decimalFormatLength[not(@type)]/decimalFormat[not(@type)]/pattern[not(@type)]" text:is-hidden="true"/></text:span></text:span></text:p>
-   <text:p text:style-name="P9">Scientific Format:<text:tab/><text:span text:style-name="Vernacular"><text:span text:style-name="T2"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/scientificFormats[@numberSystem=$lscript]/scientificFormatLength[not(@type)]/scientificFormat[not(@type)]/pattern[not(@type)]" text:is-hidden="true"/></text:span></text:span></text:p>
-   <text:p text:style-name="P8">Currency Format:<text:tab/><text:span text:style-name="Vernacular"><text:span text:style-name="T2"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/currencyFormats[@numberSystem=$lscript]/currencyFormatLength[not(@type)]/currencyFormat[not(@type)]/pattern[not(@type)]" text:is-hidden="true"/></text:span></text:span></text:p>
-   <text:p text:style-name="P8">Percent Format:<text:tab/><text:span text:style-name="Vernacular"><text:span text:style-name="T2"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/percentFormats[@numberSystem=$lscript]/percentFormatLength[not(@type)]/percentFormat[not(@type)]/pattern[not(@type)]" text:is-hidden="true"/></text:span></text:span></text:p>
-   <text:h text:style-name="P25" text:outline-level="2">Time Zones</text:h>
+   <text:p text:style-name="P10">Scientific Format:<text:tab/><text:span text:style-name="Vernacular"><text:span text:style-name="T2"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/scientificFormats[@numberSystem=$lscript]/scientificFormatLength[not(@type)]/scientificFormat[not(@type)]/pattern[not(@type)]" text:is-hidden="true"/></text:span></text:span></text:p>
+   <text:p text:style-name="P9">Currency Format:<text:tab/><text:span text:style-name="Vernacular"><text:span text:style-name="T2"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/currencyFormats[@numberSystem=$lscript]/currencyFormatLength[not(@type)]/currencyFormat[not(@type)]/pattern[not(@type)]" text:is-hidden="true"/></text:span></text:span></text:p>
+   <text:p text:style-name="P9">Percent Format:<text:tab/><text:span text:style-name="Vernacular"><text:span text:style-name="T2"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/percentFormats[@numberSystem=$lscript]/percentFormatLength[not(@type)]/percentFormat[not(@type)]/pattern[not(@type)]" text:is-hidden="true"/></text:span></text:span></text:p>
+   <text:h text:style-name="P46" text:outline-level="2">Time Zones</text:h>
    <text:p text:style-name="Standard"><text:hidden-text text:condition="ooow:" text:string-value="variable tzs doc(concat($repdir, &quot;/windowsZones.xml&quot;))" text:is-hidden="true"/></text:p>
    <table:table table:name="Table7" table:style-name="Table7">
     <table:table-column table:style-name="Table7.A"/>
@@ -1281,19 +1332,19 @@
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table7.A1" office:value-type="string">
-       <text:p text:style-name="P41">Time Zone</text:p>
+       <text:p text:style-name="P25">Time Zone</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table7.B1" office:value-type="string">
-       <text:p text:style-name="P18">City</text:p>
+       <text:p text:style-name="P32">City</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
     <table:table-row>
      <table:table-cell table:style-name="Table7.A2" office:value-type="string">
-      <text:p text:style-name="P18">Etc/Unknown</text:p>
+      <text:p text:style-name="P32">Etc/Unknown</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table7.B2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/zone[@type=&quot;Etc/Unknown&quot;]/exemplarCity" text:is-hidden="true"/></text:span><text:soft-page-break/></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/zone[@type=&quot;Etc/Unknown&quot;]/exemplarCity" text:is-hidden="true"/></text:span><text:soft-page-break/></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row>
@@ -1306,36 +1357,36 @@
     </table:table-row>
    </table:table>
    <text:p text:style-name="Standard"><text:line-break/><text:span text:style-name="T4">Fallback Format: </text:span><text:span text:style-name="Vernacular"><text:span text:style-name="T4"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/fallbackFormat" text:is-hidden="true"/></text:span></text:span></text:p>
-   <text:p text:style-name="P10">GMT Format: <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/gmtFormat" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P10">GMT Zero Format: <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/gmtZeroFormat" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P10">Region Format: <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/regionFormat[not(@type)]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P10">Region Format (daylight savings): <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/regionFormat[@type=&quot;daylight&quot;]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P10">Region Format (standard): <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/regionFormat[@type=&quot;standard&quot;]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P10">Hour Format: <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/hourFormat" text:is-hidden="true"/></text:span></text:p>
-   <text:h text:style-name="P25" text:outline-level="2">Gregoria<text:span text:style-name="T8">n</text:span> Calendar</text:h>
-   <text:h text:style-name="P26" text:outline-level="3">Days</text:h>
+   <text:p text:style-name="P11">GMT Format: <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/gmtFormat" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P11">GMT Zero Format: <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/gmtZeroFormat" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P11">Region Format: <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/regionFormat[not(@type)]" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P11">Region Format (daylight savings): <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/regionFormat[@type=&quot;daylight&quot;]" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P11">Region Format (standard): <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/regionFormat[@type=&quot;standard&quot;]" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P11">Hour Format: <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/timeZoneNames/hourFormat" text:is-hidden="true"/></text:span></text:p>
+   <text:h text:style-name="P46" text:outline-level="2">Gregoria<text:span text:style-name="T8">n</text:span> Calendar</text:h>
+   <text:h text:style-name="P51" text:outline-level="3">Days</text:h>
    <table:table table:name="Table8" table:style-name="Table8">
     <table:table-column table:style-name="Table8.A" table:number-columns-repeated="5"/>
     <table:table-column table:style-name="Table8.F"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table8.A1" office:value-type="string">
-       <text:p text:style-name="P40">Day</text:p>
+       <text:p text:style-name="P24">Day</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table8.A1" office:value-type="string">
-       <text:p text:style-name="P18">Format narrow</text:p>
+       <text:p text:style-name="P32">Format narrow</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table8.A1" office:value-type="string">
-       <text:p text:style-name="P18">Abbreviated</text:p>
+       <text:p text:style-name="P32">Abbreviated</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table8.A1" office:value-type="string">
-       <text:p text:style-name="P18">Narrow</text:p>
+       <text:p text:style-name="P32">Narrow</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table8.A1" office:value-type="string">
-       <text:p text:style-name="P18">Short</text:p>
+       <text:p text:style-name="P32">Short</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table8.F1" office:value-type="string">
-       <text:p text:style-name="P18">Wide</text:p>
+       <text:p text:style-name="P32">Wide</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -1344,38 +1395,38 @@
       <text:p text:style-name="Table_20_Contents"><text:hidden-text text:condition="ooow:" text:string-value="forenum row d sun mon tue wed thu fri sat" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $d" text:is-hidden="true"/></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table8.A2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/days/dayContext[@type=&quot;format&quot;]/dayWidth[@type=&quot;narrow&quot;]/day[@type=$d]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/days/dayContext[@type=&quot;format&quot;]/dayWidth[@type=&quot;narrow&quot;]/day[@type=$d]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table8.A2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/days/dayContext[@type=&quot;stand-alone&quot;]/dayWidth[@type=&quot;abbreviated&quot;]/day[@type=$d]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/days/dayContext[@type=&quot;stand-alone&quot;]/dayWidth[@type=&quot;abbreviated&quot;]/day[@type=$d]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table8.A2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/days/dayContext[@type=&quot;stand-alone&quot;]/dayWidth[@type=&quot;narrow&quot;]/day[@type=$d]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/days/dayContext[@type=&quot;stand-alone&quot;]/dayWidth[@type=&quot;narrow&quot;]/day[@type=$d]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table8.A2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/days/dayContext[@type=&quot;stand-alone&quot;]/dayWidth[@type=&quot;short&quot;]/day[@type=$d]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/days/dayContext[@type=&quot;stand-alone&quot;]/dayWidth[@type=&quot;short&quot;]/day[@type=$d]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table8.F2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/days/dayContext[@type=&quot;stand-alone&quot;]/dayWidth[@type=&quot;wide&quot;]/day[@type=$d]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor d" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/days/dayContext[@type=&quot;stand-alone&quot;]/dayWidth[@type=&quot;wide&quot;]/day[@type=$d]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor d" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
    <text:p text:style-name="Standard"/>
-   <text:p text:style-name="P10">Day period am (wide): <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/dayPeriods/dayPeriodContext[@type=&quot;format&quot;]/dayPeriodWidth[@type=&quot;wide&quot;]/dayPeriod[@type=&quot;am&quot;]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P10">Day period pm (wide): <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/dayPeriods/dayPeriodContext[@type=&quot;format&quot;]/dayPeriodWidth[@type=&quot;wide&quot;]/dayPeriod[@type=&quot;pm&quot;]" text:is-hidden="true"/></text:span></text:p>
-   <text:h text:style-name="P26" text:outline-level="3">Eras</text:h>
+   <text:p text:style-name="P11">Day period am (wide): <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/dayPeriods/dayPeriodContext[@type=&quot;format&quot;]/dayPeriodWidth[@type=&quot;wide&quot;]/dayPeriod[@type=&quot;am&quot;]" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P11">Day period pm (wide): <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/dayPeriods/dayPeriodContext[@type=&quot;format&quot;]/dayPeriodWidth[@type=&quot;wide&quot;]/dayPeriod[@type=&quot;pm&quot;]" text:is-hidden="true"/></text:span></text:p>
+   <text:h text:style-name="P51" text:outline-level="3">Eras</text:h>
    <table:table table:name="Table9" table:style-name="Table9">
     <table:table-column table:style-name="Table9.A" table:number-columns-repeated="3"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table9.A1" office:value-type="string">
-       <text:p text:style-name="P41">Era Type</text:p>
+       <text:p text:style-name="P25">Era Type</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table9.A1" office:value-type="string">
-       <text:p text:style-name="P18">Era</text:p>
+       <text:p text:style-name="P32">Era</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table9.C1" office:value-type="string">
-       <text:p text:style-name="P18">Variant</text:p>
+       <text:p text:style-name="P32">Variant</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -1384,7 +1435,7 @@
       <text:p text:style-name="Table_20_Contents"><text:hidden-text text:condition="ooow:" text:string-value="forenum row t 0 1" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $t" text:is-hidden="true"/></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table9.A2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/eras/eraAbbr/era[@type=$t][not(@alt)]" text:is-hidden="true"/></text:span><text:soft-page-break/></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/eras/eraAbbr/era[@type=$t][not(@alt)]" text:is-hidden="true"/></text:span><text:soft-page-break/></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table9.C2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/eras/eraAbbr/era[@type=$t][@alt=&quot;variant&quot;]" text:is-hidden="true"/></text:span><text:soft-page-break/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor t" text:is-hidden="true"/></text:span></text:p>
@@ -1395,7 +1446,7 @@
       <text:p text:style-name="Table_20_Contents"><text:hidden-text text:condition="ooow:" text:string-value="ifin row if $region TH" text:is-hidden="true"/><text:span text:style-name="T6">Buddhist 0</text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table9.A2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;buddhist&quot;]/eras/eraAbbr/era[@type=&quot;0&quot;]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;buddhist&quot;]/eras/eraAbbr/era[@type=&quot;0&quot;]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table9.C2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endif if" text:is-hidden="true"/></text:span></text:p>
@@ -1406,14 +1457,14 @@
       <text:p text:style-name="Table_20_Contents"><text:hidden-text text:condition="ooow:" text:string-value="ifin row if $region TW" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="forenum row t 0 1" text:is-hidden="true"/><text:span text:style-name="T6">ROC </text:span><text:span text:style-name="T6"><text:hidden-text text:condition="ooow:" text:string-value="value $t" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table9.A2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;roc&quot;]/eras/eraAbbr/era[@type=$t]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;roc&quot;]/eras/eraAbbr/era[@type=$t]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table9.C2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor t" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endif if" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:h text:style-name="P26" text:outline-level="3">Months</text:h>
+   <text:h text:style-name="P51" text:outline-level="3">Months</text:h>
    <table:table table:name="Table10" table:style-name="Table10">
     <table:table-column table:style-name="Table10.A" table:number-columns-repeated="3"/>
     <table:table-column table:style-name="Table10.D"/>
@@ -1421,57 +1472,57 @@
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table10.A1" office:value-type="string">
-       <text:p text:style-name="P40">Month</text:p>
+       <text:p text:style-name="P24">Month</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table10.A1" office:value-type="string">
-       <text:p text:style-name="P18">Format narrow</text:p>
+       <text:p text:style-name="P32">Format narrow</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table10.A1" office:value-type="string">
-       <text:p text:style-name="P18">Abbreviated</text:p>
+       <text:p text:style-name="P32">Abbreviated</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table10.A1" office:value-type="string">
-       <text:p text:style-name="P18">Narrow</text:p>
+       <text:p text:style-name="P32">Narrow</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table10.E1" office:value-type="string">
-       <text:p text:style-name="P18">Wide</text:p>
+       <text:p text:style-name="P32">Wide</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
     <table:table-row>
      <table:table-cell table:style-name="Table10.A2" office:value-type="string">
-      <text:p text:style-name="P19"><text:hidden-text text:condition="ooow:" text:string-value="forenum row m 1 2 3 4 5 6 7 8 9 10 11 12" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $m" text:is-hidden="true"/></text:p>
+      <text:p text:style-name="P33"><text:hidden-text text:condition="ooow:" text:string-value="forenum row m 1 2 3 4 5 6 7 8 9 10 11 12" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $m" text:is-hidden="true"/></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table10.A2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;gregorian&apos;]/months/monthContext[@type=&quot;format&quot;]/monthWidth[@type=&quot;narrow&quot;]/month[@type=$m]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;gregorian&apos;]/months/monthContext[@type=&quot;format&quot;]/monthWidth[@type=&quot;narrow&quot;]/month[@type=$m]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table10.A2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;gregorian&apos;]/months/monthContext[@type=&quot;stand-alone&quot;]/monthWidth[@type=&quot;abbreviated&quot;]/month[@type=$m]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;gregorian&apos;]/months/monthContext[@type=&quot;stand-alone&quot;]/monthWidth[@type=&quot;abbreviated&quot;]/month[@type=$m]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table10.A2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;gregorian&apos;]/months/monthContext[@type=&quot;stand-alone&quot;]/monthWidth[@type=&quot;narrow&quot;]/month[@type=$m]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;gregorian&apos;]/months/monthContext[@type=&quot;stand-alone&quot;]/monthWidth[@type=&quot;narrow&quot;]/month[@type=$m]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table10.E2" office:value-type="string">
-      <text:p text:style-name="P18"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;gregorian&apos;]/months/monthContext[@type=&quot;stand-alone&quot;]/monthWidth[@type=&quot;wide&quot;]/month[@type=$m]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor m" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&apos;gregorian&apos;]/months/monthContext[@type=&quot;stand-alone&quot;]/monthWidth[@type=&quot;wide&quot;]/month[@type=$m]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor m" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:h text:style-name="P58" text:outline-level="3">Time</text:h>
+   <text:h text:style-name="P53" text:outline-level="3">Time</text:h>
    <text:p text:style-name="Standard">Time Format (full): <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/timeFormats/timeFormatLength[@type=&quot;full&quot;]/timeFormat/pattern" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P28">Time Format (short): <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/timeFormats/timeFormatLength[@type=&quot;short&quot;]/timeFormat/pattern" text:is-hidden="true"/></text:span></text:p>
-   <text:h text:style-name="P50" text:outline-level="1">Basic</text:h>
-   <text:h text:style-name="P53" text:outline-level="2">Translations</text:h>
+   <text:p text:style-name="P13">Time Format (short): <text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/timeFormats/timeFormatLength[@type=&quot;short&quot;]/timeFormat/pattern" text:is-hidden="true"/></text:span></text:p>
+   <text:h text:style-name="P44" text:outline-level="1">Basic</text:h>
+   <text:h text:style-name="P47" text:outline-level="2">Translations</text:h>
    <table:table table:name="Table11" table:style-name="Table11">
     <table:table-column table:style-name="Table11.A" table:number-columns-repeated="3"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table11.A1" office:value-type="string">
-       <text:p text:style-name="P39">Language</text:p>
+       <text:p text:style-name="P23">Language</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table11.A1" office:value-type="string">
-       <text:p text:style-name="P38">Name</text:p>
+       <text:p text:style-name="P34">Name</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table11.C1" office:value-type="string">
-       <text:p text:style-name="P38">Short Variant</text:p>
+       <text:p text:style-name="P34">Short Variant</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -1487,22 +1538,23 @@
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P36"/>
+   <text:p text:style-name="P41"/>
    <table:table table:name="Table12" table:style-name="Table12">
-    <table:table-column table:style-name="Table12.A" table:number-columns-repeated="4"/>
+    <table:table-column table:style-name="Table12.A" table:number-columns-repeated="3"/>
+    <table:table-column table:style-name="Table12.D"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table12.A1" office:value-type="string">
-       <text:p text:style-name="P39">Script</text:p>
+       <text:p text:style-name="P23">Script</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table12.A1" office:value-type="string">
-       <text:p text:style-name="P38">Name</text:p>
+       <text:p text:style-name="P34">Name</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table12.A1" office:value-type="string">
-       <text:p text:style-name="P38">Variant</text:p>
+       <text:p text:style-name="P34">Variant</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table12.D1" office:value-type="string">
-       <text:p text:style-name="P38">Stand alone</text:p>
+       <text:p text:style-name="P34">Stand alone</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -1521,17 +1573,17 @@
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P36"/>
+   <text:p text:style-name="P41"/>
    <table:table table:name="Table13" table:style-name="Table13">
     <table:table-column table:style-name="Table13.A"/>
     <table:table-column table:style-name="Table13.B"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table13.A1" office:value-type="string">
-       <text:p text:style-name="P44">Region</text:p>
+       <text:p text:style-name="P28">Region</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table13.B1" office:value-type="string">
-       <text:p text:style-name="P38">Name</text:p>
+       <text:p text:style-name="P34">Name</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -1544,60 +1596,60 @@
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P35"/>
-   <text:p text:style-name="P35"><text:span text:style-name="T5">Language pattern:<text:tab/><text:tab/></text:span><text:span text:style-name="Vernacular"><text:span text:style-name="T5"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/codePatterns/codePattern[@type=&quot;language&quot;]" text:is-hidden="true"/></text:span></text:span></text:p>
-   <text:p text:style-name="P31">Script pattern: <text:tab/><text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/codePatterns/codePattern[@type=&quot;script&quot;]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P31">Region pattern:<text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/codePatterns/codePattern[@type=&quot;territory&quot;]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P31">Metric measurement system:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/measurementSystemNames/measurementSystemName[@type=&quot;metric&quot;]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P31">UK measurement system:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/measurementSystemNames/measurementSystemName[@type=&quot;UK&quot;]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P31">US measurement system:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/measurementSystemNames/measurementSystemName[@type=&quot;US&quot;]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P31">Locale display pattern:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/localeDisplayPattern/localePattern" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P31">Locale display separator:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/localeDisplayPattern/localeSeparator" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P31">Locale key type pattern:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/localeDisplayPattern/localeKeyTypePattern" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P31"/>
+   <text:p text:style-name="P19"/>
+   <text:p text:style-name="P19"><text:span text:style-name="T5">Language pattern:<text:tab/><text:tab/></text:span><text:span text:style-name="Vernacular"><text:span text:style-name="T5"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/codePatterns/codePattern[@type=&quot;language&quot;]" text:is-hidden="true"/></text:span></text:span></text:p>
+   <text:p text:style-name="P15">Script pattern: <text:tab/><text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/codePatterns/codePattern[@type=&quot;script&quot;]" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P15">Region pattern:<text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/codePatterns/codePattern[@type=&quot;territory&quot;]" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P15">Metric measurement system:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/measurementSystemNames/measurementSystemName[@type=&quot;metric&quot;]" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P15">UK measurement system:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/measurementSystemNames/measurementSystemName[@type=&quot;UK&quot;]" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P15">US measurement system:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/measurementSystemNames/measurementSystemName[@type=&quot;US&quot;]" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P15">Locale display pattern:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/localeDisplayPattern/localePattern" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P15">Locale display separator:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/localeDisplayPattern/localeSeparator" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P15">Locale key type pattern:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value localeDisplayNames/localeDisplayPattern/localeKeyTypePattern" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P15"/>
    <table:table table:name="Table22" table:style-name="Table22">
     <table:table-column table:style-name="Table22.A"/>
     <table:table-column table:style-name="Table22.B"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table22.A1" office:value-type="string">
-       <text:p text:style-name="P44">Date Field</text:p>
+       <text:p text:style-name="P28">Date Field</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table22.B1" office:value-type="string">
-       <text:p text:style-name="P48">Name</text:p>
+       <text:p text:style-name="P37">Name</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
     <table:table-row>
      <table:table-cell table:style-name="Table22.A2" office:value-type="string">
-      <text:p text:style-name="P32"><text:hidden-text text:condition="ooow:" text:string-value="for row f dates/fields/field" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $f/@type" text:is-hidden="true"/></text:p>
+      <text:p text:style-name="P16"><text:hidden-text text:condition="ooow:" text:string-value="for row f dates/fields/field" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $f/@type" text:is-hidden="true"/></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table22.B2" office:value-type="string">
-      <text:p text:style-name="P32"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value $f/displayName" text:is-hidden="true"/></text:span><text:hidden-text text:condition="ooow:" text:string-value="endfor f" text:is-hidden="true"/></text:p>
+      <text:p text:style-name="P16"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value $f/displayName" text:is-hidden="true"/></text:span><text:hidden-text text:condition="ooow:" text:string-value="endfor f" text:is-hidden="true"/></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P31"/>
-   <text:p text:style-name="P31"><text:hidden-text text:condition="ooow:" text:string-value="forenum para r -1 0 1" text:is-hidden="true"/><text:span text:style-name="T8">Day relative </text:span><text:span text:style-name="T8"><text:hidden-text text:condition="ooow:" text:string-value="value $r" text:is-hidden="true"/></text:span><text:span text:style-name="T8">: <text:tab/></text:span><text:span text:style-name="Vernacular"><text:span text:style-name="T8"><text:hidden-text text:condition="ooow:" text:string-value="value dates/fields/field[@type=&quot;day&quot;]/relative[@type=$r]" text:is-hidden="true"/></text:span></text:span><text:span text:style-name="T8"><text:hidden-text text:condition="ooow:" text:string-value="endfor r" text:is-hidden="true"/></text:span></text:p>
-   <text:h text:style-name="P54" text:outline-level="2"><text:soft-page-break/>Currency</text:h>
+   <text:p text:style-name="P15"/>
+   <text:p text:style-name="P15"><text:hidden-text text:condition="ooow:" text:string-value="forenum para r -1 0 1" text:is-hidden="true"/><text:span text:style-name="T8">Day relative </text:span><text:span text:style-name="T8"><text:hidden-text text:condition="ooow:" text:string-value="value $r" text:is-hidden="true"/></text:span><text:span text:style-name="T8">: <text:tab/></text:span><text:span text:style-name="Vernacular"><text:span text:style-name="T8"><text:hidden-text text:condition="ooow:" text:string-value="value dates/fields/field[@type=&quot;day&quot;]/relative[@type=$r]" text:is-hidden="true"/></text:span></text:span><text:span text:style-name="T8"><text:hidden-text text:condition="ooow:" text:string-value="endfor r" text:is-hidden="true"/></text:span></text:p>
+   <text:h text:style-name="P48" text:outline-level="2"><text:soft-page-break/>Currency</text:h>
    <table:table table:name="Table14" table:style-name="Table14">
     <table:table-column table:style-name="Table14.A" table:number-columns-repeated="5"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table14.A1" office:value-type="string">
-       <text:p text:style-name="P40">Currency</text:p>
+       <text:p text:style-name="P24">Currency</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table14.A1" office:value-type="string">
-       <text:p text:style-name="P45">Display Name</text:p>
+       <text:p text:style-name="P35">Display Name</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table14.A1" office:value-type="string">
-       <text:p text:style-name="P45">Symbol</text:p>
+       <text:p text:style-name="P35">Symbol</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table14.A1" office:value-type="string">
-       <text:p text:style-name="P45">Narrow Symbol</text:p>
+       <text:p text:style-name="P35">Narrow Symbol</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table14.E1" office:value-type="string">
-       <text:p text:style-name="P45">Variant Symbol</text:p>
+       <text:p text:style-name="P35">Variant Symbol</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -1619,72 +1671,74 @@
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:h text:style-name="P55" text:outline-level="2">Calendar</text:h>
+   <text:h text:style-name="P49" text:outline-level="2">Calendar</text:h>
    <table:table table:name="Table15" table:style-name="Table15">
-    <table:table-column table:style-name="Table15.A" table:number-columns-repeated="4"/>
+    <table:table-column table:style-name="Table15.A" table:number-columns-repeated="3"/>
+    <table:table-column table:style-name="Table15.D"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table15.A1" office:value-type="string">
-       <text:p text:style-name="P43">Gregorian Quarters</text:p>
+       <text:p text:style-name="P27">Gregorian Quarters</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table15.A1" office:value-type="string">
-       <text:p text:style-name="P47">Abbreviated</text:p>
+       <text:p text:style-name="P36">Abbreviated</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table15.A1" office:value-type="string">
-       <text:p text:style-name="P47">Narrow</text:p>
+       <text:p text:style-name="P36">Narrow</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table15.D1" office:value-type="string">
-       <text:p text:style-name="P47">Wide</text:p>
+       <text:p text:style-name="P36">Wide</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
     <table:table-row>
      <table:table-cell table:style-name="Table15.A2" office:value-type="string">
-      <text:p text:style-name="P47"><text:hidden-text text:condition="ooow:" text:string-value="forenum row t 1 2 3 4" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $t" text:is-hidden="true"/><text:s/>(Format)</text:p>
+      <text:p text:style-name="P36"><text:hidden-text text:condition="ooow:" text:string-value="forenum row t 1 2 3 4" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $t" text:is-hidden="true"/><text:s/>(Format)</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table15.A2" office:value-type="string">
-      <text:p text:style-name="P47"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;format&quot;]/quarterWidth[@type=&quot;abbreviated&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P36"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;format&quot;]/quarterWidth[@type=&quot;abbreviated&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table15.A2" office:value-type="string">
-      <text:p text:style-name="P47"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;format&quot;]/quarterWidth[@type=&quot;narrow&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P36"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;format&quot;]/quarterWidth[@type=&quot;narrow&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table15.D2" office:value-type="string">
-      <text:p text:style-name="P47"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;format&quot;]/quarterWidth[@type=&quot;wide&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor t" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P36"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;format&quot;]/quarterWidth[@type=&quot;wide&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor t" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table15.A2" office:value-type="string">
-      <text:p text:style-name="P47"><text:hidden-text text:condition="ooow:" text:string-value="forenum row t 1 2 3 4" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $t" text:is-hidden="true"/><text:s/>(Stand alone)</text:p>
+      <text:p text:style-name="P36"><text:hidden-text text:condition="ooow:" text:string-value="forenum row t 1 2 3 4" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $t" text:is-hidden="true"/><text:s/>(Stand alone)</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table15.A2" office:value-type="string">
-      <text:p text:style-name="P47"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;stand-alone&quot;]/quarterWidth[@type=&quot;abbreviated&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P36"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;stand-alone&quot;]/quarterWidth[@type=&quot;abbreviated&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table15.A2" office:value-type="string">
-      <text:p text:style-name="P47"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;stand-alone&quot;]/quarterWidth[@type=&quot;narrow&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P36"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;stand-alone&quot;]/quarterWidth[@type=&quot;narrow&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table15.D2" office:value-type="string">
-      <text:p text:style-name="P47"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;stand-alone&quot;]/quarterWidth[@type=&quot;wide&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor t" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P36"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=&quot;gregorian&quot;]/quarters/quarterContext[@type=&quot;stand-alone&quot;]/quarterWidth[@type=&quot;wide&quot;]/quarter[@type=$t]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor t" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
    <text:p text:style-name="Standard"><text:hidden-text text:condition="ooow:" text:string-value="condvar ctype $region EG=coptic ET=ethiopic IL=hebrew IN=indian JP=japanese KR=dangi AE=islamic AF=islamic BH=islamic DJ=islamic DZ=islamic EG=islamic EH=islamic ER=islamic IL=islamic IQ=islamic IR=islamic JO=islamic KM=islamic KW=islamic LB=islamic LY=islamic MA=islamic MR=islamic OM=islamic PS=islamic QA=islamic SA=islamic SD=islamic SY=islamic TN=islamic YE=islamic CN=chinese CX=chinese HK=chinese MO=chinese SG=chinese TW=chinese TH=buddhist =gregorian" text:is-hidden="true"/></text:p>
    <text:p text:style-name="Standard"><text:hidden-text text:condition="ooow:" text:string-value="ifin para if1 $ctype in coptic ethiopic hebrew indian japanese dangi islamic chinese buddhist" text:is-hidden="true"/></text:p>
-   <text:h text:style-name="P59" text:outline-level="3"><text:span text:style-name="T6">Calendar (</text:span><text:span text:style-name="T6"><text:hidden-text text:condition="ooow:" text:string-value="value $ctype" text:is-hidden="true"/></text:span><text:span text:style-name="T6">)</text:span></text:h>
+   <text:h text:style-name="P54" text:outline-level="3"><text:span text:style-name="T6">Calendar (</text:span><text:span text:style-name="T6"><text:hidden-text text:condition="ooow:" text:string-value="value $ctype" text:is-hidden="true"/></text:span><text:span text:style-name="T6">)</text:span></text:h>
    <table:table table:name="Table16" table:style-name="Table16">
-    <table:table-column table:style-name="Table16.A" table:number-columns-repeated="4"/>
+    <table:table-column table:style-name="Table16.A" table:number-columns-repeated="3"/>
+    <table:table-column table:style-name="Table16.D"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table16.A1" office:value-type="string">
-       <text:p text:style-name="P43">Month (format)</text:p>
+       <text:p text:style-name="P27">Month (format)</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table16.A1" office:value-type="string">
-       <text:p text:style-name="P47">Abbreviated</text:p>
+       <text:p text:style-name="P36">Abbreviated</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table16.A1" office:value-type="string">
-       <text:p text:style-name="P47">Narrow</text:p>
+       <text:p text:style-name="P36">Narrow</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table16.D1" office:value-type="string">
-       <text:p text:style-name="P47">Wide</text:p>
+       <text:p text:style-name="P36">Wide</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -1710,14 +1764,15 @@
    <text:p text:style-name="Standard"><text:hidden-text text:condition="ooow:" text:string-value="forenum para w full long medium short" text:is-hidden="true"/><text:span text:style-name="T8">Date Time format(</text:span><text:span text:style-name="T8"><text:hidden-text text:condition="ooow:" text:string-value="value $w" text:is-hidden="true"/></text:span><text:span text:style-name="T8">): </text:span><text:span text:style-name="Vernacular"><text:span text:style-name="T8"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=$ctype]/dateTimeFormats/dateTimeFormaLength[@type=$w]/dateTimeFormat/pattern" text:is-hidden="true"/></text:span></text:span><text:span text:style-name="T8"><text:hidden-text text:condition="ooow:" text:string-value="endfor w" text:is-hidden="true"/></text:span></text:p>
    <text:p text:style-name="Standard"/>
    <table:table table:name="Table18" table:style-name="Table18">
-    <table:table-column table:style-name="Table18.A" table:number-columns-repeated="2"/>
+    <table:table-column table:style-name="Table18.A"/>
+    <table:table-column table:style-name="Table18.B"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table18.A1" office:value-type="string">
-       <text:p text:style-name="P44">Japanese Era</text:p>
+       <text:p text:style-name="P28">Japanese Era</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table18.B1" office:value-type="string">
-       <text:p text:style-name="P48">Name</text:p>
+       <text:p text:style-name="P37">Name</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -1726,7 +1781,7 @@
       <text:p text:style-name="Table_20_Contents"><text:hidden-text text:condition="ooow:" text:string-value="forstr row e in dates/calendars/calendar[@type=$ctype]/eras/eraAbbr/era/@type" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $e" text:is-hidden="true"/></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table18.B2" office:value-type="string">
-      <text:p text:style-name="P48"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="dates/calendars/calendar[@type=$ctype]/eras/eraAbbr/era[@type=$e]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor e" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P37"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="dates/calendars/calendar[@type=$ctype]/eras/eraAbbr/era[@type=$e]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor e" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
@@ -1736,60 +1791,61 @@
     <table:table-column table:style-name="Table17.A" table:number-columns-repeated="5"/>
     <table:table-row>
      <table:table-cell table:style-name="Table17.A1" office:value-type="string">
-      <text:p text:style-name="P44">In a leap year</text:p>
+      <text:p text:style-name="P28">In a leap year</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table17.A1" office:value-type="string">
-      <text:p text:style-name="P48">format abbreviated</text:p>
+      <text:p text:style-name="P37">format abbreviated</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table17.A1" office:value-type="string">
-      <text:p text:style-name="P48">format wide</text:p>
+      <text:p text:style-name="P37">format wide</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table17.A1" office:value-type="string">
-      <text:p text:style-name="P48">stand-alone abbreviated</text:p>
+      <text:p text:style-name="P37">stand-alone abbreviated</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table17.E1" office:value-type="string">
-      <text:p text:style-name="P48">stand-alone wide</text:p>
+      <text:p text:style-name="P37">stand-alone wide</text:p>
      </table:table-cell>
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table17.A2" office:value-type="string">
-      <text:p text:style-name="P48">Month 7</text:p>
+      <text:p text:style-name="P37">Month 7</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table17.A2" office:value-type="string">
-      <text:p text:style-name="P48"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=$ctype]/monthContext[@type=&quot;format&quot;]/monthWidth[@type=&quot;abbreviated&quot;]/month[@type=&quot;7&quot;]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P37"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=$ctype]/monthContext[@type=&quot;format&quot;]/monthWidth[@type=&quot;abbreviated&quot;]/month[@type=&quot;7&quot;]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table17.A2" office:value-type="string">
-      <text:p text:style-name="P48"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=$ctype]/monthContext[@type=&quot;format&quot;]/monthWidth[@type=&quot;wide&quot;]/month[@type=&quot;7&quot;]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P37"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=$ctype]/monthContext[@type=&quot;format&quot;]/monthWidth[@type=&quot;wide&quot;]/month[@type=&quot;7&quot;]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table17.A2" office:value-type="string">
-      <text:p text:style-name="P48"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=$ctype]/monthContext[@type=&quot;stand-alone&quot;]/monthWidth[@type=&quot;abbreviated&quot;]/month[@type=&quot;7&quot;]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P37"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=$ctype]/monthContext[@type=&quot;stand-alone&quot;]/monthWidth[@type=&quot;abbreviated&quot;]/month[@type=&quot;7&quot;]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table17.E2" office:value-type="string">
-      <text:p text:style-name="P48"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=$ctype]/monthContext[@type=&quot;stand-alone&quot;]/monthWidth[@type=&quot;wide&quot;]/month[@type=&quot;7&quot;]" text:is-hidden="true"/></text:span></text:p>
+      <text:p text:style-name="P37"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=$ctype]/monthContext[@type=&quot;stand-alone&quot;]/monthWidth[@type=&quot;wide&quot;]/month[@type=&quot;7&quot;]" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P33"><text:hidden-text text:condition="ooow:" text:string-value="endif if2" text:is-hidden="true"/></text:p>
-   <text:p text:style-name="P34"><text:hidden-text text:condition="ooow:" text:string-value="ifin para if2 $ctype hebrew indian islamic" text:is-hidden="true"/></text:p>
-   <text:p text:style-name="P33">Era 0:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=$ctype]/eras/eraAbbr/era[@type=&quot;0&quot;]" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P34"><text:hidden-text text:condition="ooow:" text:string-value="endif if2" text:is-hidden="true"/></text:p>
+   <text:p text:style-name="P17"><text:hidden-text text:condition="ooow:" text:string-value="endif if2" text:is-hidden="true"/></text:p>
+   <text:p text:style-name="P18"><text:hidden-text text:condition="ooow:" text:string-value="ifin para if2 $ctype hebrew indian islamic" text:is-hidden="true"/></text:p>
+   <text:p text:style-name="P17">Era 0:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value dates/calendars/calendar[@type=$ctype]/eras/eraAbbr/era[@type=&quot;0&quot;]" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P18"><text:hidden-text text:condition="ooow:" text:string-value="endif if2" text:is-hidden="true"/></text:p>
    <text:p text:style-name="Standard"><text:hidden-text text:condition="ooow:" text:string-value="endif if1" text:is-hidden="true"/></text:p>
-   <text:h text:style-name="P56" text:outline-level="2">Time Zones</text:h>
+   <text:h text:style-name="P50" text:outline-level="2">Time Zones</text:h>
    <table:table table:name="Table19" table:style-name="Table19">
-    <table:table-column table:style-name="Table19.A" table:number-columns-repeated="4"/>
+    <table:table-column table:style-name="Table19.A" table:number-columns-repeated="3"/>
+    <table:table-column table:style-name="Table19.D"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table19.A1" office:value-type="string">
-       <text:p text:style-name="P44">Time Zone (long)</text:p>
+       <text:p text:style-name="P28">Time Zone (long)</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table19.A1" office:value-type="string">
-       <text:p text:style-name="P48">Generic</text:p>
+       <text:p text:style-name="P37">Generic</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table19.A1" office:value-type="string">
-       <text:p text:style-name="P48">Standard</text:p>
+       <text:p text:style-name="P37">Standard</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table19.D1" office:value-type="string">
-       <text:p text:style-name="P48">Daylight Savings</text:p>
+       <text:p text:style-name="P37">Daylight Savings</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
@@ -1809,7 +1865,7 @@
     </table:table-row>
     <table:table-row>
      <table:table-cell table:style-name="Table19.A2" office:value-type="string">
-      <text:p text:style-name="P48">Etc/UTC</text:p>
+      <text:p text:style-name="P37">Etc/UTC</text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table19.A2" office:value-type="string">
       <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"/></text:p>
@@ -1822,63 +1878,72 @@
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:h text:style-name="P56" text:outline-level="2">Delimiters</text:h>
+   <text:h text:style-name="P50" text:outline-level="2">Delimiters</text:h>
    <text:p text:style-name="Standard">QuotationStart:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/quotationStart" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P33">QuotationEnd:<text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/quotationEnd" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P33">QuotationContinue:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/special/sil:quotation-marks/sil:quotationContinue" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P33">AlternateQuoteStart:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/alternateQuotationStart" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P33">AlternateQuoteEnd:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/alternateQuotationEnd" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P33">AlternateQuoteCont:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/special/sil:quotation-marks/sil:alternateQuotationContinue" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P33">Third Level Start:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/special/sil:quotation-marks/sil:quotation[@level=&quot;3&quot;]/@open" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P33">Third Level End:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/special/sil:quotation-marks/sil:quotation[@level=&quot;3&quot;]/@close" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P33">Third Level Continue:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/special/sil:quotation-marks/sil:quotation[@level=&quot;3&quot;]/@continue" text:is-hidden="true"/></text:span></text:p>
-   <text:p text:style-name="P33"/>
+   <text:p text:style-name="P17">QuotationEnd:<text:tab/><text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/quotationEnd" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P17">QuotationContinue:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/special/sil:quotation-marks/sil:quotationContinue" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P17">AlternateQuoteStart:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/alternateQuotationStart" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P17">AlternateQuoteEnd:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/alternateQuotationEnd" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P17">AlternateQuoteCont:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/special/sil:quotation-marks/sil:alternateQuotationContinue" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P17">Third Level Start:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/special/sil:quotation-marks/sil:quotation[@level=&quot;3&quot;]/@open" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P17">Third Level End:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/special/sil:quotation-marks/sil:quotation[@level=&quot;3&quot;]/@close" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P17">Third Level Continue:<text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value delimiters/special/sil:quotation-marks/sil:quotation[@level=&quot;3&quot;]/@continue" text:is-hidden="true"/></text:span></text:p>
+   <text:p text:style-name="P17"/>
    <table:table table:name="Table20" table:style-name="Table20">
-    <table:table-column table:style-name="Table20.A" table:number-columns-repeated="2"/>
+    <table:table-column table:style-name="Table20.A"/>
+    <table:table-column table:style-name="Table20.B"/>
+    <table:table-column table:style-name="Table20.C"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table20.A1" office:value-type="string">
-       <text:p text:style-name="P44">Decimal pattern</text:p>
+       <text:p text:style-name="P28">Decimal pattern</text:p>
       </table:table-cell>
-      <table:table-cell table:style-name="Table20.B1" office:value-type="string">
-       <text:p text:style-name="P48">Format</text:p>
+      <table:table-cell table:style-name="Table20.A1" office:value-type="string">
+       <text:p text:style-name="P37">Format <text:span text:style-name="T9">short</text:span></text:p>
+      </table:table-cell>
+      <table:table-cell table:style-name="Table20.C1" office:value-type="string">
+       <text:p text:style-name="P58">Format long</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
     <table:table-row>
      <table:table-cell table:style-name="Table20.A2" office:value-type="string">
-      <text:p text:style-name="P48"><text:hidden-text text:condition="ooow:" text:string-value="for row t numbers/decimalFormats[@numberSystem=$lscript]/decimalFormatLength[@type=&quot;short&quot;]/decimalFormat/pattern" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $t/@type" text:is-hidden="true"/></text:p>
+      <text:p text:style-name="P37"><text:hidden-text text:condition="ooow:" text:string-value="forenum row d 1000 10000 100000 1000000 10000000 100000000 1000000000 10000000000 100000000000 1000000000000 10000000000000 100000000000000" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $d" text:is-hidden="true"/></text:p>
      </table:table-cell>
-     <table:table-cell table:style-name="Table20.B2" office:value-type="string">
-      <text:p text:style-name="P48"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value $t" text:is-hidden="true"/></text:span><text:hidden-text text:condition="ooow:" text:string-value="endfor t" text:is-hidden="true"/></text:p>
+     <table:table-cell table:style-name="Table20.A2" office:value-type="string">
+      <text:p text:style-name="P37"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/decimalFormats[@numberSystem=$lscript]/decimalFormatLength[@type=&quot;short&quot;]/decimalFormat/pattern[@type=$d]" text:is-hidden="true"/></text:span></text:p>
+     </table:table-cell>
+     <table:table-cell table:style-name="Table20.C2" office:value-type="string">
+      <text:p text:style-name="P57"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value numbers/decimalFormats[@numberSystem=$lscript]/decimalFormatLength[@type=&quot;long&quot;]/decimalFormat/pattern[@type=$d]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor d" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P33"/>
+   <text:p text:style-name="P17"/>
    <table:table table:name="Table21" table:style-name="Table21">
-    <table:table-column table:style-name="Table21.A" table:number-columns-repeated="2"/>
+    <table:table-column table:style-name="Table21.A"/>
+    <table:table-column table:style-name="Table21.B"/>
     <table:table-header-rows>
      <table:table-row>
       <table:table-cell table:style-name="Table21.A1" office:value-type="string">
-       <text:p text:style-name="P44">List pattern</text:p>
+       <text:p text:style-name="P28">List pattern</text:p>
       </table:table-cell>
       <table:table-cell table:style-name="Table21.B1" office:value-type="string">
-       <text:p text:style-name="P48">pattern</text:p>
+       <text:p text:style-name="P37">pattern</text:p>
       </table:table-cell>
      </table:table-row>
     </table:table-header-rows>
     <table:table-row>
      <table:table-cell table:style-name="Table21.A2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:hidden-text text:condition="ooow:" text:string-value="for row p listPatterns/listPattern[not(@type)]/listPatternPart" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $p/@type" text:is-hidden="true"/></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:hidden-text text:condition="ooow:" text:string-value="forenum row t 2 start middle end" text:is-hidden="true"/><text:hidden-text text:condition="ooow:" text:string-value="value $t" text:is-hidden="true"/></text:p>
      </table:table-cell>
      <table:table-cell table:style-name="Table21.B2" office:value-type="string">
-      <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value $p" text:is-hidden="true"/></text:span><text:hidden-text text:condition="ooow:" text:string-value="endfor p" text:is-hidden="true"/></text:p>
+      <text:p text:style-name="Table_20_Contents"><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value listPatterns/listPattern[not(@type)]/listPatternPart[@type=$t]" text:is-hidden="true"/></text:span><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="endfor t" text:is-hidden="true"/></text:span></text:p>
      </table:table-cell>
     </table:table-row>
    </table:table>
-   <text:p text:style-name="P33"/>
-   <text:p text:style-name="P33"><text:hidden-text text:condition="ooow:" text:string-value="for para u units/durationUnit" text:is-hidden="true"/>Duration (<text:hidden-text text:condition="ooow:" text:string-value="value $u/@type" text:is-hidden="true"/>): <text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value $u/durationUnitPattern" text:is-hidden="true"/></text:span><text:hidden-text text:condition="ooow:" text:string-value="endfor u" text:is-hidden="true"/></text:p>
-   <text:p text:style-name="P33"/>
+   <text:p text:style-name="P17"/>
+   <text:p text:style-name="P17"><text:hidden-text text:condition="ooow:" text:string-value="for para u units/durationUnit" text:is-hidden="true"/>Duration (<text:hidden-text text:condition="ooow:" text:string-value="value $u/@type" text:is-hidden="true"/>): <text:tab/><text:span text:style-name="Vernacular"><text:hidden-text text:condition="ooow:" text:string-value="value $u/durationUnitPattern" text:is-hidden="true"/></text:span><text:hidden-text text:condition="ooow:" text:string-value="endfor u" text:is-hidden="true"/></text:p>
+   <text:p text:style-name="P17"/>
   </office:text>
  </office:body>
 </office:document>
