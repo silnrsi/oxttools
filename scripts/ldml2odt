@@ -22,7 +22,7 @@ t.define('repdir', os.path.abspath(os.path.dirname(args.template)))
 try:
     from sldr.langtags import LangTag
 except ImportError:
-    sys.path.append(os.path.join(os.path.dirname(__file__), '../../sldr/sldr/python/lib'))
+    sys.path.append(os.path.join(os.path.dirname(__file__), '../../sldr/python/lib'))
     from sldr.langtags import LangTag
 
 if args.langtag is None:
