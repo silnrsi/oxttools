@@ -226,7 +226,8 @@ class Templater(object) :
                 if command == 'value':
                     value = self.xpath(rest, context, c)
                     c.tag = self._uritag('text:span')
-                    lines = asstr(value).strip().split("\n")
+                    res = asstr(value)
+                    lines = res.strip().split("\n") if res is not None else [""]
                     c.text = lines.pop(0)
                     for l in lines:
                         s = et.SubElement(c, self._uritag("text:line-break"))
