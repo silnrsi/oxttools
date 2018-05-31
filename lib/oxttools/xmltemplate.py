@@ -297,8 +297,8 @@ class Templater(object) :
                     endi = ifparent.index(end)
                     value = self.xpath(val, context, c)
                     vstr = asstr(value)
-                    if vstr not in rest:
-                        ifparent[starti:endi+1] = []
+                    if not len(vstr) or vstr not in rest:
+                        ifparent[starti:endi + 1] = []
                         return (ifparent, starti)
                 elif command == "endif":
                     pass
