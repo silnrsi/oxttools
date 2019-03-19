@@ -13,7 +13,7 @@ setup(
     name = 'oxttools',
     version =0.1,
     description = 'Utility to make libreoffice language extensions',
-    maintainer = 'NRSI - SIL International',
+    maintainer = 'SIL International',
     url = 'http://github.com/silnrsi/oxttools',
     packages = ["oxttools",
         ],
