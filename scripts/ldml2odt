@@ -3,6 +3,7 @@
 import sys, os, re
 import argparse, codecs
 import lxml.etree as et
+from palaso.langtags import LangTag
 try:
     from oxttools.xmltemplate import Templater
 except ImportError:
@@ -16,14 +17,9 @@ parser.add_argument('-t','--template',help='Template file to generate from')
 parser.add_argument('-l','--langtag',help='Maximal Langtag for this data')
 args = parser.parse_args()
 t = Templater()
-t.define('resdir', os.path.abspath(os.path.join(os.path.dirname(__file__), "../lib/oxttools/data")))
+datadir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../lib/oxttools/data"))
+t.define('resdir', datadir)
 t.define('repdir', os.path.abspath(os.path.dirname(args.template)))
-
-try:
-    from sldr.langtags import LangTag
-except ImportError:
-    sys.path.append(os.path.join(os.path.dirname(__file__), '../../sldr/python/lib'))
-    from sldr.langtags import LangTag
 
 if args.langtag is None:
     lt = re.sub(ur"^([a-zA-Z_\-]+).xml", ur"\1", os.path.basename(args.infile))
@@ -41,6 +37,8 @@ if args.langtag is not None:
     t.define('region', args.langtag.region)
     # print t.vars
 
+if args.template is None:
+    args.template = os.path.join(datadir, 'simple_ldml.fodt')
 t.parse(args.template)
 oldd = et.parse(args.infile).getroot()
 nsmap = oldd.nsmap
