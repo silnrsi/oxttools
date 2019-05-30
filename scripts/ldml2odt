@@ -4,10 +4,16 @@ import sys, os, re
 import argparse, codecs
 import lxml.etree as et
 from palaso.langtags import LangTag
+
+try:
+    unicode
+except NameError:
+    unicode = str
+    unichr = chr
 try:
     from oxttools.xmltemplate import Templater
 except ImportError:
-    sys.path.append(os.path.join(os.path.dirname(__file__), '../lib'))
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..','lib'))
     from oxttools.xmltemplate import Templater
 
 parser = argparse.ArgumentParser()
@@ -21,19 +27,19 @@ datadir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../lib/oxttoo
 t.define('resdir', datadir)
 t.define('repdir', os.path.abspath(os.path.dirname(args.template)))
 
-if args.langtag is None:
-    lt = re.sub(ur"^([a-zA-Z_\-]+).xml", ur"\1", os.path.basename(args.infile))
+if args.langtag is None: # then try to deduce the language tag from the filename
+    lt = re.sub(r"^([a-zA-Z_\-]+).xml", r"\1", os.path.basename(args.infile))
     if "." not in lt:
-        ltag = LangTag(lt)
-        args.langtag = ltag.analyse()
-else:
-    ltag = LangTag(lt)
-    args.langtag = ltag.analyse()
-
+        args.langtag = lt
+    else:
+        pass # keep going with empty language tag
 if args.langtag is not None:
+    ltag = LangTag(args.langtag)
+    args.langtag = ltag.analyse()
     t.define('lang', args.langtag.lang)
     t.define('script', args.langtag.script)
-    t.define('lscript', args.langtag.script.lower())
+    if args.langtag.script:
+        t.define('lscript', args.langtag.script.lower())
     t.define('region', args.langtag.region)
     # print t.vars
 
