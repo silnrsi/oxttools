@@ -16,6 +16,11 @@ except ImportError:
     sys.path.append(os.path.join(os.path.dirname(__file__), '..','lib'))
     from oxttools.xmltemplate import Templater
 
+try:
+    unicode
+except:
+    unicode = str
+
 parser = argparse.ArgumentParser()
 parser.add_argument('infile',help='xml file to process')
 parser.add_argument('outfile',help='Ouptut file to generate')
@@ -24,15 +29,20 @@ parser.add_argument('-l','--langtag',help='Maximal Langtag for this data')
 args = parser.parse_args()
 t = Templater()
 datadir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../lib/oxttools/data"))
+if args.template is None:
+    args.template = os.path.join(datadir, 'simple_ldml.fodt')
 t.define('resdir', datadir)
 t.define('repdir', os.path.abspath(os.path.dirname(args.template)))
 
-if args.langtag is None: # then try to deduce the language tag from the filename
+if args.langtag is None:
     lt = re.sub(r"^([a-zA-Z_\-]+).xml", r"\1", os.path.basename(args.infile))
     if "." not in lt:
-        args.langtag = lt
-    else:
-        pass # keep going with empty language tag
+        ltag = LangTag(lt)
+        args.langtag = ltag.analyse()
+else:
+    ltag = LangTag(args.langtag)
+    args.langtag = ltag.analyse()
+
 if args.langtag is not None:
     ltag = LangTag(args.langtag)
     args.langtag = ltag.analyse()
@@ -43,8 +53,6 @@ if args.langtag is not None:
     t.define('region', args.langtag.region)
     # print t.vars
 
-if args.template is None:
-    args.template = os.path.join(datadir, 'simple_ldml.fodt')
 t.parse(args.template)
 oldd = et.parse(args.infile).getroot()
 nsmap = oldd.nsmap
