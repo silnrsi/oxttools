@@ -11,8 +11,7 @@ from argparse import ArgumentParser
 from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 import lxml.etree as et
 
-if sys.version_info[0] >= 3 :
-    unicode = str
+assert sys.version_info.major >= 3, "Requires Python 3"
 
 langres = ( "af-ZA", "ak-GH", "am-ET", "an-ES", "apt-IN", "arn-CL", "as-IN", "ast-ES",
     "axk-CF", "av-RU", "az-AZ", "ba-RU", "be-BY", "beq-CG", "bg-BG", "bin-NG", "bkw-CG",
@@ -53,7 +52,7 @@ def zipadd(zipfile, data, fname) :
     tlocal = time.localtime()
     zinfo.date_time = (tlocal[0], tlocal[1]+1, tlocal[2]+1, tlocal[3], tlocal[4], tlocal[5])
     zinfo.compress_type = ZIP_DEFLATED
-    zinfo.external_attr = 0664 << 16
+    zinfo.external_attr = 0o664 << 16
     zipfile.writestr(zinfo, data)
 
 def ziphunspell(ozip, hun, name) :
@@ -63,10 +62,10 @@ def ziphunspell(ozip, hun, name) :
 def zipnfcfile(ozip, fin, fout, affix=None) :
     dat = ""
     with open(fin) as fd :
-        dat += u"\n".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
+        dat += "\n".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
     if affix is not None :
         with oepn(affix) as fd:
-            dat += u"\n".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
+            dat += "\n".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
     zipadd(ozip, dat.replace("\uFEFF", ""), fout)
 
 scripttypes = {
@@ -110,7 +109,7 @@ else :
 test = args.langtag + "-"
 for k in langres:
     if k.startswith(test):
-        print "Can't have unregioned tag {}, using {} instead.".format(args.langtag, k)
+        print("Can't have unregioned tag {}, using {} instead.".format(args.langtag, k) )
         args.langtag = k
         break
 
@@ -133,11 +132,11 @@ else :
 t.addfn(None, 'fonts', fn_fonts)
 t.parse(os.path.join(resdir, 'dictxcu.xml'))
 t.process()
-zipadd(ozip, unicode(t).encode('utf-8'), 'dictionaries.xcu')
+zipadd(ozip, str(t).encode('utf-8'), 'dictionaries.xcu')
 
 t.parse(os.path.join(resdir, 'oxtdescription.xml'))
 t.process()
-zipadd(ozip, unicode(t).encode('utf-8'), 'description.xml')
+zipadd(ozip, str(t).encode('utf-8'), 'description.xml')
 
 license="""LICENSES:
 Spell checker: MIT
@@ -175,10 +174,10 @@ if args.dict :
         for e in doc.findall('//item') :
             itemcount += 1
             if args.dicttype != 'ptall' and e.attrib['spelling'] != 'Correct' : continue
-            hun.addword(unicode(e.attrib['word']))
+            hun.addword(str(e.attrib['word']))
             wordcount += 1
         if wordcount * 4 < itemcount :  #warn if less than 25% of the words are valid
-            print "Warning: only {:.0f}% of the words marked as correct and entered into the dictionary. Consider using --dicttype ptall".format(wordcount / float(itemcount) * 100)
+            print("Warning: only {:.0f}% of the words marked as correct and entered into the dictionary. Consider using --dicttype ptall".format(wordcount / float(itemcount) * 100) )
         if args.affix is not None :
             hun.mergeaffix(args.affix)
         ziphunspell(ozip, hun, args.langtag)

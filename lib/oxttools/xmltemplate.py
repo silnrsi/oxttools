@@ -1,13 +1,13 @@
 #!/usr/bin/python
 
 import lxml.etree as et
-import codecs, re, copy, sys
+import re, copy, sys
 from lxml.etree import XPathEvalError
 
 tmpl = "{uri://nrsi.sil.org/template/0.1}"
 tmpla = "{uri://nrsi.sil.org/template_attributes/0.1}"
 
-stringtype = str if sys.version_info[0] >= 3 else basestring
+assert sys.version_info.major >= 3, "Requires Python 3"
 
 class IterDict(object) :
     def __init__(self) :
@@ -17,7 +17,7 @@ class IterDict(object) :
         self.atstart = True
 
     def __setitem__(self, key, value) :
-        if isinstance(value, stringtype) or not hasattr(value, 'len') :
+        if isinstance(value, str) or not hasattr(value, 'len') :
             value = [value]
         self.keys[key] = len(self.values)
         self.values.append(value)
@@ -32,7 +32,7 @@ class IterDict(object) :
     def __iter__(self) :
         return self
 
-    def next(self) :
+    def __next__(self) :
         if self.atstart :
             self.atstart = False
             return self.asdict()
@@ -43,7 +43,7 @@ class IterDict(object) :
         raise StopIteration
 
 def asstr(v) :
-    if isinstance(v, stringtype) : return v
+    if isinstance(v, str) : return v
     elif isinstance(v, et._Element) : return v.text
     elif len(v) == 0 : return ''
     v = v[0]
@@ -86,7 +86,7 @@ class Templater(object) :
                     k = c.attrib[tmpl+'name']
                     if not tmpl+"fallback" in c.attrib or not k in self.vars :
                         v = self.xpath(c.text, context, c)
-                        if isinstance(v, (stringtype, list)) and len(v) == 0 :
+                        if isinstance(v, (str, list)) and len(v) == 0 :
                             v = c.attrib.get(tmpl+'default', '')
                         self.vars[k] = v
                 elif name == 'namespace':
@@ -318,7 +318,7 @@ class Templater(object) :
 
     def xpath(self, path, context, base) :
         res = self.xpathall(path, context, base)
-        if not isinstance(res, stringtype) and len(res) == 1 :
+        if not isinstance(res, str) and len(res) == 1 :
             res = res[0]
         return res
 
@@ -326,7 +326,7 @@ class Templater(object) :
         res = self.xpathall(path, context, base)
         if res is None:
             return ""
-        if isinstance(res, stringtype):
+        if isinstance(res, str):
             return res
         else:
             return res[0].text
@@ -455,7 +455,7 @@ if __name__ == '__main__' :
         t.processodt(context=d)
     else:
         t.process(context = d)
-    with codecs.open(args.outfile, "w", encoding="utf-8") as of :
+    with open(args.outfile, "w", encoding="utf-8") as of :
         of.write("<?xml version='1.0'?>\n")
         of.write(unicode(t))
 

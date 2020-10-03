@@ -1,10 +1,12 @@
 
-import codecs
+import sys
 import unicodedata
 import itertools
 
+assert sys.version_info.major >= 3, "Requires Python 3"
+
 def decompose(s) :
-    return "".join([unichr(int(x, 16)) for x in unicodedata.decomposition(s).split()])
+    return "".join([chr(int(x, 16)) for x in unicodedata.decomposition(s).split()])
     
 
 class Hunspell(object) :
@@ -36,11 +38,11 @@ class Hunspell(object) :
 
     def mergeaffix(self, fname) :
         if fname is not None :
-            with codecs.open(fname, encoding='utf-8') as fd :
-                self.affix = "\n".join(fd.readlines()).replace(u"\uFEFF", "")
+            with open(fname, encoding='utf-8') as fd :
+                self.affix = "\n".join(fd.readlines()).replace("\uFEFF", "")
 
     def getaff(self) :
-        res = u"""
+        res = """
 SET UTF-8
 """ + self.affix
 
@@ -60,22 +62,22 @@ SET UTF-8
                         d += c[i]
                         r += c[i]
                         for p in itertools.permutations(d[1:]) :
-                            t = (u"".join(p), r)
+                            t = ("".join(p), r)
                             if t not in uconv :
                                 uconv.append(t)
                     else :
                         break
 
         if len(specialchars) :
-            res += u"\nWORDCHARS {}\n".format(u"".join(specialchars))
+            res += "\nWORDCHARS {}\n".format("".join(specialchars))
 
         if len(self.ignore) :
-            res += u"\nIGNORE {}\n".format(u"".join(sorted(self.ignore)))
+            res += "\nIGNORE {}\n".format("".join(sorted(self.ignore)))
 
         if len(uconv) :
-            res += u"\nICONV {}\n".format(len(uconv))
+            res += "\nICONV {}\n".format(len(uconv))
             for u in uconv :
-                res += u"ICONV {} {}\n".format(u[0], u[1])
+                res += "ICONV {} {}\n".format(u[0], u[1])
         return res
 
 
