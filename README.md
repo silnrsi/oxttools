@@ -14,6 +14,11 @@ See WindowsInstall.md (in the `docs` folder)
 python setup.py build
 sudo python setup.py install
 ```
+```
+
+python3 setup.py build
+sudo python3 setup.py install
+```
 
 ## Usage
 makeoxt is the tool for creating a LibreOffice extension. You will need to choose a language
