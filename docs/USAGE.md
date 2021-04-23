@@ -16,6 +16,10 @@ sudo python setup.py install
 
 Note: makeoxt requires Python 3. If you need to type 'python3' (rather than 'python') to run Python 3, then substitute 'python3' for 'python' in the above command.
 
+Note: The installation process uses setuptools. If it is not installed, you'll need `sudo apt-get install python3-setuptools`. 
+
+Note: makeoxt uses lxml. If it is not installed, you'll need to install python3-lxml.
+
 ## Usage
 - Copy WORDLIST (.txt, .dic/.aff, .xml) to the working folder
 - From command prompt enter the command:
