@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 import time, os, codecs, sys
+import unicodedata
 try:
     import oxttools.xmltemplate as xtmpl
 except ImportError:
@@ -12,6 +13,39 @@ from zipfile import ZipFile, ZipInfo, ZIP_DEFLATED
 import lxml.etree as et
 
 assert sys.version_info.major >= 3, "Requires Python 3"
+
+check_for_two_letter_code = { # data extracted from langtags.csv 2021-03
+'aar': 'aa', 'abk': 'ab', 'afr': 'af', 'aka': 'ak', 'amh': 'am', 'ara': 'ar', 'arg': 'an', 'asm': 'as', 'ava': 'av', 'ave': 'ae', 
+'aym': 'ay', 'aze': 'az',
+'bak': 'ba', 'bam': 'bm', 'bel': 'be', 'ben': 'bn', 'bih': 'bh', 'bis': 'bi', 'bod': 'bo', 'bos': 'bs', 'bre': 'br', 'bul': 'bg',
+'cat': 'ca', 'ces': 'cs', 'cha': 'ch', 'che': 'ce', 'chu': 'cu', 'chv': 'cv', 'cmn': 'zh', 'cor': 'kw', 'cos': 'co', 'cre': 'cr', 'cym': 'cy',
+'dan': 'da', 'deu': 'de', 'div': 'dv', 'dzo': 'dz',
+'ell': 'el', 'eng': 'en', 'epo': 'eo', 'est': 'et', 'eus': 'eu', 'ewe': 'ee',
+'fao': 'fo', 'fas': 'fa', 'fij': 'fj', 'fin': 'fi', 'fra': 'fr', 'fry': 'fy', 'ful': 'ff',
+'gla': 'gd', 'gle': 'ga', 'glg': 'gl', 'glv': 'gv', 'grn': 'gn', 'guj': 'gu',
+'hat': 'ht', 'hau': 'ha', 'hbs': 'sh', 'heb': 'he', 'her': 'hz', 'hin': 'hi', 'hmo': 'ho', 'hrv': 'hr', 'hun': 'hu', 'hye': 'hy',
+'ibo': 'ig', 'ido': 'io', 'iii': 'ii', 'iku': 'iu', 'ile': 'ie', 'ina': 'ia', 'ind': 'id', 'ipk': 'ik', 'isl': 'is', 'ita': 'it',
+'jav': 'jv', 'jpn': 'ja',
+'kal': 'kl', 'kan': 'kn', 'kas': 'ks', 'kat': 'ka', 'kau': 'kr', 'kaz': 'kk', 'khm': 'km', 'kik': 'ki', 'kin': 'rw', 'kir': 'ky', 
+'knc': 'kr', 'kom': 'kv', 'kon': 'kg', 'kor': 'ko', 'kua': 'kj', 'kur': 'ku',
+'lao': 'lo', 'lat': 'la', 'lav': 'lv', 'lim': 'li', 'lin': 'ln', 'lit': 'lt', 'ltz': 'lb', 'lub': 'lu', 'lug': 'lg',
+'mah': 'mh', 'mal': 'ml', 'mar': 'mr', 'mkd': 'mk', 'mlg': 'mg', 'mlt': 'mt', 'mon': 'mn', 'mri': 'mi', 'msa': 'ms', 'mya': 'my',
+'nau': 'na', 'nav': 'nv', 'nbl': 'nr', 'nde': 'nd', 'ndo': 'ng', 'nep': 'ne', 'nld': 'nl', 'nno': 'nn', 'nob': 'nb', 'nor': 'no', 'nya': 'ny',
+'oci': 'oc', 'oji': 'oj', 'ori': 'or', 'orm': 'om', 'oss': 'os',
+'pan': 'pa', 'pli': 'pi', 'pol': 'pl', 'por': 'pt', 'pus': 'ps',
+'que': 'qu',
+'roh': 'rm', 'ron': 'mo', 'run': 'rn', 'rus': 'ru',
+'sag': 'sg', 'san': 'sa', 'sin': 'si', 'slk': 'sk', 'slv': 'sl', 'sme': 'se', 'smo': 'sm', 'sna': 'sn', 'snd': 'sd', 
+'som': 'so', 'sot': 'st', 'spa': 'es', 'sqi': 'sq', 'srd': 'sc', 'srp': 'sr', 'ssw': 'ss', 'sun': 'su', 'swa': 'sw', 'swe': 'sv',
+'tah': 'ty', 'tam': 'ta', 'tat': 'tt', 'tel': 'te', 'tgk': 'tg', 'tgl': 'tl', 'tha': 'th', 'tir': 'ti', 'ton': 'to', 
+'tsn': 'tn', 'tso': 'ts', 'tuk': 'tk', 'tur': 'tr', 'twi': 'tw',
+'uig': 'ug', 'ukr': 'uk', 'urd': 'ur', 'uzb': 'uz',
+'ven': 've', 'vie': 'vi', 'vol': 'vo',
+'wln': 'wa', 'wol': 'wo',
+'xho': 'xh',
+'yid': 'ji', 'yor': 'yo',
+'zha': 'za', 'zho': 'zh', 'zsm': 'ms', 'zul': 'zu',
+}
 
 langres = ( "af-ZA", "ak-GH", "am-ET", "an-ES", "apt-IN", "arn-CL", "as-IN", "ast-ES",
     "axk-CF", "av-RU", "az-AZ", "ba-RU", "be-BY", "beq-CG", "bg-BG", "bin-NG", "bkw-CG",
@@ -61,10 +95,10 @@ def ziphunspell(ozip, hun, name) :
 
 def zipnfcfile(ozip, fin, fout, affix=None) :
     dat = ""
-    with open(fin) as fd :
+    with open(fin, encoding="utf-8") as fd :
         dat += "\n".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
     if affix is not None :
-        with oepn(affix) as fd:
+        with open(affix, encoding="utf-8") as fd:
             dat += "\n".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
     zipadd(ozip, dat.replace("\uFEFF", ""), fout)
 
@@ -105,6 +139,12 @@ if args.font is not None :
     t.define('fonttypes', " ".join(sorted(fontmap.keys())))
 else :
     t.define('fonttypes', '')
+
+test = args.langtag.split('-')[0]
+if test in check_for_two_letter_code:
+    print("Can't use '{}' for the language, must use '{}' instead.".
+    format(test, check_for_two_letter_code[test]) )
+    sys.exit("Please change the language tag.")
 
 test = args.langtag + "-"
 for k in langres:
