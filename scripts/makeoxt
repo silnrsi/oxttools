@@ -123,6 +123,7 @@ parser.add_argument('-v','--version',default='0.1',help='OXT version number')
 parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt, ptall, text]')
 parser.add_argument('--publisher',help='Name of publisher')
 parser.add_argument('--puburl',default='',help='URL of publisher')
+parser.add_argument('--license',default='',help='Add your own license in a text file (.txt)')
 args = parser.parse_args()
 
 resdir = os.path.join(os.path.dirname(xtmpl.__file__), 'data')
@@ -164,11 +165,14 @@ t.define('resdir', resdir)
 t.define('scripttype', str(scripttype))
 t.define('language', args.langname)
 t.define('version', args.version)
+t.define('license', args.license)
+
 if args.publisher is not None :
     t.define('publisher', args.publisher)
     t.define('puburl', args.puburl)
 else :
     t.define('publisher', '')
+    
 t.addfn(None, 'fonts', fn_fonts)
 t.parse(os.path.join(resdir, 'dictxcu.xml'))
 t.process()
@@ -178,12 +182,18 @@ t.parse(os.path.join(resdir, 'oxtdescription.xml'))
 t.process()
 zipadd(ozip, str(t).encode('utf-8'), 'description.xml')
 
-license="""LICENSES:
-Spell checker: MIT
+# adding user-specified license
+if len(args.license):
+    with open(args.license, "r") as f:
+        zipadd(ozip, f.read(), 'LICENSES-en.txt')
+ 
+else:
+    license="""LICENSES:
+    Spell checker: MIT
 
-https://opensource.org/licenses/MIT
-"""
-zipadd(ozip, license.encode('utf-8'), 'LICENSES-en.txt')
+    https://opensource.org/licenses/MIT
+    """
+    zipadd(ozip, license.encode('utf-8'), 'LICENSES-en.txt')
 
 manifest="""<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE manifest:manifest PUBLIC "-//OpenOffice.org//DTD Manifest 1.0//EN" "Manifest.dtd">
