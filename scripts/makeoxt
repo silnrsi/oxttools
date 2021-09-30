@@ -182,18 +182,18 @@ t.parse(os.path.join(resdir, 'oxtdescription.xml'))
 t.process()
 zipadd(ozip, str(t).encode('utf-8'), 'description.xml')
 
-# adding user-specified license
-if len(args.license):
-    with open(args.license, "r") as f:
-        zipadd(ozip, f.read(), 'LICENSES-en.txt')
- 
-else:
-    license="""LICENSES:
+# adding license
+license="""LICENSES:
     Spell checker: MIT
 
     https://opensource.org/licenses/MIT
     """
-    zipadd(ozip, license.encode('utf-8'), 'LICENSES-en.txt')
+
+if len(args.license):
+    with open(args.license, "r") as f:
+        license = f.read()
+        
+zipadd(ozip, license.encode('utf-8'), 'LICENSES-en.txt')
 
 manifest="""<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE manifest:manifest PUBLIC "-//OpenOffice.org//DTD Manifest 1.0//EN" "Manifest.dtd">
