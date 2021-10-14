@@ -42,6 +42,11 @@ where
 - LANGTAG = the language tag (for example aak or aae-Latn)
 - OUTPUT.oxt = name of the LibreOffice extension to be created
 
+To see a list of additiona options, use the command:
+```
+makeoxt --help
+```
+
 NB: LibreOffice may require a region as part of the language tag.
 
 ## Using the .oxt file
