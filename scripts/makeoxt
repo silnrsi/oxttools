@@ -99,7 +99,7 @@ def zipnfcfile(ozip, fin, fout, affix=None) :
         dat += "".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
     if affix is not None :
         with open(affix, encoding="utf-8") as fd:
-            dat += "".join([unicodedata.normalize('NFC', x.strip()) for x in fd.readlines()])
+            dat += "".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
     zipadd(ozip, dat.replace("\uFEFF", ""), fout)
 
 scripttypes = {
