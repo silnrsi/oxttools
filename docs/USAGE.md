@@ -5,7 +5,8 @@ You will need to choose a language tag to associate with your writing system.
 LibreOffice 5.3 or later is needed if you are adding a language.
 
 ## Windows installation (using packaged version)
-Copy makeoxt.exe to the working folder
+Download makeoxt.zip from the https://github.com/silnrsi/oxttools/releases page.
+Extract the makeoxt.exe file and copy it to working folder.
 
 ## Linux installation
 Use setup.py to install the makeoxt python script:
