@@ -54,10 +54,15 @@ def asstr(v) :
 docs = {}
 class Templater(object) :
 
-    def __init__(self) :
+    def __init__(self, mergefile=None) :
         self.vars = {}
         self.ns = {}
         self.fns = copy.copy(self.extensions)
+        if mergefile is not None:
+            self.mergedoc = et.parse(mergefile)
+            self.ns = self.mergedoc.getroot().nsmap
+        else:
+            self.mergefile = None
 
     def define(self, name, val) :
         self.vars[name] = val
@@ -145,6 +150,13 @@ class Templater(object) :
                         for r in n :
                             n.remove(r)
                             root.insert(index, r)
+                            index += 1
+                elif name == "includepath":
+                    if self.mergedoc is not None:
+                        index = root.index(c)
+                        nodes = self.xpathall(c.attrib[tmpl+"path"], self.mergedoc, c)
+                        for n in nodes:
+                            root.insert(index, n)
                             index += 1
                 root.remove(c)
             elif len(c) :
@@ -386,7 +398,7 @@ class Templater(object) :
     def fn_default(control, *vals) :
         for v in vals :
             x = asstr(v)
-            if x is not '' :
+            if x != '' :
                 return x
         return ''
 

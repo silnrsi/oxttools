@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 import time, os, codecs, sys
 import unicodedata
@@ -84,7 +84,7 @@ def zipadd(zipfile, data, fname) :
     zinfo = ZipInfo()
     zinfo.filename = fname
     tlocal = time.localtime()
-    zinfo.date_time = (tlocal[0], tlocal[1]+1, tlocal[2]+1, tlocal[3], tlocal[4], tlocal[5])
+    zinfo.date_time = (tlocal[0], tlocal[1], tlocal[2], tlocal[3], tlocal[4], tlocal[5])
     zinfo.compress_type = ZIP_DEFLATED
     zinfo.external_attr = 0o664 << 16
     zipfile.writestr(zinfo, data)
@@ -119,6 +119,7 @@ parser.add_argument('-f','--font',action='append',help='Specifies font for seman
 parser.add_argument('-l','--langname',help='Language name for UI strings')
 parser.add_argument('-d','--dict',help='Wordlist dictionary. For hunspell dictionaries, specify the .aff file. Will try to infer what kind of xml')
 parser.add_argument('-a','--affix',help='Merge the given affix file data into the generated .aff file')
+parser.add_argument('-m','--merge',help='Merge with an existing .oxt')
 parser.add_argument('-v','--version',default='0.1',help='OXT version number')
 parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt, ptall, text]')
 parser.add_argument('--publisher',help='Name of publisher')
@@ -130,7 +131,15 @@ resdir = os.path.join(os.path.dirname(xtmpl.__file__), 'data')
 scripttype = scripttypes.get(args.type.lower(), 1)
 
 ozip = ZipFile(args.outfile, "w")
-t = xtmpl.Templater()
+if args.merge is not None:
+    mergezip = ZipFile(args.merge)
+    for f in (fn for fn in mergezip.namelist() if fn.startswith("dictionaries/")):
+        dat = mergezip.read(f)
+        ozip.writestr(f, dat)
+    mergefile = mergezip.open("dictionaries.xcu")
+else:
+    mergefile = None
+t = xtmpl.Templater(mergefile=mergefile)
 
 fontmap = {}
 if args.font is not None :
@@ -166,6 +175,7 @@ t.define('scripttype', str(scripttype))
 t.define('language', args.langname)
 t.define('version', args.version)
 t.define('license', args.license)
+t.define('refid', args.langtag.replace("-", ""))
 
 if args.publisher is not None :
     t.define('publisher', args.publisher)
