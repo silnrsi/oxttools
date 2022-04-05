@@ -62,7 +62,7 @@ class Templater(object) :
             self.mergedoc = et.parse(mergefile)
             self.ns = self.mergedoc.getroot().nsmap
         else:
-            self.mergefile = None
+            self.mergedoc = None
 
     def define(self, name, val) :
         self.vars[name] = val
