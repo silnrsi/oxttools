@@ -121,7 +121,7 @@ parser.add_argument('-d','--dict',help='Wordlist dictionary. For hunspell dictio
 parser.add_argument('-a','--affix',help='Merge the given affix file data into the generated .aff file')
 parser.add_argument('-m','--merge',help='Merge with an existing .oxt')
 parser.add_argument('-v','--version',default='0.1',help='OXT version number')
-parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt, ptall, text]')
+parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt9, pt9all, text, pt, ptall]')
 parser.add_argument('--publisher',help='Name of publisher')
 parser.add_argument('--puburl',default='',help='URL of publisher')
 parser.add_argument('--license',default='',help='Add your own license in a text file (.txt)')
@@ -238,6 +238,21 @@ if args.dict :
             wordcount += 1
         if wordcount * 4 < itemcount :  #warn if less than 25% of the words are valid
             print("Warning: only {:.0f}% of the words marked as correct and entered into the dictionary. Consider using --dicttype ptall".format(wordcount / float(itemcount) * 100) )
+        if args.affix is not None :
+            hun.mergeaffix(args.affix)
+        ziphunspell(ozip, hun, args.langtag)
+    elif args.dicttype == 'pt9' or args.dicttype == 'pt9all' :
+        itemcount = 0
+        wordcount = 0
+        doc = et.parse(args.dict)
+        hun = hs.Hunspell(args.langtag, puncs=args.word)
+        for e in doc.findall('//Status') :
+            itemcount += 1
+            if args.dicttype != 'pt9all' and e.attrib['State'] != 'R' : continue
+            hun.addword(str(e.attrib['Word']))
+            wordcount += 1
+        if wordcount * 4 < itemcount :  #warn if less than 25% of the words are valid
+            print("Warning: only {:.0f}% of the words marked as correct and entered into the dictionary. Consider using --dicttype pt9all".format(wordcount / float(itemcount) * 100) )
         if args.affix is not None :
             hun.mergeaffix(args.affix)
         ziphunspell(ozip, hun, args.langtag)
