@@ -11,17 +11,18 @@ def decompose(s) :
 
 class Hunspell(object) :
 
-    def __init__(self, name, puncs="") :
+    def __init__(self, name, puncs="", norm="NFC") :
         self.name = name
         self.words = set()
         self.affix = ""
         self.chars = set()
         self.ignore = set()
         self.puncs = puncs
+        self.norm = norm if norm == "NFC" else None
 
-    def addword(self, word) :
+    def addword(self, word, norm="NFC") :
         if len(word) :
-            line = unicodedata.normalize('NFC', word)
+            line = unicodedata.normalize(norm, word) if norm else word
             for dat in line.split() :  # no phrases, just words
                 self.words.add(dat)
                 i = 0
@@ -53,20 +54,21 @@ SET UTF-8
             r = c[0]
             if unicodedata.category(r)[0] in 'SP' :
                 specialchars.append(r)
-            d = decompose(r)
-            if len(d) :
-                uconv.append((d, r))
-                i = 0
-                for i in range(1, len(c)) :
-                    if unicodedata.combining(c[i]) :
-                        d += c[i]
-                        r += c[i]
-                        for p in itertools.permutations(d[1:]) :
-                            t = ("".join(p), r)
-                            if t not in uconv :
-                                uconv.append(t)
-                    else :
-                        break
+            if self.norm == 'NFC':
+                d = decompose(r)
+                if len(d) :
+                    uconv.append((d, r))
+                    i = 0
+                    for i in range(1, len(c)) :
+                        if unicodedata.combining(c[i]) :
+                            d += c[i]
+                            r += c[i]
+                            for p in itertools.permutations(d[1:]) :
+                                t = ("".join(p), r)
+                                if t not in uconv :
+                                    uconv.append(t)
+                        else :
+                            break
 
         if len(specialchars) :
             res += "\nWORDCHARS {}\n".format("".join(specialchars))

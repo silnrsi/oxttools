@@ -11,7 +11,7 @@ except ImportError:
 
 setup(
     name = 'oxttools',
-    version =0.1,
+    version =0.2,
     description = 'Utility to make libreoffice language extensions',
     maintainer = 'SIL International',
     url = 'http://github.com/silnrsi/oxttools',

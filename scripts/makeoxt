@@ -93,13 +93,13 @@ def ziphunspell(ozip, hun, name) :
         zipadd(ozip, hun.getaff().encode('utf-8'), 'dictionaries/' + name + '.aff')
         zipadd(ozip, hun.getdic().encode('utf-8'), 'dictionaries/' + name + '.dic')
 
-def zipnfcfile(ozip, fin, fout, affix=None) :
+def zipnormfile(ozip, fin, fout, affix=None, norm='NFC') :
     dat = ""
     with open(fin, encoding="utf-8") as fd :
-        dat += "".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
+        dat += "".join([unicodedata.normalize(norm, x) if norm else x for x in fd.readlines()])
     if affix is not None :
         with open(affix, encoding="utf-8") as fd:
-            dat += "".join([unicodedata.normalize('NFC', x) for x in fd.readlines()])
+            dat += "".join([x for x in fd.readlines()])
     zipadd(ozip, dat.replace("\uFEFF", ""), fout)
 
 scripttypes = {
@@ -119,6 +119,7 @@ parser.add_argument('-f','--font',action='append',help='Specifies font for seman
 parser.add_argument('-l','--langname',help='Language name for UI strings')
 parser.add_argument('-d','--dict',help='Wordlist dictionary. For hunspell dictionaries, specify the .aff file. Will try to infer what kind of xml')
 parser.add_argument('-a','--affix',help='Merge the given affix file data into the generated .aff file')
+parser.add_argument('-n','--norm', default='NFC', help='Specify normalization [NFC,None]')
 parser.add_argument('-m','--merge',help='Merge with an existing .oxt')
 parser.add_argument('-v','--version',default='0.1',help='OXT version number')
 parser.add_argument('--dicttype',help='Specifies dictionary type [hunspell, pt9, pt9all, text, pt, ptall]')
@@ -129,6 +130,9 @@ args = parser.parse_args()
 
 resdir = os.path.join(os.path.dirname(xtmpl.__file__), 'data')
 scripttype = scripttypes.get(args.type.lower(), 1)
+
+if args.norm != 'NFC': ### NFC or None
+    args.norm = None
 
 ozip = ZipFile(args.outfile, "w")
 if args.merge is not None:
@@ -200,7 +204,7 @@ license="""LICENSES:
     """
 
 if len(args.license):
-    with open(args.license, "r") as f:
+    with open(args.license, "r", encoding='utf-8') as f:
         license = f.read()
         
 zipadd(ozip, license.encode('utf-8'), 'LICENSES-en.txt')
@@ -223,14 +227,14 @@ if args.dict :
         elif args.dict.endswith('.txt') :
             args.dicttype = 'text'
     if args.dicttype == 'hunspell' :
-        zipnfcfile(ozip, args.dict, 'dictionaries/' + args.langtag + '.aff', args.affix)
+        zipnormfile(ozip, args.dict, 'dictionaries/' + args.langtag + '.aff', args.affix, norm=None)
         d = args.dict.replace('.aff', '.dic')
-        zipnfcfile(ozip, d, 'dictionaries/' + args.langtag + '.dic', None)
+        zipnormfile(ozip, d, 'dictionaries/' + args.langtag + '.dic', None, norm=args.norm)
     elif args.dicttype == 'pt' or args.dicttype == 'ptall' :
         itemcount = 0
         wordcount = 0
         doc = et.parse(args.dict)
-        hun = hs.Hunspell(args.langtag, puncs=args.word)
+        hun = hs.Hunspell(args.langtag, puncs=args.word, norm=args.norm)
         for e in doc.findall('//item') :
             itemcount += 1
             if args.dicttype != 'ptall' and e.attrib['spelling'] != 'Correct' : continue
@@ -245,7 +249,7 @@ if args.dict :
         itemcount = 0
         wordcount = 0
         doc = et.parse(args.dict)
-        hun = hs.Hunspell(args.langtag, puncs=args.word)
+        hun = hs.Hunspell(args.langtag, puncs=args.word, norm=args.norm)
         for e in doc.findall('//Status') :
             itemcount += 1
             if args.dicttype != 'pt9all' and e.attrib['State'] != 'R' : continue
@@ -257,7 +261,7 @@ if args.dict :
             hun.mergeaffix(args.affix)
         ziphunspell(ozip, hun, args.langtag)
     elif args.dicttype == 'text' :
-        hun = hs.Hunspell(args.langtag, puncs=args.word)
+        hun = hs.Hunspell(args.langtag, puncs=args.word, norm=args.norm)
         with codecs.open(args.dict, encoding='utf-8') as infile :
             for l in infile.readlines() :
                 hun.addword(l.replace("\uFEFF", "").strip())

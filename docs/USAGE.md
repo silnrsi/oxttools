@@ -2,7 +2,8 @@
 
 makeoxt is a tool for creating a LibreOffice extension.
 You will need to choose a language tag to associate with your writing system.
-LibreOffice 5.3 or later is needed if you are adding a language.
+LibreOffice 5.3 or later is needed if you are adding a language that is not in the list
+of languages that ships with LibreOffice.
 
 ## Windows installation (using packaged version)
 Download makeoxt.zip from the https://github.com/silnrsi/oxttools/releases page.
@@ -32,21 +33,53 @@ makeoxt -d WORDLIST -l "Name of Language" -t SCRIPTTYPE LANGTAG OUTPUT.oxt
 where
 - WORDLIST (which processes differently based on the file extension) =
   - DICT.txt : plain text file containing a list of words (one per line)
-  - PARATEXT_WORDLIST.xml : file containing the output of Paratext's Wordlist-File-Export to XML
-  - DICT.aff : (experimental) hunspell .dic/.aff dictionary files
+  - PARATEXT_WORDLIST.xml : file containing the output of Paratext's Wordlist-File-Export to XML (see note below)
+  - DICT.aff : looks for Hunspell dictionary files DICT.dic and DICT.aff
 - "Name of Language" = the name of the language enclosed in quotes (for example "Ankave" or "Albanian")
 - SCRIPTTYPE =
-  - west (Latin, Greek, Cyrillic, etc.)
+  - west (Latin, Greek, Cyrillic, etc.), this is the default
   - asian (Chinese, Japanese, Korean)
   - rtl (complex right-to-left scripts, Arabic, etc.)
   - ctl (complex left-to-right scripts, Devanagri, etc.)
 - LANGTAG = the language tag (for example aak or aae-Latn)
 - OUTPUT.oxt = name of the LibreOffice extension to be created
 
+For the Paratext wordlist option, you may need the additional parameter `--dicttype=xxx` where `xxx` is:
+- pt = (default) Paratext 8 format: `<item word="abcd" spelling="Correct"/>
+- ptall = Paratext 8 format (as above), but ignore the `spelling` status
+- pt9 = Paratext 9 format: `<Status Word="abcd" State="R"/>
+- Pt9all = Paratext 9 format (as above), but ignore the `State` status
+
+Note that, for `pt9` and `pt9all`, the `<SpecificCase>` indication is not considered.
+
+You are encouraged to use the `-v` option to include a version number and increment it each time you create a new version. 
+If omitted, the version number defaults to `0.1`.
+Often version numbers less than `1.0` are used during initial development and the first general release is `1.0`.
+
 To see a list of additional options, use the command:
 ```
 makeoxt --help
 ```
+
+Examples
+```
+makeoxt -l "Hypothetical Language" -d SpellingStatus.xml --dicttype=pt9 -v 0.3 xyz xyzHunspellDictionary.oxt
+```
+Uses the `SpellingStatus.xml` file from a Paratext 9 project and therefore needs to specify `--dicttype=pt9` 
+so that the XML file is properly treated.
+Version number is set to 0.3.
+The language tag is `xyz` and the output is written to `xyzHunspellDictionary.oxt`.
+
+
+```
+makeoxt -l Sango -d sg-CF.aff -n None -v 0.2 sg-CF sg.oxt
+```
+Uses the `sg-CF.aff` and `sg-CF.dic` Hunspell dictionary files. 
+The `-n None` overrides the default NFC normalization. 
+The version number is set to 0.2.
+The language tag for Sango is normally `sg`, but LibreOffice requires the region code `CF`, so the `sg-CF` language tag is used.
+
+
 
 NB: LibreOffice may require a region as part of the language tag.
 
@@ -61,7 +94,8 @@ NB: LibreOffice may require a region as part of the language tag.
 
 ### Initial use of the language in a LibreOffice document
 - Format menu, Character menu item, brings up a dialog, then select the Font tab
-- Select the language name (value of "Name of Language" in the creation process) from the list
   - Use "Western Text Font" for Latin, Greek, Cyrillic fonts
   - Use "CTL Font" otherwise
-- The language name should then be available from the Tools menu, Language menu item
+- In the `Language` field, select the language name from the list. (This will be the value that was used for "Name of Language" during the creation process).
+- Use the `OK` button to exit the dialog.
+- The language name should then be available from the Tools menu, Language menu item. You can, for example, select the entire text and apply the 
