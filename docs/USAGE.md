@@ -43,7 +43,7 @@ where
 - LANGTAG = the language tag (for example aak or aae-Latn)
 - OUTPUT.oxt = name of the LibreOffice extension to be created
 
-To see a list of additiona options, use the command:
+To see a list of additional options, use the command:
 ```
 makeoxt --help
 ```
@@ -57,6 +57,7 @@ NB: LibreOffice may require a region as part of the language tag.
 - Navigate to the folder with the .oxt file and double-click on it
 - Accept the license
 - Close the Extension Manager dialog
+- At this point you may need to close and reopen LibreOffice
 
 ### Initial use of the language in a LibreOffice document
 - Format menu, Character menu item, brings up a dialog, then select the Font tab
