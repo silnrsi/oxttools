@@ -70,8 +70,12 @@ class Templater(object) :
     def addfn(self, ns, name, fn) :
         self.fns[(ns, name)] = fn
 
+    def addns(self, nsmap):
+        self.ns.update(nsmap)
+
     def parse(self, fname) :
         self.doc = et.parse(fname)
+        self.ns.update(self.doc.getroot().nsmap)
 
     def __str__(self) :
         return et.tounicode(self.doc)
@@ -189,7 +193,7 @@ class Templater(object) :
             return tag
 
     def _scanendfor(self, root, start, var, mode, match):
-        for c in root[start:]:
+        for i, c in enumerate(root[start:]):
             if c.tag == self._uritag('text:hidden-text'):
                 v = c.attrib[self._uritag('text:string-value')]
                 if ' ' in v:
@@ -198,18 +202,13 @@ class Templater(object) :
                     (command, rest) = (v, '')
                 if command == match:
                     if rest == var:
-                        if mode == 'para':
-                            end = self._upscan(c, 'endfor para', 'text:p')
-                        elif mode == 'row':
-                            end = self._upscan(c, 'endfor row', 'table:table-row')
-                        else:
-                            raise SyntaxError("Unexpected endfor mode")
-                        return end
+                        res = self._upscanmode(mode, c, err="Unexpected endfor mode")
+                        return (res, i)
             else:
-                res = self._scanendfor(c, 0, var, mode, match)
+                res, resi= self._scanendfor(c, 0, var, mode, match)
                 if res is not None:
-                    return res
-        return None
+                    return (res, i)
+        return (None, 0)
 
     def _upscan(self, start, errorctxt, *tags):
         testtags = [self._uritag(x) for x in tags]
@@ -220,6 +219,16 @@ class Templater(object) :
                 raise SyntaxError("cannot find {} above {}".format(tags[0], errorctxt))
             res = res.getparent()
         return res
+
+    def _upscanmode(self, mode, c, err="Unknown for type"):
+        if mode == 'para':
+            return self._upscan(c, 'for para', 'text:p', 'text:h')
+        elif mode == 'row':
+            return self._upscan(c, 'for row', 'table:table-row')
+        elif mode == "text":
+            return c
+        else:
+            raise SyntaxError(err)
 
     def processodt(self, root=None, parent=None, index=0, context=None, infor=None):
         if root is None :
@@ -235,8 +244,12 @@ class Templater(object) :
                     (command, rest) = v.split(' ', 1)
                 else:
                     (command, rest) = (v, '')
-                if command == 'value':
+                if command in ('value', 'fvalue'):
                     value = self.xpath(rest, context, c)
+                    if command == "fvalue" and not asstr(value) and "fallback" in self.vars:
+                        value, isfallback = self.xpath_aliases(rest, context, self.vars['fallback'])
+                        if asstr(value) and isfallback:
+                            c.set(self._uritag("text:style-name"), "Fallback")
                     c.tag = self._uritag('text:span')
                     res = asstr(value)
                     lines = res.strip().split("\n") if res is not None else [""]
@@ -263,46 +276,55 @@ class Templater(object) :
                     if var == infor:
                         i += 1
                         continue
-                    if mode == 'para':
-                        start = self._upscan(c, 'for para', 'text:p')
-                    elif mode == 'row':
-                        start = self._upscan(c, 'for row', 'table:table-row')
-                    else:
-                        raise SyntaxError("Unknown for type")
+                    start = self._upscanmode(mode, c)
                     forparent = start.getparent()
-                    end = self._scanendfor(forparent, forparent.index(start), var, mode, "endfor")
-                    if end is None or start.getparent() != end.getparent():
-                        raise SyntaxError("Unbalanced for")
-                    starti = forparent.index(start)
-                    endi = forparent.index(end)
+                    if forparent is None:
+                        forparent = start
+                        if c in start:
+                            starti = start.index(c)
+                        else:
+                            starti = 0
+                    else:
+                        starti = forparent.index(start)
+                    (end, endi) = self._scanendfor(forparent, starti, var, mode, "endfor")
+                    if end is not None:
+                        endparent = end.getparent()
+                        if endparent is None:
+                            endparent = end
+                        else:
+                            endi = endparent.index(end)
+                    if end is None or forparent != endparent:
+                        raise SyntaxError(f"Unbalanced for for {var}")
                     replacements = []
                     if command == 'for' or command == 'forstr':
                         vals = self.xpathall(rest, context, c)
                     elif command == 'forenum':
                         vals = rest.split(' ')
-                    for val in vals:
+                    tempbase = forparent[starti:endi+1]
+                    tempend = len(forparent) - endi
+                    for j, val in enumerate(vals):
                         ctx = val if command == 'for' else context
                         memo = {}
-                        temp = [x.__deepcopy__(memo) for x in forparent[starti:endi+1]]
+                        temp = [x.__deepcopy__(memo) for x in tempbase]
+                        if start == forparent:
+                            newp = start.makeelement(start.tag, nsmap=self.ns)
+                            newp.extend(temp)
+                            temp = [newp]
+                        forparent[endi+1+j*len(temp):endi+1+j*len(temp)] = temp
                         oldvars = self.vars.copy()
                         self.vars[var] = val
                         self.processodt(root=temp, context=ctx, infor=var)
                         self.vars = oldvars
                         replacements.extend(temp)
-                    forparent[starti:endi+1] = replacements
-                    return (forparent, starti + len(replacements))
+                    forparent[starti:endi+1] = []
+                    return (forparent, len(forparent) - tempend + 1)
                 elif command == 'endfor':
                     pass
                 elif command == "ifin":
                     (mode, ident, val, rest) = rest.split(' ', 3)
-                    if mode == 'para':
-                        start = self._upscan(c, 'if para', 'text:p')
-                    elif mode == 'row':
-                        start = self._upscan(c, 'if row', 'table:table-row')
-                    else:
-                        raise SyntaxError("Unknown if type")
+                    start = self._upscanmode(mode, c)
                     ifparent = start.getparent()
-                    end = self._scanendfor(ifparent, ifparent.index(start), ident, mode, "endif")
+                    end, endi = self._scanendfor(ifparent, ifparent.index(start), ident, mode, "endif")
                     if end is None or start.getparent() != end.getparent():
                         raise SyntaxError("Unbalanced if")
                     starti = ifparent.index(start)
@@ -312,18 +334,39 @@ class Templater(object) :
                     if not len(vstr) or vstr not in rest:
                         ifparent[starti:endi + 1] = []
                         return (ifparent, starti)
+                elif command == "ifval":
+                    (mode, ident, var, rest) = rest.split(' ', 3)
+                    start = self._upscanmode(mode, c) 
+                    ifparent = start.getparent()
+                    if mode == "text" and ifparent.tag == self._uritag("text:span"):
+                        start = ifparent
+                        ifparent = ifparent.getparent()
+                    end, endi = self._scanendfor(ifparent, ifparent.index(start), ident, mode, "endif")
+                    if end is None or start.getparent() != end.getparent():
+                        if mode == "text" and end is not None:
+                            end = end.getparent()
+                        if end is None or start.getparent() != end.getparent():
+                            raise SyntaxError("Unbalanced if")
+                    starti = ifparent.index(start)
+                    endi = ifparent.index(end)
+                    value = self.xpath(rest, context, c)
+                    vstr = asstr(value)
+                    self.vars[var] = vstr
+                    if not len(vstr):
+                        ifparent[starti:endi+1] = []
+                        return (ifparent, starti)
                 elif command == "endif":
                     pass
                 i += 1
             else:
-                root, i = self.processodt(root=c, parent=root, index=i, context=context, infor=infor)
-                if infor is None and isinstance(parent, et._Element) and (parent.getparent() is None or root is parent or root in parent.iterancestors()):
-                    return (root, i)
+                newroot, i = self.processodt(root=c, parent=root, index=i, context=context, infor=infor)
+                if newroot is not root:
+                    return (newroot, i)
         return (parent, index+1)
 
     def xpathall(self, path, context, base):
         try:
-            res = context.xpath(path, extensions = self.fns, smart_strings=False, namespaces = self.ns, **self.vars)
+            res = context.xpath(path, extensions=self.fns, smart_strings=False, namespaces=self.ns, **self.vars)
         except XPathEvalError as e:
             raise SyntaxError("{} in xpath expression: {}".format(e.args[0], path))
         return res
@@ -342,6 +385,69 @@ class Templater(object) :
             return res
         else:
             return res[0].text
+
+    def _getaliascontext(self, context, path, a, kw):
+        try:
+            context = context.xpath(path, **kw)
+        except XPathEvalError:
+            context = None
+        if context is not None and len(context):
+            try:
+                context = context[0].xpath(a)
+            except XPathEvalError:
+                context = None
+        if context is not None and not len(context):
+            context = None
+        return context if context is None else context[0]
+
+    def xpath_aliases(self, path, context, fbcontext):
+        ''' returns result and whether it came from the fbcontext '''
+        origpath = path
+        kw = dict(extensions=self.fns, smart_strings=False, namespaces=self.ns)
+        kw.update(self.vars)
+        if context is not None:
+            try:
+                res = context.xpath(path, **kw)
+            except XPathEvalError:
+                pass
+            else:
+                if len(res):
+                    return (res[0], False)
+        exts = []
+        while len(path):
+            try:
+                res = fbcontext.xpath(path, **kw)
+            except XPathEvalError as e:
+                res = []
+            if not len(res):
+                if "/" not in path:
+                    res = [fbcontext]
+                    exts = [path]
+                    path = ""
+                else:
+                    path, ext = path.rsplit("/", 1)
+                    exts.append(ext)
+                    continue
+            if not len(exts):
+                return (res[0], True)
+            if isinstance(res[0], str) or len(res[0]) != 1 or getattr(res[0][0], 'tag', '') != 'alias':
+                return ([], True)
+                raise ValueError(f"Alias not found at {path} in {res} for {path}/{'/'.join(exts)}")
+            a = res[0][0].get('path')
+            while a.startswith("../"):
+                if not len(path):
+                    path = ".."
+                elif path.startswith(".."):
+                    path = a[:3] + path
+                else:
+                    path, _ = path.rsplit("/", 1)
+                a = a[3:]
+            if len(path):
+                path += "/" + a
+            else:
+                path = a
+            path += "/" + "/".join(exts)
+            return self.xpath_aliases(path, context, fbcontext)
 
 # xpath functions
     @staticmethod
@@ -415,6 +521,10 @@ class Templater(object) :
             else:
                 s.add(v)
         return sorted(s)
+
+    @staticmethod
+    def fn_ucfirst(context, s):
+        return s.title()
         
     extensions = {
         (None, 'doc') : fn_doc.__func__,
@@ -427,6 +537,7 @@ class Templater(object) :
         (None, 'default') : fn_default.__func__,
         (None, 'concat') : fn_concat.__func__,
         (None, 'set') : fn_set.__func__,
+        (None, 'ucfirst') : fn_ucfirst.__func__,
     }
 
 

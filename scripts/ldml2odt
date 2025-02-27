@@ -1,6 +1,6 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
-import sys, os, re
+import sys, os, re, time
 import argparse
 import lxml.etree as et
 from sldr.langtags_full import LangTag
@@ -18,6 +18,7 @@ parser.add_argument('infile',help='xml file to process')
 parser.add_argument('outfile',help='Ouptut file to generate')
 parser.add_argument('-t','--template',help='Template file to generate from')
 parser.add_argument('-l','--langtag',help='Maximal Langtag for this data')
+parser.add_argument('-f','--fallback',help='fallback xml file')
 args = parser.parse_args()
 t = Templater()
 datadir = os.path.abspath(os.path.join(os.path.dirname(__file__), "../lib/oxttools/data"))
@@ -25,6 +26,7 @@ if args.template is None:
     args.template = os.path.join(datadir, 'simple_ldml.fodt')
 t.define('resdir', datadir)
 t.define('repdir', os.path.abspath(os.path.dirname(args.template)))
+t.define('date', time.strftime("%d/%b/%Y"))
 
 lt = args.langtag
 if lt == None:
@@ -39,7 +41,7 @@ if lt != None:
     if ltag.script:
         t.define('lscript', ltag.script.lower())
     t.define('region', ltag.region)
-    # print t.vars
+    t.define('langtag', lt)
 
 t.parse(args.template)
 oldd = et.parse(args.infile).getroot()
@@ -47,6 +49,12 @@ nsmap = oldd.nsmap
 nsmap['sil'] = 'urn://www.sil.org/ldml/0.1'
 d = et.Element(oldd.tag, nsmap=nsmap)
 d[:] = oldd[:]
+t.addns(nsmap)
+
+if args.fallback:
+    doc = et.parse(args.fallback)
+    t.define("fallback", doc.getroot())
+
 if args.template.endswith('.fodt'):
     t.processodt(context=d)
 else:
